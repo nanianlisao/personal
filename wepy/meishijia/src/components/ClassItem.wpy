@@ -1,0 +1,106 @@
+<template>
+  <view class="news-item" @tap="goDetail({{item.id}})">
+    <view class="left">
+      <image src="{{imgUrl}}{{item.img.img0}}" mode="aspectFill"></image>
+    </view>
+    <view class="right">
+      <view class="lesson-name one-lines">
+        {{item.name}}
+      </view>
+      <view class="lesson-date">课程时间：{{item.bigenTime}}</view>
+      <view class="remark">
+        <text class="lesson-count">剩余{{item.quota}}个名额</text>
+        <text class="lesson-price">￥{{item.discount}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  const app = wepy.$instance
+  export default class NewsItem extends wepy.component {
+    props = {
+      item: {
+        type: Object
+      }
+    }
+    data = {
+      imgUrl: ''
+
+    }
+
+    events = {
+
+    }
+    methods = {
+      goDetail(id) {
+        this.$emit('goClassDetail', id)
+      }
+    }
+
+    computed = {
+    }
+    onLoad() {
+      this.imgUrl = app.globalData.imgUrl
+      // console.log(this.item)
+      // this.$apply()
+    }
+  }
+
+</script>
+<style lang="less">
+ .news-item{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 28rpx 50rpx 28rpx 30rpx;
+    position: relative;
+    margin-bottom: 10rpx;
+    .left{
+      width: 160rpx;
+      height: 120rpx;
+      border-radius: 8rpx;
+      image{
+        width: 100%;
+        height: 100%;
+        border-radius: 8rpx;
+      }
+    }
+    .right{
+      flex: 1;
+      margin-left: 29rpx;
+      max-width: 480rpx;
+      .one-lines{
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .lesson-name{
+        font-size: 26rpx;
+        color: #333;
+        line-height: 38rpx;
+      }
+      .lesson-date{
+        font-size: 22rpx;
+        color: #4D4D4D;
+        line-height: 34rpx;
+      }
+      .remark{
+        margin-top: 22rpx;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .lesson-count{
+          color: #666;
+          font-size: 20rpx;
+        }
+        .lesson-price{
+          font-size: 24rpx;
+          color: #E11C18;
+        }
+      }
+    }
+ }
+</style>

@@ -1,0 +1,38 @@
+<!--pages/player/player.wxml-->
+<view class='player'>
+  <view class='filter'>
+    <image src='{{song.imgUrl}}' mode='aspectFill'></image>
+  </view>
+  <view class='top'>
+    <view class='return' bindtap='reback'>
+      <text class='icon-back'></text>
+    </view>
+    <view class='top-name text-hidden'>{{song.songname}}</view>
+    <view class='filter'></view>
+  </view>
+  <view class='singer-name text-hidden'>{{song.singer}}</view>
+  <view class='poster2 {{playing?"":"stop"}}'>
+    <image src='{{song.imgUrl}}' mode='aspectFill'></image>
+  </view>
+  <view class='lyric'>暂未获取到歌词</view>
+  <view class='control-wrap'>
+    <view class='progress'>
+      <text>{{currentSecone}}</text>
+      <slider bindchange="sliderChange" block-size="12" block-color="#ffcd32" step="1" max="200" value="{{progress}}" class="slider" activeColor="#ffcd32" />
+      <text>{{totalSecond}}</text>
+    </view>
+    <view class='control'>
+      <text bindtap='troggleMethod'>
+        <text class='{{playMethod[Index].className}}'></text>
+      </text>
+      <text class='icon-prev' bindtap='troggleSong' data-type="prev"></text>
+      <text class='icon-pause center' bindtap='trogglePlay' hidden="{{!playing}}"></text>
+      <text class='icon-play center' bindtap='trogglePlay' hidden='{{playing}}'></text>
+      <text class='icon-next' bindtap='troggleSong' data-type="next"></text>
+      <text bindtap='updataLike'>
+        <text class='icon-favorite favorite' wx:if="{{liked}}"></text>
+      <text class='icon-not-favorite' wx:else></text>
+      </text>
+    </view>
+  </view>
+</view>

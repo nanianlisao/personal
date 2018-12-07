@@ -1,0 +1,49 @@
+.helper {
+    font-weight: 100;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    line-height: 30px;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-smoothing: antialiased;
+}
+
+.helper .left,
+.clear,
+.tabs {
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+.left,
+.clear {
+    width: 150px;
+}
+
+.left {
+    text-align: left;
+}
+
+.clear {
+    text-align: right;
+    cursor: pointer;
+}
+
+.tabs {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabs span {
+    display: inline-block;
+    padding: 0px 10px;
+    cursor: pointer;
+    border: 1px solid rgba(175, 47, 47, 0);
+}
+
+.tabs span.actived {
+    border-color: rgba(175, 47, 47, 0.4);
+    border-radius: 5px;
+}

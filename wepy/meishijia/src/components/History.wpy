@@ -1,0 +1,60 @@
+<template>
+  <view class="history">
+    <view class="history-txt">
+      <view class="reason">积分兑换</view>
+      <view class="date">2018-04-13</view>
+    </view>
+    <view class="count">+200</view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  const app = wepy.$instance
+  export default class History extends wepy.component {
+    props = {
+      item: {
+        type: Number
+      }
+    }
+    data = {
+      imgUrl: ''
+    }
+
+    events = {
+
+    }
+    methods = {
+    }
+
+    computed = {
+    }
+    onLoad() {
+    }
+  }
+
+</script>
+<style lang="less" scoped>
+  .history{
+    height: 126rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2rpx solid #EBE8E6;
+    &-txt{
+      .reason{
+        font-size: 30rpx;
+        color: #1a1a1a;
+        line-height: 60rpx;
+      }
+      .date{
+        font-size: 22rpx;
+        color: #999;
+        line-height: 32rpx;
+      }
+    }
+    .count{
+      font-size: 26rpx;
+      color: #FD6D47;
+    }
+  }
+</style>

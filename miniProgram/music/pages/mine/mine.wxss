@@ -1,0 +1,117 @@
+/* pages/mine/mine.wxss */
+page{
+  padding-top: 250rpx;
+}
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 250rpx;
+  background-color: #222;
+  padding-top: 44rpx;
+  width: 100%;
+  z-index: 99;
+  box-sizing: border-box;
+}
+
+.top .return {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  top: 44rpx;
+  left: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.top .return text {
+  font-size: 44rpx;
+  color: #ffcd32;
+}
+
+.top  .button-wrapper {
+  display: flex;
+  align-items: center;
+  width: 380rpx;
+  margin: 6rpx auto 0;
+  border: 2rpx solid #333;
+  border-radius: 10rpx;
+}
+
+.top  .button-wrapper text{
+  flex: 1;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+}
+.top  .button-wrapper text.active{
+  color: #fff;
+  background-color: #333;
+}
+.top .random-paly {
+  width: 270rpx;
+  margin: 60rpx auto 0;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid rgba(255, 255, 255, 0.5);
+  border-radius: 200rpx;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 24rpx;
+}
+
+.top .random-paly .icon-play {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+}
+
+
+.song-list {
+  padding: 0 60rpx 40rpx;
+  background-color: #222;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.song-item {
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  line-height: 44rpx;
+}
+
+.song-item .name {
+  color: #fff;
+}
+
+.song-item .ablum {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.text-hidden{
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.no-result{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500rpx;
+  margin-top: 100rpx;
+}
+.no-result image{
+  width: 172rpx;
+  height: 180rpx;
+  opacity: 0.5;
+}
+.no-result text{
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 60rpx;
+}

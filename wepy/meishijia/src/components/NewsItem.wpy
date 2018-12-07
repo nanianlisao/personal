@@ -1,0 +1,136 @@
+<template>
+  <view class="news-item" @tap="goDetail({{item.id}})">
+    <view class="left">
+      <image src="{{imgUrl}}{{item.img}}" mode="aspectFill"></image>
+    </view>
+    <view class="right">
+      <view class="title textoverflow">{{item.title}}</view>
+      <view class="subtitle textoverflow">{{item.des}}</view>
+      <view class="info">
+        <view class="info-time">
+          <image src="/img/shijian.png"></image>
+          <text>{{item.createTime}}</text>
+        </view>
+        <view class="info-eyes" @tap.stop="thumb({{index}})">
+          <image src="/img/guankan.png" class="eye"></image>
+          <text>{{item.viewCount}}</text>
+          <image src="{{item.status==1?'/img/zan2.png':'/img/zan.png'}}" class="zan"></image>
+          <text>{{item.praiseCount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  const app = wepy.$instance
+  export default class NewsItem extends wepy.component {
+    props = {
+      item: {
+        type: Object
+      },
+      index: {
+        type: Number
+      }
+    }
+    data = {
+      imgUrl: ''
+
+    }
+
+    events = {
+
+    }
+    methods = {
+      thumb(index) {
+        console.log(index + '点击了')
+        this.$emit('thumbs', index)
+      },
+      goDetail(id) {
+        console.log(id + '点击了')
+        this.$emit('goNewsDetail', id)
+      }
+    }
+
+    computed = {
+    }
+    onLoad() {
+      this.imgUrl = app.globalData.imgUrl
+      // console.log(this.item)
+      // this.$apply()
+    }
+  }
+
+</script>
+<style lang="less">
+ .news-item{
+    display: flex;
+    align-items:center;
+    background-color: #fff;
+    padding: 28rpx 50rpx 28rpx 30rpx;
+    position: relative;
+    margin-bottom: 10rpx;
+    .left{
+      width: 160rpx;
+      height: 120rpx;
+      border-radius: 8rpx;
+      image{
+        width: 100%;
+        height: 100%;
+        border-radius: 8rpx;
+      }
+    }
+    .right{
+      width:400rpx;
+      margin-left: 30rpx;
+      .textoverflow{
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .title{
+        font-size: 26rpx;
+        color: #333;
+        line-height: 40rpx;
+      }
+      .subtitle{
+        font-size: 20rpx;
+        color: #666;
+        line-height: 30rpx;
+      }
+      .info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20rpx;
+        line-height: 32rpx;
+        margin-top: 16rpx;
+        color: #666;
+        .info-time{
+          display: flex;
+          align-items: center;
+          image{
+            width:18rpx;
+            height: 18rpx;
+            margin-right: 10rpx;
+          }
+        }
+        .info-eyes{
+          display: flex;
+          align-items:center;
+          .eye{
+            width:24rpx;
+            height: 16rpx;
+            margin-right: 10rpx;
+          }
+          .zan{
+            width:18rpx;
+            height: 18rpx;
+            margin:0 10rpx 0 30rpx;
+          }
+        }
+      }
+    }
+ }
+</style>

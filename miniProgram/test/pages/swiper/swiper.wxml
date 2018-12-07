@@ -1,0 +1,6 @@
+<!--pages/swiper/swiper.wxml-->
+<swiper current='{{current}}'>
+  <swiper-item wx:for="{{data}}">
+    <view style='background:#f00;height:400rpx;width:600rpx;'>这是第{{index}}张</view>
+  </swiper-item>
+</swiper>

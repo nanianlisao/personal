@@ -1,0 +1,138 @@
+<template>
+  <view class="content">
+    <import src="/plugins/wxParse/wxParse.wxml" />
+    <view class="header">{{detail.name}}</view>
+    <view class="content-item">
+      <view class="content-title">课程特点</view>
+      <view class="wxparse-content">
+        <template is="wxParse" data="{{wxParseData:des.nodes}}" />
+      </view>
+    </view>
+    <view class="content-item">
+      <view class="content-title">课程特点</view>
+      <view class="content-list">
+        <view class="items">
+          <text class="keys">课程分类：</text>
+          <text class="vals">{{detail.goodesTypeName}}</text>
+        </view>
+        <view class="items">
+          <text class="keys">上课时间：</text>
+          <text class="vals">{{detail.bigenTime}}</text>
+        </view>
+        <view class="items">
+          <text class="keys">上课地点：</text>
+          <view class="addr" @tap.stop="openMap">
+            <text class="vals">{{detail.origin.addr}}</text>
+            <image src="/img/map.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  const app = wepy.$instance
+  export default class GoodsContent extends wepy.component {
+    props = {
+      detail: {
+        type: Object
+      },
+      des: {
+        type: Object
+      }
+    }
+    data = {
+    }
+
+    events = {
+
+    }
+    methods = {
+      openMap() {
+        const {lat, lng, addr} = this.detail.origin
+        wepy.openLocation({
+          latitude: Number(lat),
+          longitude: Number(lng),
+          address: addr
+        })
+      }
+    }
+    watch = {
+      detail(old, news) {
+        console.log(old)
+      },
+      des(o, n) {
+        // console.log(o, n)
+      }
+    }
+    computed = {
+    }
+    onLoad() {
+    }
+  }
+
+</script>
+<style lang="less">
+  .content{
+    .header{
+      line-height: 88rpx;
+      position: relative;
+      padding-left: 38rpx;
+      font-size: 24rpx;
+      color: #1a1a1a;
+      border-bottom: 1rpx solid #e6e6e6;
+      &::before{
+        content: '';
+        position: absolute;
+        top: 24rpx;
+        left: 22rpx;
+        width: 8rpx;
+        height: 40rpx;
+        background-color: #fd6522;
+      }
+    }
+    .content-item{
+      padding:36rpx 36rpx 0;
+      .content-title{
+        width: 100rpx;
+        line-height: 30rpx;
+        font-size: 20rpx;
+        color: #fff;
+        border-radius: 4rpx;
+        text-align: center;
+        background-color: #EDB95D;
+      }
+      .wxparse-content{
+        margin-top: 30rpx;
+      }
+      .content-list{
+        margin-top: 18rpx;
+        .items{
+          display: flex;
+          font-size: 22rpx;
+          line-height: 36rpx;
+          vertical-align: middle;
+          .keys{
+            color: #333;
+            width: 120rpx;
+            flex-shrink: 0;
+          }
+          .vals{
+            color: #666;
+          }
+          .addr{
+            display: flex;
+            align-items: center;
+          }
+          image{
+            flex-shrink: 0;
+            width:20rpx;
+            height: 24rpx;
+            margin-left: 16rpx;
+          }
+        }
+      }
+    }
+  }
+</style>

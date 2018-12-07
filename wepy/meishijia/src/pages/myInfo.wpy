@@ -1,0 +1,136 @@
+<style lang="less" scoped>
+	@tcolor:#EDB95D;
+	.page{
+		background-color: #FFFCF9;
+		min-height: 100%;
+		box-sizing: border-box;
+		padding-bottom: 140rpx;
+		.header{
+			padding-left: 30rpx;
+			font-size: 26rpx;
+			color: #FD6522;
+			line-height: 90rpx;
+			background-color: #EDCD94;
+		}
+		.item{
+			display: flex;
+			align-items: center;
+			height: 122rpx;
+			border-bottom: 1rpx solid #E9E9E9;
+			padding:0 50rpx;
+			font-size: 24rpx;
+			color: #666;
+			.icon1{
+				width: 37rpx;
+				height: 37rpx;
+				margin-right: 30rpx;
+			}
+			.icon2{
+				width: 34rpx;
+				height: 36rpx;
+				margin-right: 34rpx;
+			}
+			.icon3{
+				width: 36rpx;
+				height: 37rpx;
+				margin-right: 31rpx;
+			}
+			.icon4{
+				width: 25rpx;
+				height: 38rpx;
+				margin-right: 42rpx;
+			}
+			.avatar{
+				width: 52rpx;
+				height: 52rpx;
+			}
+			picker,.changeAvatar,input{
+				flex: 1;
+				text-align: right;
+			}
+			.arrow{
+				width: 15rpx;
+				height: 24rpx;
+				margin-left: 20rpx;
+			}
+		}
+		.change-btn{
+			width: 650rpx;
+			line-height: 75rpx;
+			color: #fff;
+			font-size: 26rpx;
+			background-color: #EDB95D;
+			margin-top: 213rpx;
+		}
+	}
+</style>
+
+<template>
+	<view class="page">
+		<view class="header">基本信息</view>
+		<view class="item">
+			<image class="icon icon1" src="/img/register2_1.png"></image>
+			<text>头像</text>
+			<view class="changeAvatar">
+			  <image class="avatar" src="/img/touxiang.png"></image>
+			</view>
+			<image class="arrow" src="/img/jiantou2.png"></image>
+		</view>
+		<view class="item">
+			<image class="icon icon2" src="/img/name.png"></image>
+			<text>真实姓名</text>
+			<input type="text" placeholder="请填写" />
+			<image class="arrow" src="/img/jiantou2.png"></image>
+		</view>
+		<view class="item">
+			<image class="icon icon3" src="/img/sex.png"></image>
+			<text>性别</text>
+			<picker bindchange="changeSex" range="{{sex}}" range-key='name' name="picker">
+			  请填写
+			</picker>
+			<image class="arrow" src="/img/jiantou2.png"></image>
+		</view>
+		<view class="item">
+			<image class="icon icon4" src="/img/tele.png"></image>
+			<text>手机</text>
+			<input type="text" placeholder="请填写" />
+			<image class="arrow" src="/img/jiantou2.png"></image>
+		</view>
+	  <button class="change-btn">确认修改</button>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  const app = wepy.$instance
+  export default class myInfo extends wepy.page {
+    config = {
+      'navigationBarTitleText': '我的资料',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    data = {
+      sex: [
+        {
+          name: '男',
+          type: 1
+        }, {
+          name: '女',
+          type: 2
+        }
+      ]
+    }
+
+    onLoad() {
+      // wepy.$instance.globalData.imgUrl = '11111'
+    }
+
+    methods = {
+    }
+    components = {
+    }
+  }
+
+</script>

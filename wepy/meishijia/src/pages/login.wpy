@@ -1,0 +1,116 @@
+<style lang="less">
+	@tcolor:#EDB95D;  
+	.page{
+		padding: 100rpx 30rpx 0;
+		background-color: #fff;
+		.input-wrap{
+			position: relative;
+		  background-color: #FAFAFA;
+		  line-height: 100rpx;
+		  height: 100rpx;
+		  font-size: 26rpx;
+		  color: #999999;
+		  &:first-child{
+		  	margin-bottom: 20rpx;
+		  }
+			input{
+				width: 70%;
+				padding-left: 30rpx;
+				height: 100rpx;
+				line-height: 100rpx;
+			}
+			image{
+				width: 52rpx;
+				height:	24rpx;
+				position: absolute;
+				top: 38rpx;
+				right: 45rpx;
+			}
+		}
+		.login{
+			margin-top: 140rpx;
+			button{
+				background-color: @tcolor;
+				width: 100%;
+				line-height: 100rpx;
+				font-size: 30rpx;
+				color: #fff;
+			}
+		}
+		.remark{
+			margin-top: 54rpx;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			padding: 0 20rpx;
+			font-size: 24rpx;
+			line-height: 36rpx;
+			color: @tcolor;
+		}
+		
+	}
+</style>
+
+<template>
+	<view class='page'>
+		<form @submit='formSubmit'>
+			<view class='input-wrap'>
+				<input type="number" placeholder="请输入您的电话" name='phone' maxlength="11">
+			</view>
+			<view class='input-wrap'>
+				<input placeholder="请输入您的密码" name='password' password='{{!show}}'>
+				<image 
+				  src="{{show?'/img/zhengyan.png':'/img/biyan.png'}}"
+				  @tap='changeData'></image>
+			</view>
+			</view>
+			<view class='login'>
+				<button form-type='submit'>登录</button>
+			</view>
+			<view class='remark'>
+				<text @tap='register'>注册账号</text>
+			</view>
+		</form>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  export default class login extends wepy.page {
+    config = {
+      'navigationBarTitleText': '登录'
+    }
+    async onLoad() {
+    }
+
+    data = {
+      show: false
+    }
+
+    methods = {
+      register(e) {
+        wepy.redirectTo({
+          url: '/pages/register'
+        })
+      },
+      changeData() {
+        this.show = !this.show
+        this.$apply()
+      },
+      async formSubmit(e) {
+        try {
+          let res2 = await api.appDetail(54)
+          console.log(res2)
+        } catch (e) {
+          console.log(e)
+        }
+        let res = await api.getAppBanner({
+          app_id: 14
+        })
+        console.log(res)
+      }
+    }
+  }
+
+</script>

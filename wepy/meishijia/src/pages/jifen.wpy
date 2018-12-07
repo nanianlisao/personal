@@ -1,0 +1,124 @@
+<style lang="less" scoped>
+	@tcolor:#EDB95D;
+	.page{
+		background-color: #FFFCF9;
+		min-height: 100%;
+		box-sizing: border-box;
+		.top{
+		  background-color: @tcolor;
+		  padding: 40rpx 20rpx 60rpx;
+		  .box{
+		  	padding: 20rpx 20rpx 46rpx;
+		  	background-color: #fff;
+		  	border-radius: 20rpx;
+		  	box-shadow:6rpx 5rpx 13rpx rgba(237,205,148,0.5);
+		  	.jifen{
+		  		.current{
+		  			display: flex;
+		  			align-items: center;
+		  			justify-content: space-between;
+		  			line-height: 40rpx;
+		  			font-size: 22rpx;
+		  			color: #666;
+		  			.right{
+		  				display: flex;
+		  				align-items: center;
+		  				image{
+		  					width: 29rpx;
+		  					height: 29rpx;
+		  					margin-right: 10rpx;
+		  				}
+		  			}
+		  		}
+		  		.grade{
+		  			font-size: 22rpx;
+		  			color: #F27F17;
+		  			text{
+		  				font-size: 50rpx;
+		  				margin-right: 8rpx;
+		  			}
+		  		}
+		  	}
+		  	.exchange{
+		  		font-size: 26rpx;
+		  		color: #fff;
+		  		line-height: 90rpx;
+		  		margin-top:28rpx;
+		  		background-color: #FFAB5F;
+		  	}
+		  }
+		}
+		.detailed{
+			line-height: 80rpx;
+			font-size: 22rpx;
+			color: #666;
+			padding-left: 30rpx;
+			background-color: #F4F2F0;
+		}
+		.list{
+			padding: 0 30rpx;
+		}
+	}
+</style>
+
+<template>
+	<view class="page">
+		<view class="top">
+			<view class="box">
+				<view class="jifen">
+					<view class="current">
+					  <view>当前积分</view>
+					  <view class="right">
+					  	<image src="/img/wenhao.png"></image>
+					  	<text>积分说明</text>
+					  </view>
+					</view>
+					<view class="grade"><text>2135</text>分</view>
+				</view>
+				<button class="exchange">积分兑换</button>
+			</view>
+		</view>
+		<view class="detailed">最近30天积分记录</view>
+		<view class="list">
+			<repeat for="{{list}}" key="historylist" item="item" index="index">
+        <history :item.sync="item"></history>
+      </repeat>
+		</view>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  import History from '@/components/History'
+  import Showtoast from '@/components/common/Showtoast'
+  const app = wepy.$instance
+  export default class yue extends wepy.page {
+    config = {
+      'navigationBarTitleText': '积分',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    data = {
+      list: [1, 2, 3, 6]
+    }
+
+    onLoad() {
+      // wepy.$instance.globalData.imgUrl = '11111'
+    }
+
+    methods = {
+      goYue() {
+        wepy.navigateTo({
+          url: '/pages/yue'
+        })
+      }
+    }
+    components = {
+      history: History,
+      showtoast: Showtoast
+    }
+  }
+
+</script>

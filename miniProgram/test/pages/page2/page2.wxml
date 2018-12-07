@@ -1,0 +1,4 @@
+<movable-area style="height: 150px; width: 350px; background: red;">
+    <movable-view style="height: 50px; width: 50px; background: blue;" direction="horizontal" bindchange="change" inertia="true">
+    </movable-view>
+  </movable-area>

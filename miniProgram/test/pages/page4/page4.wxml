@@ -1,0 +1,8 @@
+<!--pages/page4/page4.wxml-->
+<!-- <move-swiper>
+  <move-item wx:for="11" class="aa">
+    <view>这是item{{index}}</view>
+  </move-item>
+</move-swiper> -->
+<button open-type='contact'>联系客服</button>
+<button bindtap='openFile'>打开文件</button>

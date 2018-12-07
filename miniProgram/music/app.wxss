@@ -1,0 +1,25 @@
+/**app.wxss**/
+@import '/lib/fonts/music-icon.wxss';
+page{
+  background: #222;
+  /* position: relative; */
+  /* padding-top: 44rpx; */
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.text-hidden{
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+

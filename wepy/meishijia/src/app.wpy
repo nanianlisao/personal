@@ -1,0 +1,120 @@
+<style lang='less'>
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+page{
+  font-family:MicrosoftYaHei;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/member',
+      'pages/find',
+      'pages/recharge',
+      'pages/rechargeSuccess',
+      'pages/paySuccess',
+      'pages/pay',
+      'pages/myInfo',
+      'pages/exchange',
+      'pages/jifen',
+      'pages/yue',
+      'pages/goodDetail',
+      'pages/buy',
+      'pages/register',
+      'pages/login'
+    ],
+    window: {
+      backgroundTextStyle: 'dark',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    },
+    'tabBar': {
+      'color': '#666666',
+      'selectedColor': '#FD6522',
+      'borderStyle': 'white',
+      'list': [
+        {
+          'selectedIconPath': '/img/indexactive.png',
+          'iconPath': '/img/index.png',
+          'pagePath': 'pages/find',
+          'text': '发现'
+        },
+        {
+          'selectedIconPath': '/img/goodsactive.png',
+          'iconPath': '/img/goods.png',
+          'pagePath': 'pages/buy',
+          'text': '已购'
+        },
+        {
+          'selectedIconPath': '/img/vipactive.png',
+          'iconPath': '/img/vip.png',
+          'pagePath': 'pages/member',
+          'text': '会员'
+        }
+      ]
+    }
+  }
+
+  globalData = {
+    userInfo: null,
+    // requestUrl: 'https://m.njdream.cn/api/',
+    requestUrl: 'http://ty.njdream.cn/api/',
+    // requestUrl: 'http://192.168.1.104:8080/api/',
+    app_id: 43,
+    // app_id: 40,
+    app_name: '美食家课堂',
+    imgUrl: 'https://wmx.njdream.cn/njdream/temp/'
+  }
+
+  constructor () {
+    super()
+    this.use('requestfix')
+    this.use('promisify')
+  }
+
+  onLaunch() {
+    this.globalData.imgUrl = this.globalData.imgUrl + this.globalData.app_id + '/'
+    wepy.setStorageSync('user_id', '15278244571170')  //
+    // this.testAsync()
+  }
+
+  sleep (s) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promise resolved')
+      }, s * 1000)
+    })
+  }
+
+  async testAsync () {
+    const data = await this.sleep(3)
+    console.log(data)
+  }
+
+  getUserInfo(cb) {
+    const that = this
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo
+    }
+    wepy.getUserInfo({
+      success (res) {
+        that.globalData.userInfo = res.userInfo
+        cb && cb(res.userInfo)
+      }
+    })
+  }
+}
+</script>

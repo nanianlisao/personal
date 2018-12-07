@@ -1,0 +1,24 @@
+/* pages/page1/page1.wxss */
+
+page {
+  color: #333;
+  font-size: 28rpx;
+  min-height: 100%;
+  padding-bottom: 143rpx;
+  box-sizing: border-box; /* 这两个写在app.wxss里面 */
+  position: relative; /* 这两个写在app.wxss里面 */
+}
+
+.title {
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.list {
+  border-top: 1rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80rpx;
+  padding: 0 30rpx;
+}

@@ -1,0 +1,94 @@
+<template>
+  <view class="news-item" @tap="goDetail({{item.orderDetail[0].goodsId}})">
+    <view class="left">
+      <image src="{{imgUrl}}{{item.orderDetail[0].goodsImg}}" mode="aspectFill"></image>
+    </view>
+    <view class="right">
+      <view class="lesson-name one-lines">
+        {{item.orderDetail[0].goodsName}}
+      </view>
+      <view class="lesson-date">课程时间：{{item.order.ext.bigenTime}}</view>
+      <view class="remark">未开始</view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  const app = wepy.$instance
+  export default class NewsItem extends wepy.component {
+    props = {
+      item: {
+        type: Object
+      }
+    }
+    data = {
+      imgUrl: ''
+
+    }
+
+    events = {
+
+    }
+    methods = {
+      goDetail(id) {
+        this.$emit('goClassDetail', id)
+      }
+    }
+
+    computed = {
+    }
+    onLoad() {
+      this.imgUrl = app.globalData.imgUrl
+      // console.log(this.item)
+      // this.$apply()
+    }
+  }
+
+</script>
+<style lang="less">
+ .news-item{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 28rpx 50rpx 28rpx 30rpx;
+    position: relative;
+    margin-bottom: 10rpx;
+    .left{
+      width: 160rpx;
+      height: 120rpx;
+      border-radius: 8rpx;
+      image{
+        width: 100%;
+        height: 100%;
+        border-radius: 8rpx;
+      }
+    }
+    .right{
+      flex: 1;
+      margin-left: 29rpx;
+      max-width: 480rpx;
+      .one-lines{
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .lesson-name{
+        font-size: 26rpx;
+        color: #333;
+        line-height: 38rpx;
+      }
+      .lesson-date{
+        font-size: 22rpx;
+        color: #4D4D4D;
+        line-height: 34rpx;
+      }
+      .remark{
+        margin-top: 22rpx;
+        font-size: 22rpx;
+        color: #666;
+      }
+    }
+ }
+</style>

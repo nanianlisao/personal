@@ -1,0 +1,155 @@
+<style lang="less" scoped>
+	.page{
+		background-color: #FFFCF9;
+    min-height: 100%;
+    padding-bottom: 88rpx;
+    box-sizing: border-box;
+    .top{
+      padding: 20rpx 30rpx 0 30rpx;
+      .swiper{
+        width: 690rpx;
+        height: 350rpx;
+        .wx-swiper-dots {
+          width: 100%;
+          height: 40rpx;
+          padding: 30rpx 60rpx 0 0;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          position: absolute;
+          box-sizing: border-box;
+        }
+        .wx-swiper-dot {
+          background-color: #fff;
+          width: 16rpx;
+          height: 16rpx;
+          border-radius: 8rpx;
+        }
+        .wx-swiper-dot-active {
+          width: 40rpx;
+        }
+        image{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .lines{
+      height: 24rpx;
+      background: #f2f2f2;
+      margin-top: 32rpx;
+    }
+    .footer{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 88rpx;
+      display: flex;
+      font-size: 26rpx;
+      color: #fff;
+      line-height: 88rpx;
+      .sign-up{
+        width: 530rpx;
+        text-align: center;
+        background-color: #EDB95D;
+      }
+      .contact{
+        position: relative;
+        display: flex;
+        width: 220rpx;
+        background-color: #666;
+        align-items: center;
+        justify-content: center;
+        image{
+          width: 42rpx;
+          height: 42rpx;
+          margin-right: 18rpx;
+        }
+        button{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-sizing:border-box;
+          opacity: 0;
+        }
+      }
+    }
+	}
+</style>
+
+<template>
+	<view class='page'>
+    <view class='top'>
+      <swiper class="swiper" indicator-dots autoplay="{{autoplay}}" circular>
+        <swiper-item wx:for="{{bannerList}}">
+          <image src="{{imgUrl}}{{item}}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="lines"></view>
+    <goodsContent :detail.sync="detail" :des.sync="des"></goodsContent>
+    <view class="footer">
+      <view class="sign-up">立即报名</view>
+      <view class="contact">
+        <image src="/img/kefu02.png"></image>
+        <text>客服</text>
+        <button open-type="contact"></button>
+      </view>
+    </view>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  import WxParse from '@/plugins/wxParse/wxParse'
+  import GoodsContent from '@/components/GoodsContent'
+  import Showtoast from '@/components/common/Showtoast'
+  const app = wepy.$instance
+  export default class login extends wepy.page {
+    config = {
+      'navigationBarTitleText': '课程详情',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    onLoad(options) {
+      options.id = 533
+      this.imgUrl = app.globalData.imgUrl
+      this.getGoodsDetail(options)
+    }
+
+    async getGoodsDetail(options) {
+      let res = await api.goods.getGoodsById(options.id)
+      console.log(res)
+      res.resultObj.img = util.strTojson(res.resultObj.img)
+      res.resultObj.origin = util.strTojson(res.resultObj.origin)
+      res.resultObj.bigenTime = new Date(res.resultObj.bigenTime).Format('yyyy-MM-dd')
+      let bannerList = Object.assign({}, res.resultObj.img)
+      delete bannerList.img0
+      this.bannerList = bannerList
+      let des = res.resultObj.des
+      WxParse.wxParse('des', 'html', des, this, 5)
+      this.detail = res.resultObj
+      this.$apply()
+    }
+
+    data = {
+      bannerList: {},
+      detail: {},
+      des: {},
+      imgUrl: ''
+    }
+
+    methods = {
+    }
+    components = {
+      goodsContent: GoodsContent,
+      showtoast: Showtoast
+    }
+  }
+
+</script>

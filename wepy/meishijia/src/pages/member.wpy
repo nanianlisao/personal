@@ -1,0 +1,206 @@
+<style lang="less" scoped>
+	@tcolor:#EDB95D;
+	.flexcten{
+    display: flex;
+    align-items: center;
+  }
+	.member{
+		.top{
+			height:290rpx;
+			background: linear-gradient(to right top, #EDCA8E , @tcolor);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.avatar{
+				width:160rpx;
+				height: 160rpx;
+				margin-right: 37rpx;
+				image{
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+				}
+			}
+			.member-info{
+				color: #fff;
+				.info-name{
+					.flexcten;
+			    height: 48rpx;
+			    .name{
+			    	font-size: 30rpx;
+			    	font-weight: bold;
+			    }
+			    .grade{
+			    	margin-left: 30rpx;
+			    	.flexcten;
+			    	padding: 0 10rpx;
+			    	border: 1rpx solid #fff;
+			    	border-radius:16rpx;
+			    	line-height: 32rpx;
+			    	font-size: 20rpx;
+			    	image{
+			    		width: 23rpx;
+			    		height: 19rpx;
+			    	}
+			    }
+				}
+				.integral{
+				  font-size: 24rpx;
+				  line-height: 36rpx;
+				  margin-top: 14rpx;
+				}
+				.progress{
+					width: 352rpx;
+					height: 8rpx;
+					margin: 22rpx 0;
+					border-radius:4rpx;
+					overflow: hidden;
+				}
+				.rights{
+					.flexcten;
+					font-size: 22rpx;
+					image{
+						width: 40rpx;
+						height: 40rpx;
+						margin-right: 12rpx;
+					}
+				}
+			}
+		}
+		.points{
+			line-height:80rpx;
+			.flexcten;
+			color: #fff;
+			background: linear-gradient(to bottom, @tcolor, @tcolor);
+			font-size: 28rpx;
+			&-item{
+				flex: 1;
+				flex-shrink: 0;
+				.flexcten;
+				padding-left: 42rpx;
+				.icon1{
+					width: 32rpx;
+					height: 32rpx;
+					margin-right: 12rpx;
+				}
+				.icon2{
+					width: 21rpx;
+					height: 18rpx;
+					margin-left: 18rpx;
+				}
+				.val{
+					color: #FFDA53;
+					margin-left: 20rpx;
+				}
+			}
+		}
+		.person-list{
+			margin-top:15rpx;
+			padding: 0 30rpx;
+			.person-item{
+				.flexcten;
+				font-size: 26rpx;
+				color: #323232;
+				line-height: 120rpx;
+				border-bottom: 2rpx solid #e6e6e6;
+				text{
+					flex: 1;
+				}
+				.icon1{
+					width: 50rpx;
+					height: 47rpx;
+					margin-right: 32rpx;
+				}
+				.icon2{
+					width: 52rpx;
+					height: 44rpx;
+					margin-right: 32rpx;
+				}
+				.icon3{
+					width: 15rpx;
+					height: 26rpx;
+				}
+			}
+		}
+
+	}
+</style>
+
+<template>
+	<view class="member">
+		<view class="top">
+			<view class="avatar">
+				<image src="/img/test.jpg"></image>
+			</view>
+			<view class="member-info">
+				<view class="info-name">
+					<view class="name">麦芽糖</view>
+					<view class="grade">
+						<image src="/img/grade.png"></image>
+						<text>普通会员</text>
+					</view>
+				</view>
+				<view class="integral">还差53分升级到黄金会员 27/80</view>
+				<progress class="progress" percent="50" activeColor="#FFFFFF" stroke-width="4" backgroundColor="#F4DCB2" active></progress>
+				<view class="rights">
+					<image src="/img/discount.png"></image>
+					<text>享会员则扣</text>
+				</view>
+			</view>
+		</view>
+		<view class="points">
+			<view class="points-item">
+				<image src="/img/integral.png" class="icon1"></image>
+				<text>我的积分</text>
+				<text class="val">0</text>
+			</view>
+			<view class="points-item" @tap="goYue">
+				<text>余额</text>
+				<text class="val">2200</text>
+				<image src="/img/jiantou1.png" class="icon2"></image>
+			</view>
+		</view>
+		<view class="person-list">
+			<view class="person-item">
+				<image src="/img/information.png" class="icon1"></image>
+				<text>我的资料</text>
+				<image src="/img/jiantou2.png" class="icon3"></image>
+			</view>
+			<view class="person-item">
+				<image src="/img/kefu.png" class="icon2"></image>
+				<text>联系客服</text>
+				<image src="/img/jiantou2.png" class="icon3"></image>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  const app = wepy.$instance
+  export default class member extends wepy.page {
+    config = {
+      'navigationBarTitleText': '会员',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    data = {
+      states: '1'
+    }
+
+    onLoad() {
+      // wepy.$instance.globalData.imgUrl = '11111'
+    }
+
+    methods = {
+      goYue() {
+        wepy.navigateTo({
+          url: '/pages/yue'
+        })
+      }
+    }
+  }
+
+</script>

@@ -1,0 +1,116 @@
+<style lang="less" scoped>
+  @tcolor:#EDB95D;
+  .flexcten{
+    display: flex;
+    align-items: center;
+  }
+  .page{
+    overflow: hidden;
+    padding: 0 30rpx;
+    .remark{
+      margin-top: 50rpx;
+      font-size: 30rpx;
+      color: #666;
+      line-height: 50rpx;
+      text{
+        font-size: 24rpx;
+      }
+    }
+    .input{
+      .flexcten;
+      justify-content: space-between;
+      height: 80rpx;
+      line-height: 80rpx;
+      font-size: 32rpx;
+      color: #333;
+      border: 2rpx solid #E6E6E6;
+      border-radius: 10rpx;
+      box-sizing: border-box;
+      padding: 0 22rpx;
+      margin-top: 10rpx;
+    }
+    .format{
+      .flexcten;
+      justify-content: space-between;
+      margin-top: 50rpx;
+      .item{
+        width: 150rpx;
+        line-height: 68rpx;
+        text-align: center;
+        font-size: 30rpx;
+        color: #333;
+        border: 2rpx solid #E6E6E6;
+        &.active{
+          background-color: @tcolor;
+          color: #fff;
+          border: 2rpx solid @tcolor;
+        }
+      }
+    }
+    .bg-img{
+      margin: 158rpx auto 114rpx;
+      width: 437rpx;
+      height: 437rpx;
+      image{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .recharge{
+      background-color: @tcolor;
+      width: 670rpx;
+      margin: 0 auto;
+      line-height: 90rpx;
+      font-size: 26rpx;
+      color: #fff;
+    }
+  }
+</style>
+
+<template>
+  <view class="page">
+    <view class="remark">请输入充值金额<text>（不小于1元）</text></view>
+    <view class="input"><input type="number"><text>元</text></view>
+    <view class="format">
+      <view class="item">50元</view>
+      <view class="item active">100元</view>
+      <view class="item">200元</view>
+      <view class="item">500元</view>
+    </view>
+    <view class="bg-img">
+      <image src="/img/recharge.png"></image>
+    </view>
+    <button class="recharge">立即充值</button>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  const app = wepy.$instance
+  export default class recharge extends wepy.page {
+    config = {
+      'navigationBarTitleText': '余额充值',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    data = {
+    }
+
+    onLoad() {
+      // wepy.$instance.globalData.imgUrl = '11111'
+    }
+
+    methods = {
+      goYue() {
+        wepy.navigateTo({
+          url: '/pages/yue'
+        })
+      }
+    }
+    components = {
+    }
+  }
+
+</script>

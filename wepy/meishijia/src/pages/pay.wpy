@@ -1,0 +1,118 @@
+<style lang="less" scoped>
+	@tcolor:#EDB95D;
+	.page{
+		background-color: #FFFCF9;
+		min-height: 100%;
+		box-sizing: border-box;
+		.list{
+			padding: 13rpx 30rpx 0;
+			.item{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 30rpx;
+				line-height: 95rpx;
+				border-bottom: 1rpx solid #E0E0E0;
+				font-size: 28rpx;
+				color: #666;
+				.price{
+					color: #f00;
+				}
+			}
+		}
+		.title{
+			color: #666;
+			font-size: 28rpx;
+			line-height: 42rpx;
+			margin: 26rpx 0 50rpx;
+			padding-left: 60rpx;
+		}
+		.pay-methods{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			.pay-item{
+				width: 256rpx;
+				height: 90rpx;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  border: 2rpx solid #E2E2E2;
+			  border-radius: 10rpx;
+			  background-color: #FAFAFA;
+			  font-size: 24rpx;
+			  color: #999;
+			  &.active{
+			    border: 2rpx solid #FF8B26;
+			  }
+			  &:first-child{
+			  	margin-right: 58rpx;
+			  }
+			  .icon1{
+			  	width: 77rpx;
+			  	height: 51rpx;
+			  	margin-right: 20rpx;
+			  }
+			  .icon2{
+			  	width: 63rpx;
+			  	height: 63rpx;
+			  	margin-right: 20rpx;
+			  }
+			}
+		}
+		.pay-btn{
+			width: 702rpx;
+		  line-height: 95rpx;
+		  font-size: 32rpx;
+		  color: #fff;
+		  background-color: @tcolor;
+		  margin-top: 120rpx;
+		}
+	}
+</style>
+
+<template>
+	<view class="page">
+		<view class="list">
+			<view class="item"><text>支付费用</text><text class="price">￥168.00</text></view>
+			<view class="item"><text>可用余额</text><text class="price">￥525.00</text></view>
+		</view>
+		<view class="title">支付方式</view>
+		<view class="pay-methods">
+		  <view class="pay-item active"><image class="icon1" src="/img/balance_pay.png"></image>余额支付</view>
+		  <view class="pay-item"><image class="icon2" src="/img/wx_pay.png"></image>微信支付</view>
+		</view>
+		<button class="pay-btn">确认</button>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  const app = wepy.$instance
+  export default class pay extends wepy.page {
+    config = {
+      'navigationBarTitleText': '支付',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    data = {
+    }
+
+    onLoad() {
+      // wepy.$instance.globalData.imgUrl = '11111'
+    }
+
+    methods = {
+      goYue() {
+        wepy.navigateTo({
+          url: '/pages/yue'
+        })
+      }
+    }
+    components = {
+    }
+  }
+
+</script>

@@ -1,0 +1,340 @@
+<style lang="less">
+	@tcolor:#EDB95D;
+	.page{
+    background-color: #FFFCF9;
+		.my-swiper{
+			width: 690rpx;
+			height: 230rpx;
+			margin: 20rpx auto;
+      .wx-swiper-dots {
+        width: 100%;
+        height: 40rpx;
+        padding: 30rpx 60rpx 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: absolute;
+        box-sizing: border-box;
+        /* bottom: 0;  */
+      }
+
+      .wx-swiper-dot {
+        background-color: #fff;
+        width: 16rpx;
+        height: 16rpx;
+        border-radius: 8rpx;
+      }
+
+      .wx-swiper-dot-active {
+        width: 40rpx;
+      }
+			.slide-image{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.type-scroll-view{
+			padding-top: 36rpx;
+			background-color: #fff;
+			border-bottom: 1rpx solid #FCE9E0;
+			.type-list{
+				display: flex;
+				position: relative;
+				.type-item{
+					font-size: 24rpx;
+					flex: 1;
+					min-width: 187rpx;
+					text-align: center;
+					line-height: 64rpx;
+					font-weight: bold;
+					color: #999999;
+					&.active{
+						color: #FD6522;
+					}
+				}
+				.bottom-lines{
+					position: absolute;
+					width:139rpx;
+					height: 6rpx;
+					left: 0;
+					bottom: 0;
+					transition: transform 0.3s;
+					background-color: #FD6522;
+				}
+		  }
+		}
+	}
+</style>
+
+<template>
+	<view class='page'>
+		<swiper indicator-dots="true" class="my-swiper">
+			<block wx:for-item="bannerItem" wx:for="{{bannerList}}" wx:key="bannerList">
+				<swiper-item>
+					<image src="{{imgUrl}}{{bannerItem.content.img0.url}}" class="slide-image" mode="aspectFill" />
+				</swiper-item>
+			</block>
+		</swiper>
+		<scroll-view class='type-scroll-view' scroll-x scroll-into-view="{{child_id}}" scroll-with-animation>
+    	<view class='type-list'>
+    		<repeat for="{{allTypeList}}">
+    			<view class="type-item {{tab==index?'active':''}}" @tap="changeTab({{index}},{{item.type}},{{item.id}})" id="child{{index}}">{{item.name}}</view>
+    		</repeat>
+    		<view class='bottom-lines' style="transform:translate({{transLeft}}rpx)"></view>
+    	</view>
+		</scroll-view>
+        <view @tap="exit">退出小程序</view>
+    <classList :classListData.sync="datas" wx:if="{{type==1}}" @goClassDetail="goClassDetail"></classList>
+    <newsList :newsListData.sync="datas" wx:if="{{type==2}}" @thumbs="thumbs" @goNewsDetail="goNewsDetail"></newsList>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  import NewsList from '@/components/NewsList'
+  import ClassList from '@/components/ClassList'
+  const app = wepy.$instance
+  export default class find extends wepy.page {
+    config = {
+      'navigationBarTitleText': '发现',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    async onShow() {
+      // this.getAppBanner() // 获取banner图片
+      // this.getTypeList() // 获取顶部tab列表
+    }
+    /**
+     * 获取顶部的banner图片
+     * @param appId 小程序appid
+     * @return arr [banner图列表]
+     */
+    async getAppBanner() {
+      this.imgUrl = app.globalData.imgUrl
+      let res = await api.app.getAppBanner({
+        appId: app.globalData.app_id
+      })
+      res.resultObj.map(x => {
+        x.content = util.strTojson(x.content)
+      })
+      this.bannerList = res.resultObj
+      this.$apply()
+    }
+
+    async getTypeList() {
+      // 先获取课程分类列表
+      let res = await api.goods.goodsTypeList({
+        appId: app.globalData.app_id,
+        status: 1
+      })
+      console.log('课程类别', res)
+      res.resultObj.map(x => {
+        x.type = 1
+      })
+      this.goodsTypeList = res.resultObj
+      // 获取新闻分类列表
+      let res2 = await api.news.newsTypeList({
+        appId: app.globalData.app_id
+      })
+      console.log('新闻类型', res2)
+      res2.resultObj.map(x => {
+        x.type = 2
+      })
+      this.newsTypeList = res2.resultObj
+      this.getAllTypeList()
+    }
+   /**
+    * 类型 总
+    */
+    async getAllTypeList() {
+      let allTypeList = [...this.goodsTypeList, ...this.newsTypeList]
+      let transLeft = allTypeList.length > 4 ? 24 : (750 / allTypeList.length - 139) / 2
+      this.transLeft = transLeft
+      this.allTypeList = allTypeList
+      this.typeId = allTypeList[0].id
+      this.transLeft = transLeft
+      this.type = allTypeList[0].type
+      this.$apply()
+      this.getDetailList()
+    }
+
+    /**
+     * 获取下面详细列表信息
+     */
+
+    getDetailList() {
+      let type = this.type
+      if (type === 1) {
+        this.getGoodslList()
+      } else if (type === 2) {
+        this.getNewsList()
+      }
+    }
+    /**
+     * 课程详情 列表
+     */
+
+    async getGoodslList() {
+      let res = await api.goods.goodsList({
+        appId: app.globalData.app_id,
+        status: 1,
+        goodsTypeId: this.typeId
+      }, this.page)
+      this.totalPages = res.page.totalPages
+      res.resultObj.map(x => {
+        x.img = util.strTojson(x.img)
+        x.bigenTime = new Date(x.bigenTime).Format('yyyy-MM-dd hh:mm')
+        x.quota = parseInt(x.inventory) - x.salesCount // 剩余的名额
+      })
+      console.log('课程详情', res)
+      if (this.datas) {
+        res.resultObj = [...this.datas, ...res.resultObj]
+      }
+      this.datas = res.resultObj
+      this.$apply()
+      this.showLoading = false
+    }
+
+    /**
+     * 新闻内容 列表
+     */
+
+    async getNewsList() {
+      let res = await api.news.newsList({
+        appId: app.globalData.app_id,
+        noCache: true,
+        newsTypeId: this.typeId
+      }, this.page)
+      this.totalPages = res.page.totalPages
+      let newsList = res.resultObj
+      var newsIdArr = newsList.map(x => x.id)
+      let allZanList = await util.wx_requestPost(app.globalData.requestUrl + 'praise/praiseStatus', {
+        data: {
+          appId: app.globalData.app_id,
+          currentPage: 1,
+          pageSize: 20,
+          totalRows: 1,
+          newsIds: newsIdArr,
+          openId: wepy.getStorageSync('user_id')
+        }
+      })
+      console.log(allZanList)
+      try {
+        newsList.map((x, index) => {
+          x.status = allZanList.data[index].status
+          x.createTime = new Date(x.createTime).Format('yyyy-MM-dd')
+          if (!x.praiseCount) {
+            x.praiseCount = 0
+          }
+        })
+        if (this.datas) {
+          newsList = [...this.datas, ...newsList]
+        }
+      } catch (e) {
+        console.log(e)
+      }
+      this.datas = newsList
+      console.log(this.datas)
+      this.$apply()
+      this.showLoading = false
+    }
+
+    data = {
+      show: false,
+      bannerList: [],
+      allTypeList: [],
+      datas: [],
+      child_id: 'child0',
+      type: 0,
+      page: 1,
+      transLeft: 0,
+      imgUrl: null,
+      tab: 0
+    }
+
+    computed = {
+      transLeft () {
+        let len = this.allTypeList.length
+        return len > 4 ? this.tab * 187 + 24 : (750 / len - 139) / 2 + this.tab * 750 / len
+      }
+    }
+
+    methods = {
+      changeTab(index, type, typeId) {
+        if (index === this.tab) {
+          return false
+        } else {
+          this.tab = index
+        }
+        this.child_id = index > 1 ? `child${index - 1}` : 'child0'
+        this.type = type
+        this.typeId = typeId
+        this.datas = []
+        this.page = 1
+        this.$apply()
+        this.getDetailList()
+      },
+      exit() {
+        console.log(111)
+        wx.navigateBack({
+          delta: -1
+        })
+      }
+    }
+
+    events = {
+      // 点赞或取消点赞
+      async thumbs(index) {
+        try {
+          var data = this.datas
+          var praised = data[index].status
+          var res = await api.praise.addPraise({
+            appId: app.globalData.app_id,
+            openId: wepy.getStorageSync('user_id'),
+            newsId: data[index].id,
+            type: 1
+          })
+          console.log(res)
+          if (res.resultCode === '1') {
+            if (praised === 1) {
+              data[index].status = 2
+              data[index].praiseCount --
+              wepy.showToast({
+                title: '取消点赞',
+                icon: 'none'
+              })
+            } else {
+              data[index].status = 1
+              data[index].praiseCount ++
+              wepy.showToast({
+                title: '点赞成功',
+                icon: 'none'
+              })
+            }
+          }
+          this.datas = data
+          console.log(this.datas)
+          this.$apply()
+        } catch (e) {
+          console.log(e)
+        }
+      },
+
+      goNewsDetail(id) {
+        console.log('去新闻详情' + id)
+      },
+
+      goClassDetail(id) {
+        console.log('去课程详情' + id)
+      }
+    }
+
+    components = {
+      newsList: NewsList,
+      classList: ClassList
+    }
+  }
+
+</script>

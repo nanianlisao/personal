@@ -1,0 +1,41 @@
+<template>
+  <view class="class-list">
+    <repeat for="{{classListData}}" key="classlist" item="item">
+      <classItem :item.sync="item"></classItem>
+    </repeat>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import ClassItem from './ClassItem'
+export default class ClassList extends wepy.component {
+  props = {
+    classListData: {
+      type: Array,
+      default: []
+    }
+  }
+  data = {
+  }
+
+  events = {
+
+  }
+  methods = {
+  }
+
+  onLoad() {
+  }
+  components = {
+    classItem: ClassItem
+  }
+}
+
+</script>
+<style lang="less">
+.class-list {
+  position: relative;
+  overflow: hidden;
+}
+
+</style>

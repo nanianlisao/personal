@@ -1,0 +1,35 @@
+<!--pages/liandong/liandong.wxml-->
+<view class="container">
+  <!--左侧栏-->
+  <scroll-view class='scroll_left' scroll-y="true" style="height:{{winHeight}}px;" scroll-with-animation="true">
+    <view class="nav_left">
+      <block wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{itemName[0].name}}">
+        <!--当前项的id等于item项的id，那个就是当前状态-->
+        <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+        <view class="nav_left_items {{curNav == idx ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}" data-id="{{idx}}">{{itemName[0].name}}</view>
+      </block>
+    </view>
+  </scroll-view>
+
+  <!--右侧栏-->
+  <scroll-view scroll-y="true" class="scroll_right" style="height:{{winHeight}}px;" scroll-into-view="{{scrollTopId}}"  bindscroll="scroll">
+    <view class="nav_right">
+      <view class='mink' wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" wx:key="{{itemName[0].name}}">
+        <view class='minl' id='{{idx}}'>{{itemName[0].name}}</view>
+        <block wx:for="{{itemName}}" wx:key="{{item.desc}}" wx:for-index="idex">
+          <view class="nav_right_items" wx:if="{{idex>0}}">
+            <navigator url="../detail/detail" hover-class="other-navigator-hover">
+              <view>
+                <!-- <image src="{{item.picture}}"></image> -->
+                <view>
+                  <text>{{item.desc}}</text>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+      <view style="width:100%;height:30rpx;background:#f0f4f7"></view>
+    </view>
+  </scroll-view>
+</view>

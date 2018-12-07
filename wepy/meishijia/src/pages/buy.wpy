@@ -1,0 +1,85 @@
+<style lang="less">
+	.page{
+		background-color: #FFFCF9;
+	}
+</style>
+
+<template>
+	<view class='page'>
+		<repeat for="{{orderList}}" key="buylist" item="item">
+			<orderItem :item.sync="item"></orderItem>
+		</repeat>
+    <showtoast :showLoading.sync="showLoading"></showtoast>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  import OrderItem from '@/components/OrderItem'
+  import Showtoast from '@/components/common/Showtoast'
+  const app = wepy.$instance
+  export default class login extends wepy.page {
+    config = {
+      'navigationBarTitleText': '已购',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff',
+      'enablePullDownRefresh': true
+    }
+    onLoad() {
+      this.getOderList()
+    }
+
+    async getOderList() {
+      let res = await api.order.orderList({
+        appId: app.globalData.app_id,
+        // status: 10,
+        openId: wepy.getStorageSync('user_id')
+      }, this.page)
+      console.log(res)
+      this.totalpage = res.page.totalPages
+      res.resultObj.map(x => {
+        x.order.ext = util.strTojson(x.order.ext)
+      })
+      this.orderList = [...this.orderList, ...res.resultObj]
+      this.showLoading = 'false'
+      this.$apply()
+    }
+
+    data = {
+      page: 1,
+      showLoading: 'false',
+      show: false,
+      orderList: []
+    }
+    onPullDownRefresh() {
+      this.page = 1
+      this.orderList = []
+      this.getOderList()
+      wepy.stopPullDownRefresh()
+    }
+
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom() {
+      this.page++
+      if (this.page <= this.totalpage) {
+        this.showLoading = '2'
+        this.getOderList()
+      } else {
+        this.showLoading = '3'
+        this.$apply()
+      }
+    }
+
+    methods = {
+    }
+    components = {
+      orderItem: OrderItem,
+      showtoast: Showtoast
+    }
+  }
+
+</script>

@@ -1,0 +1,11 @@
+/* pages/picker-view/picker-view.wxss */
+
+.aa {
+  color: #f00;
+}
+
+.cc {
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}

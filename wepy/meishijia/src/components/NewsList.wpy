@@ -1,0 +1,40 @@
+<template>
+  <view class="news-list">
+    <repeat for="{{newsListData}}" key="newslist" item="item" index="index">
+      <newsItem :item.sync="item" :index="index" @thumbs="thumbs"></newsItem>
+    </repeat>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+import NewsItem from './NewsItem'
+export default class NewsList extends wepy.component {
+  props = {
+    newsListData: {
+      type: Array,
+      default: []
+    }
+  }
+  data = {
+  }
+
+  events = {
+  }
+  methods = {
+  }
+
+  onLoad() {
+  }
+  components = {
+    newsItem: NewsItem
+  }
+}
+
+</script>
+<style lang="less">
+.news-list {
+  position: relative;
+  overflow: hidden;
+}
+
+</style>

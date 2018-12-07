@@ -1,0 +1,5 @@
+<!--components/water-mark/water-mark.wxml-->
+<view class='friend-link' bindtap='goindex'>
+  <image src='/img/jmLogo.png' mode='widthFix'></image>
+  <text>提供技术支持</text>
+</view>

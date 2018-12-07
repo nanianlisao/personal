@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>微信小程序 -- WeChat applet --</title>
+    <meta name = "format-detection" content = "telephone=no">
+    <link rel="icon" type="text/css" href="img/wechat.ico" />
+    <link rel="stylesheet" type="text/css" href="css/common.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/wechat.min.css" />
+</head>
+
+<body>
+    <!-- headbar -->
+    <div class="header">
+        <div class="logo-wrapper">
+            <img src="http://ox0m81w8t.bkt.clouddn.com/page_home/img/index_logo.png" class="logo">
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="content-main clearfix">
+            <!-- banner -->
+            <div class="banner-wrapper">
+                <img src="img/wechat_banner_txt.png" alt="" class="banner-wrapper-txt" />
+            </div>
+            <!-- ecology -->
+            <div class="ecology-wrapper">
+                <div class="title">小程序生态现状</div>
+                <div class="advantage-wrapper">
+                    <div id="advantage-bg"></div>
+                    <div id="advantage-main"></div>
+                    <div id="advantage-1"></div>
+                    <div id="advantage-2"></div>
+                    <div id="advantage-3"></div>
+                    <div id="advantage-4"></div>
+                </div>
+                <div class="advantage-wrapper-handset">
+                    <img src="img/wechat_advantage@2x.png" />
+                </div>
+            </div>
+            <!-- applet -->
+            <div class="applet-section">
+                <div class="title">集梦小程序</div>
+                <div class="applet-content">
+                    <div class="applet-floor">
+                        <div class="applet-wrapper ">
+                            <div class="applet-img-wrapper" id="img">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_pizza.png" class="applet-img-wrapper1"></a>
+                            </div>
+                            <p class="applet-function">分销</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_restaurant.png" class="applet-img-wrapper2"></a>
+                            </div>
+                            <p class="applet-function">商城</p>
+                        </div>
+                        <div class="applet-wrapper ">
+                            <div class="applet-img-wrapper">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_vote.png" class="applet-img-wrapper3"></a>
+                            </div>
+                            <p class="applet-function">投票</p>
+                        </div>
+                        <div class="applet-wrapper ">
+                            <div class="applet-img-wrapper">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_vote.png" class="applet-img-wrapper4"></a>
+                            </div>
+                            <p class="applet-function">招商</p>
+                        </div>
+                        <div class="applet-wrapper last">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper5"></a>
+                            </div>
+                            <p class="applet-function">会员预定</p>
+                        </div>
+                    </div>
+                    <div class="applet-floor">
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper6"></a>
+                            </div>
+                            <p class="applet-function">公众号</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper7"></a>
+                            </div>
+                            <p class="applet-function">外卖</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper8"></a>
+                            </div>
+                            <p class="applet-function">点餐</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper9"></a>
+                            </div>
+                            <p class="applet-function">拼团</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper10"></a>
+                            </div>
+                            <p class="applet-function">排队</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- case -->
+            <div class="case-section">
+                <div class="title">项目案例</div>
+                <div class="case-content">
+                    <div class="tab-button-wrapper">
+                        <div class="tab-button tab-active">味美仙</div>
+                        <div class="tab-button">洋雾电子烟</div>
+                        <div class="tab-button">拼团</div>
+                    </div>
+                   <div id="jswbox">
+                       <ul>
+                           <li style="display: block; width: 262px; height: 389px; top: 152px; left: 200px; z-index: 3; ">
+                               <img src="img/bg_1.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 300px; height: 445px; left: 388px; z-index: 4; top: 124px; ">
+                               <img src="img/bg_2.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 262px; height: 389px; left: 668px; z-index: 3; top: 152px; ">
+                               <img src="img/bg_3.png" style="opacity: 100;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 262px; height: 389px; left: 834px; z-index: 2; top: 152px; ">
+                               <img src="img/bg_4.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 262px; height: 389px; top: 152px; left: 450px; z-index: 1; ">
+                               <img src="img/bg_5.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                       </ul>
+                   </div>
+                    <div style="text-align:center;clear:both">
+                        <div class="carousel-wrapper-handset">
+                            <div class="carousel-item-handset carousel-item-handset1">
+                                <img src="img/wechat_specialty1.png" />
+                            </div>
+                            <div class="carousel-item-handset carousel-item-handset2">
+                                <img src="img/wechat_specialty2.png" />
+                            </div>
+                            <div class="carousel-item-handset carousel-item-handset3">
+                                <img src="img/wechat_specialty3.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- edition -->
+            </div>
+            <!-- banner-bottom -->
+            <div class="banner-bottom-wrapper">
+                <p class="banner-bottom-title">金牌项目 诚邀代理</p>
+                <p class="banner-bottom-text">移动电商、O2O、新零售行业、展示、互动、推广、交易必选利器</p>
+                <!--<img src="img/wechat_banner_bottom.png" class="banner-bottom"/>-->
+            </div>
+        </div>
+        <!-- footbar -->
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.min.js"></script>
+<script type="text/javascript" src="js/comm.min.js"></script>
+<script>
+$(function() {
+    new ZoomPic("jswbox");
+})
+</script>
+<script src="js/wechat.min.js"></script>
+
+</html>

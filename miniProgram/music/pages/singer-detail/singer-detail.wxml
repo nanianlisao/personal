@@ -1,0 +1,26 @@
+<!--pages/singer-detail/singer-detail.wxml-->
+<view class='top'>
+  <view class='return' bindtap='reback'>
+    <text class='icon-back'></text>
+  </view>
+  <view class='top-name'>{{singer.singer_name}}</view>
+  <image src='https://y.gtimg.cn/music/photo_new/T001R300x300M000{{singer.singer_mid}}.jpg?max_age=2592000' mode='widthFix' class='bg'></image>
+  <view class='filter'></view>
+</view>
+
+<view class='song-wrap'>
+  <view class='poster'>
+    <view class='filter'></view>
+    <image src='https://y.gtimg.cn/music/photo_new/T001R300x300M000{{singer.singer_mid}}.jpg?max_age=2592000' mode='widthFix'></image>
+    <view class='random-paly' bindtap='randomPlay'>
+      <text class='icon-play'></text>
+      <text>随机播放全部</text>
+    </view>
+  </view>
+  <view class='song-list'>
+    <view class='song-item' wx:for="{{singer.list}}" wx:key="{{index}}" bindtap='toPlay' data-item="{{item}}">
+      <view class='name text-hidden'>{{item.musicData.songname}}</view>
+      <view class='ablum text-hidden'>{{item.singer}}·{{item.musicData.albumname}}</view>
+    </view>
+  </view>
+</view>

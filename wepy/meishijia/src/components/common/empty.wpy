@@ -1,0 +1,34 @@
+<template>
+  <view>
+  	<view wx:if="{{showLoading==2}}" class="showtoast">
+     <image src='/img/loading.gif'></image>加载中...
+    </view>
+   <view wx:if="{{showLoading==3}}" class="showtoast">已经加载到底了</view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  const app = wepy.$instance
+  export default class Showtoast extends wepy.component {
+    props = {
+      showLoading: {
+        type: String
+      }
+    }
+  }
+
+</script>
+<style lang="less">
+	.showtoast{
+	  margin: 20rpx auto;
+	  text-align: center;
+	  font-size: 24rpx;
+	  color: #999;
+	  image{
+	  	vertical-align: middle; 
+	    width: 40rpx;
+	  	height: 40rpx;
+	  	margin-right: 20rpx;
+	  }
+}
+</style>

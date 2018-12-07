@@ -1,0 +1,49 @@
+.layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.pickerContainer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  transition: all 0.3s;
+  background: #fff;
+  z-index: 800;
+}
+
+.pickerContainer .pickerBtns {
+  width: 750rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  border-bottom: 1rpx solid rgba(220, 220, 220, 0.3);
+}
+
+.pickerContainer .pickerBtns .cancel, .pickerContainer .pickerBtns .sure {
+  z-index: 1000;
+  margin: 0 56rpx;
+  font-size: 32rpx;
+}
+
+.pickerContainer .pickerBtns .cancel {
+  color: #999;
+}
+
+.pickerContainer .pickerBtns .sure {
+  color: #6487c9;
+}
+
+.pickerContainer .pickerView {
+  width: 100%;
+  height: 523rpx;
+  font-size: 42rpx;
+}

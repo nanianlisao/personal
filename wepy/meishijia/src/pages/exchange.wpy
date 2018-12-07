@@ -1,0 +1,141 @@
+<style lang="less" scoped>
+	@tcolor:#EDB95D;
+	.page{
+		background-color: #FFFCF9;
+		min-height: 100%;
+		box-sizing: border-box;
+		padding-bottom: 100rpx;
+		.top{
+			width: 100%;
+			height: 390rpx;
+			image{
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.lines{
+			height: 20rpx;
+			background-color: #f5f5f5;
+		}
+		.header{
+			position: relative;
+			font-size: 30rpx;
+			line-height: 52rpx;
+			padding-left: 40rpx;
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 8rpx;
+				height: 52rpx;
+				background-color: #C88606;
+			}
+		}
+		.exchange-wrap{
+      padding:32rpx 40rpx;
+      .mark{
+      	font-size: 24rpx;
+      	color: #AC7304;
+      	line-height: 36rpx;
+      }
+      .exchange{
+      	display: flex;
+      	margin-top: 40rpx;
+      	padding-left: 62rpx;
+      	font-size: 30rpx;
+      	color: #000;
+      	line-height: 50rpx;
+      	input{
+      		width: 200rpx;
+      		height: 48rpx;
+      		line-height: 48rpx;
+      		border:1rpx solid #E5E1DF;
+      		border-radius: 8rpx;
+      		margin: 0 11rpx 0 18rpx;
+      		padding-left: 20rpx;
+      	}
+      }
+      .mark2{
+      	font-size: 28rpx;
+      	line-height: 48rpx;
+      	color: #C71010;
+      	padding-left: 62rpx;
+        margin-top: 20rpx;
+      }
+		}
+		.list{
+			margin-top: 26rpx;
+			border-top: 1rpx solid #c9c9c9;
+			padding: 20rpx 40rpx;
+			.item{
+				font-size: 24rpx;
+				line-height: 48rpx;
+				color: #4a4a4a;
+			}
+		}
+		.exchange-btn{
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: #EDB95D;
+			text-align: center;
+			line-height: 100rpx;
+			font-size: 30rpx;
+			color: #fff;
+		}
+	}
+</style>
+
+<template>
+	<view class="page">
+	  <view class="top">
+	    <image src="/img/duihuan.png"></image>
+	  </view>
+	  <view class="lines"></view>
+	  <view class="header">积分兑换账户余额</view>
+	  <view class="exchange-wrap">
+	  	<view class="mark">您的当前积分2100分，可兑换余额21元。</view>
+	  	<view class="exchange">
+	  		请输入兑换金额<input type="number"></input>元
+	  	</view>
+	  	<view class="mark2">您将消耗积分  1000  分</view>
+	  </view>
+	  <view class="header">兑换说明</view>
+	  <view class="list">
+	    <view class="item">1.兑换的比例根据您的等级来决定，未达到最低标准等级，无法兑换。</view>
+	  	<view class="item">2.当您总消费达到 200 元时，您的等级为 {{item.name}} 。每兑换 1 元，则需要消耗 10 积分。</view>
+	  	<view class="item">3.当您总消费达到 200 元时，您的等级为 {{item.name}} 。每兑换 1 元，则需要消耗 10 积分。</view>
+	  	<view class="item">4.当您总消费达到 200 元时，您的等级为 {{item.name}} 。每兑换 1 元，则需要消耗 10 积分。</view>
+	  </view>
+	  <view class="exchange-btn">立即兑换</view>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  const app = wepy.$instance
+  export default class yue extends wepy.page {
+    config = {
+      'navigationBarTitleText': '积分',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    data = {
+      list: [1, 2, 3, 6]
+    }
+
+    onLoad() {
+      // wepy.$instance.globalData.imgUrl = '11111'
+    }
+
+    methods = {
+    }
+    components = {
+    }
+  }
+
+</script>

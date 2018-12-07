@@ -1,0 +1,26 @@
+<top-dialog id="dialog" height="900">
+  <view class='wrapper'>
+    <view class='top-wrap'>
+      <view class='top-title'>
+        <view class='arrow-box' bindtap='hide'>
+          <image src='/img/arrow_left.png'></image>
+        </view>
+        <view>选择服务时间</view>
+      </view>
+      <view class='top'>
+        <view wx:for='{{weekArr}}' wx:key="week" class='date'>{{item}}</view>
+      </view>
+    </view>
+    <view class='content'>
+      <view class='monthes' wx:for="{{monthes}}" wx:for-item="month" wx:key="monthes" wx:for-index="monthIndex">
+        <view class='title'>{{month.year}}年{{month.month}}月</view>
+        <view class='days'>
+          <view class='day {{day.checked?"choose":""}} {{day.date?"":"hidden"}} {{day.out?"grey":""}}' wx:for="{{month.dayArr}}" wx:for-item="day" wx:for-index="dayIndex" wx:key="day" bindtap='chooseDate' data-dindex="{{dayIndex}}" data-mindex="{{monthIndex}}"
+            data-item='{{day}}'>
+            <text>{{day.date}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</top-dialog>

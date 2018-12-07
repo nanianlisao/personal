@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+    <input type="file" value="打开">
+<body>
+    <script>
+    function curry(fn) {
+        let arr = [];
+        let depth = fn.length;
+        const re = (...a) => {
+            console.log(arr)
+            depth = depth - a.length;
+            arr = [...arr, ...a]
+            if (depth > 0) {
+                return re;
+            }
+            let result = [...arr];
+            arr = [];
+            depth = fn.length;
+            return fn(...result);
+        };
+        return re;
+    }
+
+    function add(a, b, c) {
+        return a + b + c;
+    }
+    let addEx = curry(add)
+    console.log(addEx(1, 2, 3) === 6);
+    console.log(addEx(1, 2)(3) === 6);
+    // console.log(addEx(1)(2, 3) === 6);
+    // console.log(addEx(1)(2)(3) === 6);
+
+
+  
+    </script>
+</body>
+
+</html>

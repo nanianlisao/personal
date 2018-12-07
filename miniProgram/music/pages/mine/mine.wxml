@@ -1,0 +1,24 @@
+<!--pages/mine/mine.wxml-->
+<view class='top'>
+  <view class='return' bindtap='reback'>
+    <text class='icon-back'></text>
+  </view>
+  <view class='button-wrapper'>
+    <text class='{{Index==1?"active":""}}' bindtap='showLike'>我喜欢的</text>
+    <text class='{{Index==2?"active":""}}' bindtap='showHistory'>最近听的</text>
+  </view>
+  <view class='random-paly' bindtap='randomPlay'>
+    <text class='icon-play'></text>
+    <text>随机播放全部</text>
+  </view>
+</view>
+<view class='song-list' wx:if="{{list.length>0}}">
+  <view class='song-item' wx:for="{{list}}" wx:key="{{index}}" bindtap='toPlay' data-item="{{item}}">
+    <view class='name text-hidden'>{{item.songname}}</view>
+    <view class='ablum text-hidden'>{{item.singer}}·{{item.albumname}}</view>
+  </view>
+</view>
+<view class='no-result' wx:if="{{list.length==0}}">
+  <image src='/img/logo.png'></image>
+  <text>暂无收藏歌曲</text>
+</view>

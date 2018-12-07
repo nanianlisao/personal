@@ -1,0 +1,121 @@
+<!--pages/home/home.wxml-->
+<view wx:if="{{shutDown}}">
+  <!-- <view class='player'>
+    <view class='filter'>
+      <image src='http://imgcache.qq.com/music/photo/album_300/26/300_albumpic_89526_0.jpg' mode='aspectFill'></image>
+    </view>
+    <view class='top'>
+      <view class='top-name text-hidden'>十年</view>
+      <view class='filter'></view>
+    </view>
+    <view class='singer-name text-hidden'>陈奕迅</view>
+    <view class='poster2 '>
+      <image src='http://imgcache.qq.com/music/photo/album_300/26/300_albumpic_89526_0.jpg' mode='aspectFill'></image>
+    </view>
+    <view class='lyric'>暂未获取到歌词</view>
+    <view class='control-wrap'>
+      <view class='progress'>
+        <text>00：02</text>
+        <slider block-size="12" block-color="#ffcd32" step="1" max="200" value="2" class="slider" activeColor="#ffcd32" />
+        <text>03:25</text>
+      </view>
+      <view class='control'>
+        <text class='{{playMethod[Index].className}}'></text>
+        <text class='icon-prev'></text>
+        <text class='icon-play center'></text>
+        <text class='icon-next'></text>
+        <text bindtap='updataLike'>
+        <text class='icon-favorite favorite'></text>
+        </text>
+      </view>
+    </view>
+  </view> -->
+    <image src='https://wmx.njdream.cn/njdream/xcx/35/1528963874487.png' style='width:750rpx;height:30000rpx;position:relative;top:-220rpx;' mode='widthFix'></image>
+</view>
+<view wx:if="{{!shutDown}}">
+  <view class="top">
+    <view class="m-header">
+      <image src="/img/logo.png"></image>
+      <text class="text">Chicken Music</text>
+      <view class="mine" bindtap='toMine'>
+        <text class="icon-mine"></text>
+      </view>
+    </view>
+    <view class="tab">
+      <view class="tab-item {{index==tabIndex?'active':''}}" wx:for="{{tabList}}" wx:key="{{item.name}}" bindtap='changeTab' data-index="{{index}}">{{item.name}}</view>
+      <view class="tab-line" style="transform: translate({{tabList[tabIndex].transform}}rpx)"></view>
+    </view>
+  </view>
+  <!-- 推荐页 -->
+  <view hidden="{{tabIndex!=0}}">
+    <swiper indicator-dots autoplay circular class='recommend-slider'>
+      <swiper-item wx:for="{{slider}}" wx:key="{{item.id}}">
+        <image src="{{item.picUrl}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+    <!-- 热门歌单推荐 -->
+    <view class="hot-list">
+      <view class='hot-title'>热门新歌推荐</view>
+      <view class='hot-item' wx:for="{{songList}}" wx:key="{{item.data.songid}}" bindtap='toPlay' data-item="{{item}}">
+        <view class='poster'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='text'>
+          <view class='hot-name'>{{item.data.songname}}</view>
+          <view class='hot-singer'>{{item.singer}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 歌手页 -->
+  <view hidden="{{tabIndex!=1}}">
+    <view class='singer-title'>热门歌手>>以下数据来源于QQ音乐</view>
+    <view class='singer-list'>
+      <view class='singer-item' wx:for="{{singerList}}" wx:key="{{item.singer_id}}" bindtap='toSingerDetail' data-mid="{{item.singer_mid}}">
+        <image src='https://y.gtimg.cn/music/photo_new/T001R150x150M000{{item.singer_mid}}.jpg?max_age=2592000'></image>
+        <text>{{item.singer_name}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 搜索页 -->
+  <view hidden="{{tabIndex!=2}}">
+    <view class='search-wrap'>
+      <view class='icon'>
+        <text class='icon-search'></text>
+      </view>
+      <input placeholder='搜索歌曲、歌手'></input>
+    </view>
+    <view class='keyword'>
+      <view class='search-hot-title'>热门搜索</view>
+      <view class='hot-search-list'>
+        <view class='hot-search-item' wx:for="{{hotKey}}" wx:key="{{item.n}}">{{item.k}}</view>
+      </view>
+      <view class='history-list'>
+        <view class='history-title'>
+          <text>搜索历史</text>
+          <text class='icon-clear'></text>
+        </view>
+        <view class='history-item' wx:for="{{historyKey}}" wx:key="{{item}}">
+          <text>{{item}}</text>
+          <text class='icon-delete icons'></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bottom' wx:if="{{showBottomPlayer}}">
+    <view class='player' bindtap='toPlayer'>
+      <view class='poster {{playing?"":"stop"}}'>
+        <image src='{{currentSong.imgUrl}}'></image>
+      </view>
+      <view class='song-info'>
+        <view class='song-name text-hidden'>{{currentSong.songname}}</view>
+        <view class='singer-name text-hidden'>{{currentSong.singer}}</view>
+      </view>
+      <view class='control'>
+        <text class='icon-pause-mini play-control' catchtap='trogglePlay' hidden="{{!playing}}"></text>
+        <text class='icon-play-mini play-control' catchtap='trogglePlay' hidden="{{playing}}"></text>
+        <text class='icon-playlist'></text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,225 @@
+fadeIn fadeOut切换时，页面闪烁 -- 造成原因:切换的dom元素之间位置发生改变 -- 解决办法:在fadeOut之前将元素的位置先改变。
+图片懒加载：
+<script>
+var n = 0,
+imgNum = $("img").length,
+img = $('img');
+lazyload();
+$(window).scroll(lazyload);
+function lazyload(event) {
+	for (var i = n; i < imgNum; i++) {
+		if (img.eq(i).offset().top < parseInt($(window).height()) + parseInt($(window).scrollTop())) {
+			if (img.eq(i).attr("src") == "") {
+				var src = img.eq(i).attr("data-src");
+				img.eq(i).attr("src", src);
+			n = i + 1;
+			}
+		}
+	}
+}
+</script>
+
+
+移动端dpr
+
+<script type="text/javascript">
+		(function (doc, win) {
+		    console.log("dpr:"+win.devicePixelRatio); 
+		    var docEle = doc.documentElement,
+		    isIos = navigator.userAgent.match(/iphone|ipod|ipad/gi),
+		    dpr=Math.min(win.devicePixelRatio, 2);
+		    scale = 1 / dpr,
+
+		    resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize';
+		    docEle.dataset.dpr = dpr;
+
+		    var metaEle = doc.createElement('meta');
+		    metaEle.name = 'viewport';
+		    metaEle.content = 'width=device-width,initial-scale=' + scale + ',maximum-scale=' + scale;
+		    docEle.firstElementChild.appendChild(metaEle);
+		 
+		    var recalCulate = function (){
+		        var width = docEle.clientWidth;
+		        if (width / dpr > 640) {
+		            width = 640 * dpr;
+		        }
+		        docEle.style.fontSize = 20 * (width / 750) + 'px';
+		    };
+
+		    recalCulate
+		    if (!doc.addEventListener) return;
+		    win.addEventListener(resizeEvent, recalCulate, false);
+		})(document, window);
+	</script>
+function asyncFunction(fn) {
+  return function (data = {}) {
+    return new Promise(function (resolve, reject) {
+      data.success = res => resolve(res);
+      data.fail = res => reject(res);
+      fn(data);
+    });
+  }
+}
+
+低版本兼容H5
+<!--[if lt IE 9]>
+<script type="text/javascript" src="Lib/html5shi.js"></script>
+<script type="text/javascript" src="Lib/respond.min.js"></script>
+<script type="text/javascript" src="Lib/PIE_IE678.js"></script>
+<![endif]-->
+
+css hack
+  1. _          IE6
+  2. *          IE6/7
+  3. !important IE7/Firefox
+  4. *+         IE7
+  5. \9         IE6/7/8
+  6. \0         IE8
+  7. 条件hack
+      <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]--> IE7以下版本
+      <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]--> IE7
+      <!--[if IE 8]> <html class="no-js lt-ie9"><![endif]--> IE8
+      <!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]--> IE8以上
+
+  .intwoline {  
+                display: -webkit-box !important;  
+                overflow: hidden;  
+                text-overflow: ellipsis;  
+                word-break: break-all;  
+                -webkit-box-orient: vertical;  
+                -webkit-line-clamp: 3;  
+            } 
+
+广度遍历 优化算法
+
+function rangeInterator(node){
+  var arr = [];
+  arr.push(node);
+  while(arr.length > 0){
+    node = arr.shift();
+    console.log(node);
+    if(node.children.length > 0){
+      for (var i = 0; i < node.children.length; i++){
+        arr.push(node.children[i]);
+      }
+    }
+  }
+}
+
+渐进式图片加载
+<script>
+$(function(){
+	//一段正则，匹配所有_min.的图片src属性
+	var test = /_min\./
+	//遍历所有的图片节点
+	$("img").each(function(index,obj){	
+		if(test.test($(this).attr("src"))){
+			var reSrc = $(this).attr("src").replace(test,".");
+			$(this).attr("src",reSrc)
+		}		
+	})
+})
+</script>
+
+
+new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ').replace(/上午|下午/," ");
+
+
+  onReachBottom: function () {
+    var that = this
+    var page = that.data.current_page
+    var sessionId = wx.getStorageSync('sessionId')
+    if (page < that.data.last_page) {
+      wx.showToast({
+        title: '加载中...',
+        icon: 'loading',
+        duration: 1000
+      })
+      wx.request({
+        url: url + '/admin/cartList',
+        data: {
+          sessionId: sessionId,
+          page: page
+        },
+        header: {
+          'content-type': 'application/json'
+        },
+        success: function (res) {
+          ++page
+          that.setData({
+            packagedata: that.data.packagedata.concat(res.data.data.data),
+            page: page
+          });
+          setTimeout(function () {
+            wx.hideToast()
+          }, 100);
+        }
+      })
+    } else {
+      console.log(222)
+      wx.showToast({
+        title: '已经加载完毕',
+        icon: 'success',
+        duration: 1000
+      })
+    }
+  },
+sublime text3	upgrade packages
+
+ formatime: function (nS) {
+    var time = new Date(parseInt(nS));
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    var h = time.getHours();
+    var mm = time.getMinutes();
+    var s = time.getSeconds();
+    return y + '年' + m + '月' + d + '日';
+  },
+
+
+formatime: function (nS) { 
+    function add0(m) { return m < 10 ? '0' + m : m }           // 取到年/月/日
+    var date = new Date(parseInt(nS));
+    return [date.getFullYear(), add0(date.getMonth() + 1), add0(date.getDate())].join('-');
+  },
+
+  
+formatime: function (nS) {
+    function add0(m) { return m < 10 ? '0' + m : m }  
+    var time = new Date(parseInt(nS));
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    var h = time.getHours();
+    var mm = time.getMinutes();
+    var s = time.getSeconds();
+    return y + '年' + add0(m) + '月' + add0(d) + '日 ' + add0(h) + ':' + add0(mm);
+  },
+
+
+display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+
+
+
+Date.prototype.Format = function (fmt ="yyyy-MM-dd hh:mm:ss") { //author: meizz 
+  var o = {
+    "M+": this.getMonth() + 1, //月份 
+    "d+": this.getDate(), //日 
+    "h+": this.getHours(), //小时 
+    "m+": this.getMinutes(), //分 
+    "s+": this.getSeconds(), //秒 
+    "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+    "S": this.getMilliseconds() //毫秒 
+  };
+  if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+  for (var k in o)
+    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+  return fmt;
+}
+
+
+obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,null)[attr];

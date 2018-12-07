@@ -1,0 +1,110 @@
+<style lang="less" scoped>
+	@tcolor:#EDB95D;
+	.page{
+		background-color: #FFFCF9;
+		min-height: 100%;
+		box-sizing: border-box;
+		padding-bottom: 140rpx;
+		.top{
+			height: 200rpx;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			text-align: center;
+			background-color: #fff;
+			.name{
+			  font-size: 28rpx;
+			  color: #000;
+			  margin-bottom: 20rpx;
+			}
+			.value{
+				color: #F27F17;
+				font-size: 22rpx;
+				text{
+					font-size: 50rpx;
+					margin-right: 10rpx;
+				}
+			}
+		}
+		.detailed{
+			line-height: 80rpx;
+			font-size: 22rpx;
+			color: #666;
+			padding-left: 30rpx;
+			background-color: #F4F2F0;
+		}
+		.list{
+			padding: 0 30rpx;
+		}
+		.btn-wrap{
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 30rpx 40rpx;
+			box-sizing: border-box;
+			z-index: 10rpx;
+			background-color: #FFFCF9;
+			button{
+				background: @tcolor;
+				font-size: 26rpx;
+				color: #fff;
+				line-height: 90rpx;
+			}
+		}
+	}
+</style>
+
+<template>
+	<view class="page">
+		<view class="top">
+			<view class="name">账户余额（元）</view>
+			<view class="value"><text class="price">2135</text>元</view>
+		</view>
+		<view class="detailed">最近30天余额明细</view>
+		<view class="list">
+			<repeat for="{{list}}" key="historylist" item="item" index="index">
+        <history :item.sync="item"></history>
+      </repeat>
+		</view>
+		<view class="btn-wrap">
+			<button>余额充值</button>
+		</view>
+	</view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import api from '@/api/api'
+  import util from '@/utils/util'
+  import History from '@/components/History'
+  import Showtoast from '@/components/common/Showtoast'
+  const app = wepy.$instance
+  export default class yue extends wepy.page {
+    config = {
+      'navigationBarTitleText': '余额',
+      'navigationBarBackgroundColor': '#EDB95D',
+      'navigationBarTextStyle': '#fff'
+    }
+    data = {
+      list: [1, 2, 3, 6]
+    }
+
+    onLoad() {
+      // wepy.$instance.globalData.imgUrl = '11111'
+    }
+
+    methods = {
+      goYue() {
+        wepy.navigateTo({
+          url: '/pages/yue'
+        })
+      }
+    }
+    components = {
+      history: History,
+      showtoast: Showtoast
+    }
+  }
+
+</script>

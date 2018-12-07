@@ -1,0 +1,8 @@
+<!--components/foot-dialog/foot-dialog.wxml-->
+<form bindsubmit='submit'>
+  <view class='serach-wrapper' style='height:{{height}}rpx;background:{{bgc}};border-radius:{{height/2}}rpx;'>
+    <image src='./search.png'></image>
+    <button form-type='submit'></button>
+    <input name='name' placeholder='{{placeholder}}' bindconfirm="confirm" value="{{name}}"></input>
+  </view>
+</form>

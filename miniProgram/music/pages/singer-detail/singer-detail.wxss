@@ -1,0 +1,113 @@
+/* pages/singer-detail/singer-detail.wxss */
+
+.top {
+  position: fixed;
+  padding-top: 44rpx;
+  width: 100%;
+  z-index: 99;
+  height: 124rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.top .bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.top-name {
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  color: #fff;
+}
+
+.return {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  top: 44rpx;
+  left: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.return text {
+  font-size: 44rpx;
+  color: #ffcd32;
+}
+
+.poster {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 570rpx;
+  /* z-index: -1; */
+  overflow: hidden;
+}
+
+.poster image {
+  width: 100%;
+  height: 100%;
+}
+
+.filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(7, 17, 27, 0.4);
+}
+.top .filter{
+  z-index: -1;
+}
+
+.poster .random-paly {
+  position: absolute;
+  left: 240rpx;
+  bottom: 40rpx;
+  width: 270rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #ffcd32;
+  border-radius: 200rpx;
+  color: #e0c881;
+  font-size: 24rpx;
+}
+
+.poster .random-paly .icon-play {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+}
+
+.song-wrap {
+  padding-top: 570rpx;
+}
+
+.song-list {
+  padding: 0 60rpx 40rpx;
+  background-color: #222;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.song-item {
+  font-size: 28rpx;
+  padding: 20rpx 0;
+  line-height: 44rpx;
+}
+
+.song-item .name {
+  color: #fff;
+}
+
+.song-item .ablum {
+  color: rgba(255, 255, 255, 0.3);
+}
