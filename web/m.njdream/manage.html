@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    
+    <link rel="icon" href="./static/h-ui.admin/images/index.ico">
+    <link href="static/h-ui/css/H-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" type="text/css"/>
+    <link href="static/h-ui.admin/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="static/h-ui.admin/css/manage.css" rel="stylesheet" type="text/css"/>
+    <!--[if gt IE 9]>
+      <script type="text/javascript" src="lib/html5shiv.js">
+      </script>
+      <script type="text/javascript" src="lib/respond.min.js">
+      </script>
+    <![endif]-->
+    <!--[if IE 6]>
+      <script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js">
+      </script>
+      <script>
+        DD_belatedPNG.fix('*');
+      </script>
+    <![endif]-->
+    <title>
+      集梦传媒--管理
+    </title>
+    <meta name="keywords" content="集梦文化传媒有限公司 微信小程序开发 一对一定制小程序">
+    <meta name="description" content="南京集梦文化传媒，小程序 专业开发,时间短,上线快,安全可靠.一对一服务,小程序,诚信共赢!">
+  </head>
+  <body class="cl"> 
+    <!-- 顶部导航 -->
+    <header class="my_header pos-r">
+      <div class="col-md-offset-1 col-md-3 col-lg-2">
+        <img src="./static/h-ui.admin/images/index-logo.png" class="img-responsive my_img" alt="" >
+      </div>      
+      <nav class="col-md-6 hidden-sm hidden-xs" id="dropDown">
+        <a href="default.html"><li class="col-md-3">小程序模板</li></a>
+        <a href="manage.html"><li class="col-md-3 current">小程序管理</li></a>
+        <li class="col-md-3">使用教程</li>
+        <a href="detail.html"><li class="col-md-3">成功案例</li></a>
+      </nav>
+      <div class="r avator col-md-2 hidden-sm hidden-xs">
+        <img  src="http://wx.qlogo.cn/mmopen/ickV9Qia6agM52VycZkGhPRQnjq0fPpQDVk1hMvIsapvREQf5nb5n7MXAzAseMuFy8yl5m3qibXC2BKRnfTtFcic6HphxmvFDrOL/0" alt=""><span class="text-overflow">那年我去额的</span>
+      </div>
+      <div class="visible-xs visible-sm pr-20 pos-a" id="btn_topnav">
+        <i class="Hui-iconfont" >&#xe667;</i>
+      </div>     
+    </header>
+    <!-- /顶部导航 -->
+    <section class="manage col-md-10 col-md-offset-1 mt-30 pos-r cl">
+      <div class="myself c-white text-c">
+        <img src="http://wx.qlogo.cn/mmopen/ickV9Qia6agM52VycZkGhPRQnjq0fPpQDVk1hMvIsapvREQf5nb5n7MXAzAseMuFy8yl5m3qibXC2BKRnfTtFcic6HphxmvFDrOL/0" alt="" class="avator mt-30">
+        <p class="mt-15">那年</p>
+        <p class="mt-20">小程序项目：<span>8</span>/10</p>
+      </div>
+      <div class="tab-bar pos-a c-white">
+        <span class="col-sm-2 text-c active">我的小程序</span>
+        <span class="col-sm-2 text-c">交易订单</span>
+      </div>
+    </section> 
+    <div id="tabCon">
+      <!-- 主体部分 我的小程序 -->
+      <section class="main-warp pt-20 cl">
+        <div class="content-top hidden-xs">
+          <div class="col-md-offset-1 col-md-10">
+              <li class="col-sm-2"><i class="Hui-iconfont">&#xe62e;</i>创建项目</li>
+              <li class="col-sm-2 setAll"><i class="Hui-iconfont">&#xe61d;</i>批量操作</li>
+          </div>
+        </div>
+        <div class="content-main col-md-10 col-md-offset-1 cl">
+          <div class="program-list mt-30">
+            <ul class="cl list">
+            </ul>
+            <div class="pagination text-c cl mt-30">
+              <div class="paging f-12 ">
+                <li class="item l">首页</li>
+                <li class="item l">上一页</li>
+                <li class="item l active">1</li>
+                <li class="item l">2</li>
+                <li class="item l">下一页</li>
+                <li class="item l">尾页</li>
+                <p class="l mt-10">共<span class="c-red">2</span>页</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /主体部分 我的小程序-->
+      <!-- 主体部分 我的订单 -->
+      <section class="myorder col-md-10 col-md-offset-1 mt-20 cl">
+        <header class="order-nav mt-20">
+          <li class="current" data-show="all">全部</li>
+          <li data-show="nopay">等待付款</li>
+          <li data-show="havepay">交易成功</li>
+        </header>
+        <div class="order-list">
+          <li class="list-item">
+              <div class="l"><img src="https://www.vqida.com/upload/images/20171025/15089262718.jpg"><span class="name">小程序的名字</span>
+              </div>
+              <div class="r">
+                <div class="date c-999 l">2017-10-01 15:20</div>
+                <div class="sucess-order text-c l pd-20">
+                  <p class="c-error">未付款？</p>
+                  <p class="btn btn-danger radius">去付款</p>
+                </div>
+              </div>
+          </li>
+          <li class="list-item">
+              <div class="l"><img src="https://www.vqida.com/upload/images/20171023/150872397610.jpg"><span class="name">小程序的名字</span>
+              </div>
+              <div class="r">
+                <div class="date c-999 l">2017-10-01 15:20</div>
+                <div class="sucess-order text-c l pd-20">
+                  <p class="c-success">已成功</p>
+                  <p class="btn btn-primary radius">再来一单</p>
+                </div>
+              </div>
+          </li>
+        </div>    
+      </section> 
+      <!-- /主体部分 我的订单 -->
+    </div>
+    <div id="loading">
+      <div class="pic">
+        <span></span>
+        <b>0%</b>
+      </div>
+    </div>
+    <!-- 页脚 -->
+    <footer class="footer mt-20">
+      <div class="container-fluid">
+        <nav> <a href="#" >关于我们</a> <span class="pipe">|</span> <a href="#" >联系我们</a> <span class="pipe">|</span> <a href="#" >法律声明</a> </nav>
+        <p>Copyright &copy;2016 H-ui.net All Rights Reserved. 
+          <p>京ICP备1000000号</p>
+        </p>
+      </div>
+    </footer>
+    <!-- /页脚 -->
+
+    <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="data.js">
+    </script>
+    <script type="text/javascript" src="http://lib.h-ui.net/jquery.SuperSlide/2.1.1/jquery.SuperSlide.min.js"></script>
+    <script>
+      $(function(){
+        jQuery.Huitab =function(tabBar,tabCon,class_name,tabEvent,i){
+          var $tab_menu=$(tabBar);
+            // 初始化操作
+            $tab_menu.removeClass(class_name);
+            $(tabBar).eq(i).addClass(class_name);
+            $(tabCon).hide();
+            $(tabCon).eq(i).show();
+            
+            $tab_menu.bind(tabEvent,function(){
+              $tab_menu.removeClass(class_name);
+                $(this).addClass(class_name);
+                var index=$tab_menu.index(this);
+                $(tabCon).hide();
+                $(tabCon).eq(index).show()})}
+      })
+      //顶部响应式Nav
+      $(function(){
+        var flag = true;
+        $("#btn_topnav").click(function(){
+          if(flag){
+            $("#dropDown").removeClass("hidden-sm hidden-xs");
+            flag = false;
+          }else{
+            $("#dropDown").addClass("hidden-sm hidden-xs");
+            flag = true;
+          }
+        })
+      })   
+      // 创建小程序列表
+      $(function(){
+        var aa = data.data.slice(-10,-3);
+        createDom(aa);
+        function createDom(arry){
+          var str = '';
+          $.each(arry,function(index,obj){
+              var instr = '<li class="col-lg-3 col-md-4 col-sm-6 '+obj.className+'" ><div class="box"><img src="'+obj.imgUrl+'" alt="" class="img-responsive"><div class="box-text f-12"><p class="f-14">'+obj.name+'</p><div class="c-999 mt-10 cl">已有<span>'+obj.count+'</span>人创建<div class="r"><input class="btn btn-primary radius size-S" type="button" value="使用"><input class="btn btn-primary radius ml-10 size-S del" type="button" value="删除"></div></div></div></div></li>';
+              str+=instr;
+          })
+          $(".list").html(str);
+        }      
+      });
+      // 创建订单列表
+      $(function(){
+        createOrder(data.order);
+        function createOrder(arry){
+          var str = '';
+          $.each(arry,function(index,obj){
+              if(obj.status==1){
+                var instr = '<li class="list-item all havepay"><div class="l"><img src="'+obj.imageUrl+'"><span class="name">'+obj.name+'</span></div><div class="r"><div class="date c-999 l">'+obj.date+'</div><div class="sucess-order text-c l pd-20"><p class="c-success">已成功</p><p class="btn btn-primary radius">再来一单</p></div></div></li>'
+              }else if(obj.status==2){
+                var instr = '<li class="list-item all nopay"><div class="l"><img src="'+obj.imageUrl+'"><span class="name">'+obj.name+'</span></div><div class="r"><div class="date c-999 l">'+obj.date+'</div><div class="sucess-order text-c l pd-20"><p class="c-error">未付款？</p><p class="btn btn-danger radius">去付款</p></div></div></li>'
+              }         
+              str+=instr;
+          })
+          $(".order-list").html(str);
+        }      
+      });
+      // 小程序 订单选项卡
+      $(function(){
+        $.Huitab(".tab-bar span"," #tabCon section","active","click","0")
+      });
+      // 小程序列表删除
+      $(function(){
+        $(".list li").find(".del").click(function(){
+          $(this).parents(".list li").remove();
+        });
+      })
+      // 订单选项卡切换
+      $(function(){
+        $(".order-nav li").on('click',function(){
+          $(this).addClass("current").siblings().removeClass("current");
+          var data = "."+$(this).data("show");
+          $(".order-list").children("li").hide();
+          $(data).show();
+        })
+      })
+    </script>
+    <script type="text/javascript" src="static/h-ui.admin/js/loading.js"></script>

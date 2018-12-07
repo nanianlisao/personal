@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* 你自己的样式 */
+
+*{
+	padding: 0;
+	margin: 0;
+}
+html{
+	height: 100%;
+}
+body{
+	background-color: #f6f6f6;
+	font-size: 14px;
+	min-height: 100%;
+	padding-bottom: 100px;
+	box-sizing: border-box;
+}
+ul,li{
+	list-style: none;
+}
+input{
+	outline: none;
+	border: none;
+}
+p{
+	margin-bottom: 0;
+}
+a:hover{
+	text-decoration: none;
+}
+.empty{
+	height: 1;
+}
+.my_header{
+	height: 53px;
+	line-height: 53px;
+	background: #f0f0f0;
+	z-index: 99;
+}
+.my_header .img-responsive.my_img{
+	max-width: 192px;
+}
+.my_header nav{
+	background-color: #f0f0f0;
+	padding: 0;
+}
+.my_header nav li{
+	font-size: 16px;
+	text-align: center;
+}
+.my_header nav li:hover,
+.my_header nav li.current{
+	background: #696969;
+	color: #fff;
+}
+.my_header nav li:hover,
+.my_header nav li.current{
+	color:#fff;
+}
+#btn_topnav{
+	top: 0;
+	right: 0;
+	font-size: 24px;
+	cursor: pointer;
+}
+@media (max-width: 992px){
+	.my_header nav li{
+		text-align: left;
+	}
+}
+
+
+
+/*进度条*/
+#loading{
+	width: 100%;height: 100%;position: fixed;top: 0;left: 0;z-index: 100;background-color: #fff;
+}
+#loading .pic{
+	width: 100px;height: 100px;position: absolute;top:0;left: 0;right: 0;bottom: 0;margin:auto;line-height: 100px;font-size: 30px;
+	text-align:center;
+}
+#loading .pic span{
+	display: block;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 10px;
+	left: 10px;border-radius: 50%;
+	box-shadow: 0 3px 0 #f00;
+	animation: rotate 1s infinite linear;
+	-webkit-animation: rotate 1s infinite linear;
+}
+@-webkit-keyframes rotate{
+	0%{-webkit-transform: rotate(0deg);}
+	100%{-webkit-transform: rotate(360deg);}
+}
+@keyframes rotate{
+	0%{transform: rotate(0deg);}
+	100%{transform: rotate(360deg);}
+}

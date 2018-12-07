@@ -1,0 +1,213 @@
+
+
+/*轮播图部分*/
+.slider{position:relative;text-align:center; margin:0 auto;z-index:1}
+.slider .bd,.slider .bd li,.slider{width:100%;height: 360px;}/*请给每个幻灯片套个div并设置id，通过id重置这个地方的宽度，达到自定义效果*/
+.slider .bd{z-index:2;overflow:hidden}
+.slider .bd ul li{float:left;width: 100%;overflow:hidden; background-position:center; background-repeat:no-repeat;background-size: cover;}
+.slider .bd ul li.slide1{
+	background-image: url("https://www.vqida.com/upload/images/20170824/15035681735.jpg");
+}
+.slider .bd ul li.slide2{
+	background-image: url("https://www.vqida.com/upload/images/20170719/15004645224.jpg");
+}
+.slider .bd ul li.slide3{
+	background-image: url("https://www.vqida.com/upload/images/20170824/15035681735.jpg");
+}
+.slider .bd ul li.slide4{
+	background-image: url("https://www.vqida.com/upload/images/20170719/15004645224.jpg");
+}
+.slider .bd li img{display:block}
+.slider .hd{ position: absolute; z-index: 3; left: 0; right: 0; bottom:10px; padding: 0 10px; text-align: center}
+.slider .hd li{display:inline-block;text-align:center;margin-right:10px;cursor:pointer;background-color:#C2C2C2}
+.slider .hd li.active{background-color:#222}
+  /*圆点*/
+  .dots li{width:10px; height:10px;font-size:0px;line-height:0px;border-radius:50%}
+  /*数字*/
+  .numbox li{width:20px; height:20px; line-height:20px; font-size:13px;font-family:Arial;font-weight:bold; text-indent:inherit}
+  .numbox li.active{color:#fff}
+  /*长方条*/
+  .rectangle li{width:40px; height:10px;font-size:0px;line-height:0px}
+
+
+/*小程序列表*/
+ /*小程序列表 顶部导航*/
+ .main-warp .content-top{
+	background-color: #fff;
+	height: 36px;
+	line-height: 36px;
+ }
+ .main-warp .content-top li{
+ /*	display: inline-block;*/
+	font-size: 15px;
+ 	padding: 0 5px;
+ 	color: #0DA3F9;border-bottom: 2px #0DA3F9 solid;
+ }
+ .main-warp .content-top .search{
+	font-size: 0;
+}
+ .main-warp .content-top .search .searchTxt{
+ 	font-size: 14px;
+ 	height: 34px;
+ 	width: 160px;
+ 	border: 1px solid #b7b7b7;
+ 	border-radius: 4px;
+ 	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+ 	border-right: none;
+ 	padding-left: 5px;
+ }
+  .main-warp .content-top .search .searchBtn{
+	height: 36px;
+	border-left: none;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+ }
+ .content-main{
+ 	padding: 0;
+ }
+ .program-type{
+ 	height: 45px;
+ 	line-height: 45px;
+ 	background-color: #fff;
+ 	border: 1px solid #b7b7b7;
+ 	border-radius: 4px;
+ }
+ .program-type li:hover a,.program-type li.current a{
+ 	color: #0DA3F9;
+ }
+ .program-type .type-item{
+ 	float: left;
+ 	padding: 0 2.2% 0 3%;
+ }
+ .arrow1{
+ 	position: absolute;
+    top: -20px;
+    left: 24px;
+    display: block;
+    height: 0;
+    border-color:transparent transparent #b7b7b7 transparent;
+    border-style: solid;
+    border-width: 10px;
+ }
+ .arrow2{
+ 	position: absolute;
+    top: -11px;
+    left: -12px;
+    display: block;
+    height: 0;
+    
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+    border-width: 12px;
+ }
+.program-list{
+ 	font-size: 0;
+ 	overflow: hidden; /*手机下超出尺寸*/
+ }
+.program-list .list{
+	margin: 0 -3%;
+}
+.program-list .list li{
+	padding: 0 3%;
+}
+.program-list .list li .box{
+	margin-bottom: 30px;
+	background-color:#fff;
+	border: 1px #D7D7D7 solid;
+	border-radius: 4px;
+    box-shadow: 0 4px 8px 0 #e5e6e7;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.program-list .list li .box:hover{
+	box-shadow: 0 10px 20px 0 #b4b7ba;
+}
+.program-list .list li .box .QR{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	background:#fff;
+	opacity: 0;
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transition: all 1s;
+	-webkit-transition: all 1s;
+}
+.program-list .list li .box .QR:hover{
+	opacity: 0.8;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+.program-list .list li .box .QR img{
+	width: 50%;
+}
+
+.program-list .list li .box>img{
+	width: 100%;
+}
+.program-list .list li .box .box-text{
+	padding: 10px 8px;
+}
+
+
+
+/*盒子在不同屏幕尺寸下适配*/
+@media (max-width: 768px){
+	.slider .bd,.slider .bd li,.slider{width:100%;height: 180px;}
+	.program-list .list li .box{
+		max-width: 320px;
+		margin:0px auto 30px;
+	}
+}
+@media (min-width: 768px){
+	.slider .bd,.slider .bd li,.slider{width:100%;height: 250px;}
+}
+@media (min-width: 992px){
+	.slider .bd,.slider .bd li,.slider{width:100%;height: 320px;}	
+}
+@media (min-width: 1200px){
+	.program-list .list{
+		margin: 0 -1.5%;
+	}
+	.program-list .list li{
+		padding: 0 1.5%;
+	}
+}
+@media (min-width: 1600px){
+	.program-list .list{
+		margin: 0 -2%;
+	}
+	.program-list .list li{
+		padding: 0 2%;
+	}
+}
+.paging{
+	display: inline-block;
+}
+.paging li.item{
+	cursor: pointer;
+    padding: 2px 12px;
+    height: 24px;
+    line-height: 24px;
+    color: #bbb;
+    border: 1px #ccc solid;
+    background: #fcfcfc;
+    margin-right: 8px; 
+}
+.paging li.item.active{
+	color:#fff;
+	background: #077ee3;
+}
+.paging li:hover{
+	border: 1px #077ee3 solid;
+}
+

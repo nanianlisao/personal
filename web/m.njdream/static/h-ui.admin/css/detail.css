@@ -1,0 +1,135 @@
+/**{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	background-color: #f6f6f6;
+	font-size: 14px;
+	height: 100%;
+}
+body{
+	min-height: 100%;
+}
+ul,li{
+	list-style: none;
+}
+input{
+	outline: none;
+	border: none;
+}
+p{
+	margin-bottom: 0;
+}
+a:hover{
+	text-decoration: none;
+}
+.empty{
+	height: 1;
+}
+.my_header{
+	height: 53px;
+	line-height: 53px;
+	background: #f0f0f0;
+	z-index: 999;
+}
+.my_header .img-responsive.my_img{
+	max-width: 192px;
+}
+.my_header nav{
+	background-color: #f0f0f0;
+	padding: 0;
+}
+.my_header nav li:hover,
+.my_header nav li.current{
+	background: #696969;
+}
+.my_header nav li:hover,
+.my_header nav li.current{
+	color:#fff;
+}
+.my_header nav li{
+	font-size: 16px;
+
+}
+.my_header #btn_topnav{
+	top: 0;
+	right: 0;
+	font-size: 24px;
+	cursor: pointer;
+}*/
+.subnav{
+	height: 36px;
+	line-height: 36px;
+	background-color: #fff;
+}
+.subnav span{
+	color: #0da3f9;
+}
+
+#aa{
+	padding: 0;
+}
+#aa .detail-swiper{
+	padding: 0 27px 50px;
+}
+#aa .detail-swiper img{
+	width: 100%;
+}
+.swiper-button-next{
+	right: 0px;
+}
+.swiper-button-prev{
+	left: 0px;
+}
+
+
+
+.detail{
+	min-height: 70%;
+}
+.footer{
+	bottom: 0;
+}
+
+.scanning{
+	height: 150px;
+	width: 430px;
+	clear: both;
+	padding-top: 100px;
+	padding-bottom: 50px;
+	margin: 0 auto;
+	font-size: 20px;
+	background:url("../images/erwei_bg.png") 0 100px no-repeat;
+	line-height: 150px;
+}
+.scanning img{
+	width: 146px;
+	height: 146px;
+	border-radius: 5px;
+	position: absolute;
+	top: 102px;
+	left: 2px;
+	z-index: 8;
+}
+
+@media (max-width: 460px){
+	.subnav{
+		margin-top: 20px;
+	}
+	#aa{
+		margin-top: 20px;
+	}
+	#aa .detail-swiper{
+		padding: 0 10px 50px;
+	}
+	.scanning{
+		background: none;
+		font-size: 0;
+		width: 100%;
+		padding:20px 0;
+	}
+	.scanning img{
+		top: 0;
+		position:relative;
+	}
+}
