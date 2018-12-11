@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.wrapper {
+  width: 500px;
+  margin: 10px auto;
+  font-size: 14px;
+  background-color: #f5f5f5;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.input-wrapper{
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+.input-wrapper .header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.input-wrapper .header span,
+.input-wrapper .content span{
+  width: 80px;
+}
+.input-wrapper .header input{
+  flex: 1;
+  margin-left: 20px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.input-wrapper .content{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.input-wrapper .content textarea{
+  flex: 1;
+  margin-left: 20px;
+  height: 150px;
+  line-height: 30px;
+  padding: 0 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+.input-wrapper .submit-btn{
+  text-align: right;
+}
+.input-wrapper .submit-btn span{
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  line-height: 30px;
+  border-radius: 5px;
+  background-color: #FAAD27;
+}
+.comment-list{
+  margin-top: 10px;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  padding: 10px 10px 20px;
+}
+.comment{
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  min-height: 40px;
+  padding-bottom: 30px;
+}
+.comment .name{
+  color: #FAAD27;
+  margin-right: 10px;
+  font-style: italic;
+  flex-shrink: 0;
+}
+.comment .createTime{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.comment .del{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: transparent;
+  transition: all 0.3s;
+}
+
+.comment:hover .del {
+  color: #FAAD27;
+}
