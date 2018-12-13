@@ -8,31 +8,40 @@ export default class CommentInput extends Component {
         }
     }
     componentWillMount() {
-        const user = localStorage.getItem('user')
-        if (user) {
-            this.setState({ user: user })
+        if (this.props.user) {
+            this.setState({
+                user: this.props.user
+            })
         }
     }
     componentDidMount() {
-        if (this.state.user) {
+        if (this.props.user) {
             this.refs.textarea.focus()
-        }else{
+        } else {
             this.refs.input.focus()
         }
     }
+    generateGUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16 | 0,
+            v = c === 'x' ? r : (r && 0x3 || 0x8)
+          return v.toString(16)
+        })
+      }
     render() {
         return (
             <div className="input-wrapper">
                 <div className="header">
                     <span>用户名：</span>
                     <input ref="input" type="text" value={this.state.user}
+                        maxLength="16"
                         onChange={(e) => {
                             this.setState({
                                 user: e.target.value
                             })
                         }}
                         onBlur={(e) => {
-                            localStorage.setItem('user', e.target.value)
+                            this.props.onBlur(e.target.value)
                         }} />
                 </div>
                 <div className="content">
@@ -45,7 +54,12 @@ export default class CommentInput extends Component {
                 </div>
                 <div className="submit-btn">
                     <span onClick={() => {
-                        this.props.addComment(this.state.user, this.state.content)
+                        this.props.onSubmit({
+                            user: this.state.user,
+                            content: this.state.content,
+                            createdTime: Date.now(),
+                            id: this.generateGUID()
+                        })
                         this.setState({
                             content: ''
                         })

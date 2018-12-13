@@ -8,7 +8,7 @@ export default class Comment extends Component {
         this._updateTimeString()
         this._timer = setInterval(
             this._updateTimeString.bind(this),
-            10000
+            8000
         )
     }
     componentWillUnmount() {
@@ -18,9 +18,14 @@ export default class Comment extends Component {
         let { comment } = this.props
         let duration = (Date.now() - comment.createdTime) / 1000
         this.setState({
-            timeString: duration > 60
-                ? `${Math.round(duration / 60)}分钟前`
-                : `${Math.round(Math.max(duration, 1))}秒前`
+            timeString: duration < 60
+                ? `${Math.round(Math.max(duration, 1))}秒前`
+                : duration < 3600
+                    ? `${Math.round(duration / 60)}分钟前`
+                    : duration < 3600 * 24
+                        ? `${Math.round(duration / 3600)}小时前`
+                        : `${Math.round(duration / 3600 / 24)}天前`
+
         })
     }
     _getProcessedContent(content) {

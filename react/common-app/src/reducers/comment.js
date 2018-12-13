@@ -5,6 +5,7 @@ const DELETE_COMMENT = 'DELETE_COMMENT'
 
 // reducer
 export default function (state, action) {
+    console.log(state, action)
     if (!state) {
         state = { commentList: [] }
     }
@@ -26,17 +27,18 @@ export default function (state, action) {
             }
             break;
         default:
-            return state
+            return state;
+            break;
     }
 }
 
 // action creators
-export const initComments = (comments) => {
-    return { type: INIT_COMMENTS, comments }
+export const initComments = (commentList) => {
+    return { type: INIT_COMMENTS, commentList }
 }
 
-export const addComment = (comment) => {
-    return { type: ADD_COMMENT, comment }
+export const addComment = (commentList) => {
+    return { type: ADD_COMMENT, commentList }
 }
 
 export const deleteComment = (commentIndex) => {
