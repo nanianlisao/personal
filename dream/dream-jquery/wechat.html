@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>微信小程序 -- WeChat applet --</title>
+    <meta name = "format-detection" content = "telephone=no">
+    <link rel="icon" type="text/css" href="img/wechat.ico" />
+    <link rel="stylesheet" type="text/css" href="css/common.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/wechat.min.css" />
+</head>
+
+<body>
+    <!-- headbar -->
+    <div class="header">
+        <div class="logo-wrapper">
+            <img src="https://wmx.njdream.cn/page_home/img/index_logo.png" class="logo">
+        </div>
+        <div class="nav-wrapper">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="./index.html">首页</a>
+                </li>
+                <li class="nav-item nav-active">
+                    <a href="#">微信小程序</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./advert.html">朋友圈广告</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./focuspay.html">集付</a>
+                </li>
+            </ul>
+        </div>
+        <div class="phone-wrapper">
+            <img src="https://wmx.njdream.cn/website/phone.png" class="phone-img" height="50">
+            <span class="phone-number">4008-123-686</span>
+        </div>
+        <div class="btn-wrapper">
+            <button class="btn-toggle">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="content-main clearfix">
+            <!-- banner -->
+            <div class="banner-wrapper">
+                <img src="img/wechat_banner_txt.png" alt="" class="banner-wrapper-txt" />
+            </div>
+            <!-- ecology -->
+            <div class="ecology-wrapper">
+                <div class="title">小程序生态现状</div>
+                <div class="advantage-wrapper">
+                    <div id="advantage-bg"></div>
+                    <div id="advantage-main"></div>
+                    <div id="advantage-1"></div>
+                    <div id="advantage-2"></div>
+                    <div id="advantage-3"></div>
+                    <div id="advantage-4"></div>
+                </div>
+                <div class="advantage-wrapper-handset">
+                    <img src="img/wechat_advantage@2x.png" />
+                </div>
+            </div>
+            <!-- applet -->
+            <div class="applet-section">
+                <div class="title">集梦小程序</div>
+                <div class="applet-content">
+                    <div class="applet-floor">
+                        <div class="applet-wrapper ">
+                            <div class="applet-img-wrapper" id="img">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_pizza.png" class="applet-img-wrapper1"></a>
+                            </div>
+                            <p class="applet-function">分销</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_restaurant.png" class="applet-img-wrapper2"></a>
+                            </div>
+                            <p class="applet-function">商城</p>
+                        </div>
+                        <div class="applet-wrapper ">
+                            <div class="applet-img-wrapper">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_vote.png" class="applet-img-wrapper3"></a>
+                            </div>
+                            <p class="applet-function">投票</p>
+                        </div>
+                        <div class="applet-wrapper ">
+                            <div class="applet-img-wrapper">
+                                <a href="https://zabbix.njdream.cn/img/wechat_QRcode_vote.png" class="applet-img-wrapper4"></a>
+                            </div>
+                            <p class="applet-function">招商</p>
+                        </div>
+                        <div class="applet-wrapper last">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper5"></a>
+                            </div>
+                            <p class="applet-function">会员预定</p>
+                        </div>
+                    </div>
+                    <div class="applet-floor">
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper6"></a>
+                            </div>
+                            <p class="applet-function">公众号</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper7"></a>
+                            </div>
+                            <p class="applet-function">外卖</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper8"></a>
+                            </div>
+                            <p class="applet-function">点餐</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper9"></a>
+                            </div>
+                            <p class="applet-function">拼团</p>
+                        </div>
+                        <div class="applet-wrapper">
+                            <div class="applet-img-wrapper">
+                                <a class="applet-img-wrapper10"></a>
+                            </div>
+                            <p class="applet-function">排队</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- case -->
+            <div class="case-section">
+                <div class="title">项目案例</div>
+                <div class="case-content">
+                    <div class="tab-button-wrapper">
+                        <div class="tab-button tab-active">味美仙</div>
+                        <div class="tab-button">洋雾电子烟</div>
+                        <div class="tab-button">拼团</div>
+                    </div>
+                   <div id="jswbox">
+                       <ul>
+                           <li style="display: block; width: 262px; height: 389px; top: 152px; left: 200px; z-index: 3; ">
+                               <img src="img/bg_1.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 300px; height: 445px; left: 388px; z-index: 4; top: 124px; ">
+                               <img src="img/bg_2.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 262px; height: 389px; left: 668px; z-index: 3; top: 152px; ">
+                               <img src="img/bg_3.png" style="opacity: 100;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 262px; height: 389px; left: 834px; z-index: 2; top: 152px; ">
+                               <img src="img/bg_4.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                           <li style="display: block; width: 262px; height: 389px; top: 152px; left: 450px; z-index: 1; ">
+                               <img src="img/bg_5.png" style="opacity: 87;" class="carousel-img">
+                           </li>
+                       </ul>
+                   </div>
+                    <div style="text-align:center;clear:both">
+                        <div class="carousel-wrapper-handset">
+                            <div class="carousel-item-handset carousel-item-handset1">
+                                <img src="img/wechat_specialty1.png" />
+                            </div>
+                            <div class="carousel-item-handset carousel-item-handset2">
+                                <img src="img/wechat_specialty2.png" />
+                            </div>
+                            <div class="carousel-item-handset carousel-item-handset3">
+                                <img src="img/wechat_specialty3.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- edition -->
+                <div class="edition-section">
+                    <div class="title">版本报价</div>
+                    <div class="edition-wrapper">
+                        <ul class="price-list-standard">
+                            <li class="price-item">
+                                <div class="price-wrapper">
+                                    <img src="img/wechart_price1.png" alt="" />
+                                    <p class="name">常规基础版</p>
+                                    <p class="price">到店&nbsp;￥1580</p>
+                                    <p class="price">外卖&nbsp;￥3800</p>
+                                    <p class="price">商城&nbsp;￥5800</p>
+                                </div>
+                                <div class="float" style="display: none;">
+                                    <p class="name">常规基础版</p>
+                                    <div class="txt-wrap">
+                                        <p class="price"><span></span>快速搭建商城</p>
+                                        <p class="price"><span></span>订单</p>
+                                        <p class="price"><span></span>商城</p>
+                                        <p class="price"><span></span>交易</p>
+                                        <p class="price"><span></span>模板</p>
+                                        <p class="price"><span></span>优惠券</p>
+                                        <p class="price"><span></span>会员</p>
+                                        <p class="price"><span></span>免费维护</p>
+                                    </div>
+                                </div>
+                                <div class="float phone-float">
+                                    <p class="name">常规基础版</p>
+                                    <div class="txt-wrap">
+                                        <p class="price"><span></span>快速搭建商城</p>
+                                        <p class="price"><span></span>订单</p>
+                                        <p class="price"><span></span>商城</p>
+                                        <p class="price"><span></span>交易</p>
+                                        <p class="price"><span></span>模板</p>
+                                        <p class="price"><span></span>优惠券</p>
+                                        <p class="price"><span></span>会员</p>
+                                        <p class="price"><span></span>免费维护</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="price-item">
+                                <div class="price-wrapper">
+                                    <img src="img/wechart_price2.png" alt="" />
+                                    <p class="name">营销版</p>
+                                    <p class="price">拼团&nbsp;￥6800</p>
+                                    <p class="price">投票&nbsp;￥6800</p>
+                                    <p class="price">分享&nbsp;￥6800</p>
+                                    <p class="price">鼓励金&nbsp;￥9800</p>
+                                </div>
+                                <div class="float" style="display: none;">
+                                    <p class="name">营销版</p>
+                                    <div class="txt-wrap">
+                                        <p class="price"><span></span>快速搭建商城</p>
+                                        <p class="price"><span></span>订单</p>
+                                        <p class="price"><span></span>商城</p>
+                                        <p class="price"><span></span>交易</p>
+                                        <p class="price"><span></span>分销</p>
+                                        <p class="price"><span></span>优惠券</p>
+                                        <p class="price"><span></span>会员</p>
+                                        <p class="price"><span></span>拼团</p>
+                                        <p class="price"><span></span>投票</p>
+                                        <p class="price"><span></span>免费维护</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="price-item">
+                                <div class="price-wrapper">
+                                    <img src="img/wechart_price3.png" alt="" />
+                                    <p class="name">升级版(私人定制)</p>
+                                    <p class="price">价格详询客服电话</p>
+                                    <p class="price">4008-123-686</p>
+                                </div>
+                                <div class="float last" style='display: none;'>
+                                    <p class="name">升级版</p>
+                                    <div class="txt-wrap best">
+                                        <p class="best-price">为您量身打造属于自己的小程序</p>
+                                        <p class="best-price">价格详询客服电话</p>
+                                        <p class="best-price">4008-123-686</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="phone-standard">
+                            <li class="price-item">
+                                <div class="float">
+                                    <!--<p class="name">常规基础版</p>-->
+                                    <div class="txt-wrap">
+                                        <p class="price"><span></span>搭建商城</p>
+                                        <p class="price"><span></span>订单</p>
+                                        <p class="price"><span></span>商城</p>
+                                        <p class="price"><span></span>交易</p>
+                                        <p class="price"><span></span>模板</p>
+                                        <p class="price"><span></span>优惠券</p>
+                                        <p class="price"><span></span>会员</p>
+                                        <p class="price"><span></span>免费维护</p>
+                                    </div>
+                                </div>
+                                <div class="price-wrapper">
+                                    <img src="img/wechart_price1.png" alt="" />
+                                    <p class="name">常规基础版</p>
+                                    <p class="price">到店&nbsp;￥1580</p>
+                                    <p class="price">外卖&nbsp;￥3800</p>
+                                    <p class="price">商城&nbsp;￥5800</p>
+                                </div>
+                            </li>
+                            <li class="price-item">
+                                <div class="float">
+                                    <!--<p class="name">营销版</p>-->
+                                    <div class="txt-wrap">
+                                        <p class="price"><span></span>搭建商城</p>
+                                        <p class="price"><span></span>订单</p>
+                                        <p class="price"><span></span>商城</p>
+                                        <p class="price"><span></span>交易</p>
+                                        <p class="price"><span></span>分销</p>
+                                        <p class="price"><span></span>优惠券</p>
+                                        <p class="price"><span></span>会员</p>
+                                        <p class="price"><span></span>拼团</p>
+                                        <p class="price"><span></span>投票</p>
+                                        <p class="price"><span></span>免费维护</p>
+                                    </div>
+                                </div>
+                                <div class="price-wrapper">
+                                    <img src="img/wechart_price2.png" alt="" />
+                                    <p class="name">营销版</p>
+                                    <p class="price">拼团&nbsp;￥6800</p>
+                                    <p class="price">投票&nbsp;￥6800</p>
+                                    <p class="price">分享&nbsp;￥6800</p>
+                                    <p class="price">鼓励金&nbsp;￥9800</p>
+                                </div>
+                            </li>
+                            <li class="price-item">
+                                <div class="float">
+                                    <!--<p class="name">升级版</p>-->
+                                    <div class="txt-wrap best">
+                                        <p class="best-price">为您量身打造属于自己的小程序</p>
+                                        <p class="best-price">价格详询客服电话</p>
+                                        <p class="best-price" style="color: #Fff">4008-123-686</p>
+                                    </div>
+                                </div>
+                                <div class="price-wrapper">
+                                    <img src="img/wechart_price3.png" alt="" />
+                                    <p class="name">升级版</p>
+                                    <p class="price">价格详询客服电话</p>
+                                    <p class="price">4008-123-686</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- banner-bottom -->
+            <div class="banner-bottom-wrapper">
+                <p class="banner-bottom-title">金牌项目 诚邀代理</p>
+                <p class="banner-bottom-text">移动电商、O2O、新零售行业、展示、互动、推广、交易必选利器</p>
+                <!--<img src="img/wechat_banner_bottom.png" class="banner-bottom"/>-->
+            </div>
+        </div>
+        <!-- footbar -->
+        <div class="footer">
+            <ul class="bottom-nav">
+                <li class="bottom-nav-item">
+                    <a href="./index.html">首页</a>
+                </li>
+                <li class="bottom-nav-item">|</li>
+                <li class="bottom-nav-item">
+                    <a href="./info.html">关于集梦</a>
+                </li>
+                <li class="bottom-nav-item">|</li>
+                <li class="bottom-nav-item">
+                    <a href="./recruit.html">诚招英才</a>
+                </li>
+            </ul>
+            <div>
+                <span class="copyright">COPYRIGHT @ 2017.COMPANY NAME DREAMEDIA. 苏ICP备14037308号-5</span>
+            </div>
+        </div>
+        <div id="loading">
+            <div class="pic">
+                <span></span>
+                <b>0%</b>
+            </div>
+        </div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.min.js"></script>
+<script type="text/javascript" src="js/comm.min.js"></script>
+<script>
+$(function() {
+    new ZoomPic("jswbox");
+})
+</script>
+<script src="js/wechat.min.js"></script>
+<script src="./js/loading.min.js"></script>
+
+</html>
