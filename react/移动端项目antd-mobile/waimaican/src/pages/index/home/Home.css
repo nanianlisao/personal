@@ -1,0 +1,58 @@
+.my-swiper {
+    width: 100%;
+}
+
+.page-home .slider-frame {
+    height: 4.3rem!important;
+}
+
+.slider-decorator-0 {
+    bottom: 0.1rem!important;
+}
+
+.my-swiper .banner {
+    width: 100%;
+    height: 4.3rem;
+}
+
+.checkshop-wrapper {
+    width: 7.02rem;
+    margin: 0.35rem auto;
+    justify-content: space-between;
+}
+
+.checkshop-wrapper .checkshop {
+    width: 2.25rem;
+    line-height: 0.8rem;
+    border-radius: 0.1rem;
+    justify-content: center;
+    font-size: 0.34rem;
+    color: #fff;
+}
+
+.checkshop-wrapper .checkshop img {
+    width: 0.38rem;
+    height: 0.38rem;
+    margin-right: 0.08rem;
+}
+
+.checkshop-wrapper .checkshop.scan-shop {
+    background-color: #f2901c;
+}
+
+.checkshop-wrapper .checkshop.order-shop {
+    background-color: #fc612a;
+}
+
+
+.ad {
+    width: 7.02rem;
+    height: 4.70rem;
+    margin: 0 auto;
+}
+
+.ad img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.1rem;
+}

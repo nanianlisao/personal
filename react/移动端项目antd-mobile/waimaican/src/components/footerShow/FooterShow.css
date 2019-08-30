@@ -1,0 +1,31 @@
+.footer-show{
+  height: 100%;
+}
+.footer-show .foot-dialog-mask {
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .footer-show .foot-dialog {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+    background: #fff;
+    transition: all 0.2s linear;
+    opacity: 0.5;
+    transform: translateY(100%);
+  }
+  
+  .footer-show .foot-dialog.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

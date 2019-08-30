@@ -1,0 +1,136 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.myInfo-page {
+    padding-bottom: 0.98rem;
+    .top {
+        height: 2.14rem;
+        background: #fff;
+        padding: 0 0.3rem;
+        .flex();
+        justify-content: space-between;
+        .left {
+            .name {
+                font: bold 0.3rem/0.5rem MicrosoftYaHei;
+                color: #323232;
+            }
+            .btm {
+                margin-top: 0.08rem;
+                transform: scale(0.8);
+                transform-origin: left top;
+                .flex();
+                .level {
+                    .flex();
+                    color: #24C789;
+                    font-size: 0.275rem;
+                    img {
+                        width: 0.275rem;
+                        height: 0.238rem;
+                        margin-right: 0.1rem;
+                    }
+                }
+                .upLevel {
+                    width: 1.25rem;
+                    height: 0.44rem;
+                    line-height: 0.44rem;
+                    font-size: 0.25rem;
+                    margin-left: 0.29rem;
+                    text-align: center;
+                    color: #fff;
+                    border-radius: 0.1rem;
+                    background: #24C789;
+                }
+            }
+        }
+        .profile {
+            width: 1.2rem;
+            height: 1.2rem;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+    .form-content {
+        margin-top: 0.18rem;
+        padding: 0 0.3rem 0 .4rem;
+        background: #fff;
+        .am-input-label {
+            color: #000;
+        }
+        .item {
+            border-bottom: 0.01rem solid #e6e6e6;
+            &:last-child {
+                border-bottom: none;
+            }
+            &.border {
+                border-bottom: 0.01rem solid #e6e6e6;
+            }
+            .am-list-item {
+                padding-left: 0;
+                height: 0.98rem;
+                background: transparent;
+                .am-input-label {
+                    font-size: 0.28rem;
+                }
+                input{
+                    color: #666; 
+                }
+                input:disabled {
+                    color: #666 !important;
+                    opacity: 1;
+                }
+                .phone-extra{
+                    line-height: 0.42rem;
+                    font-size: 0.26rem;
+                    color: #999;
+                    img{
+                        width: 0.13rem;
+                        height: 0.24rem;
+                        margin-left: 0.2rem;
+                    }
+                }
+            }
+        }
+        .choose-area {
+            .flex();
+            justify-content: space-between;
+            .title-area {
+                flex-shrink: 0;
+                width: 90px;
+            }
+            .borderB {
+                flex: 1;
+            }
+            img {
+                width: 0.17rem;
+                height: 0.28rem;
+            }
+        }
+    }
+    .remark {
+        color: #24C789;
+        font-size: 0.24rem;
+        line-height: 0.36rem;
+        margin-top: 0.46rem;
+        text-align: center;
+    }
+    .submit {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        .submit-btn {
+            font-size: 0.32rem;
+            color: #fff;
+            background: #24C789;
+            border-radius: 0;
+            &.hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

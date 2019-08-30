@@ -1,0 +1,204 @@
+.quanziList-component {
+    .am-list-view-scrollview-content {
+        max-width: 100%;
+    }
+    .cttList .cttItem {
+        background: #fff;
+        margin-top: .20rem;
+        padding: .42rem .30rem .53rem .30rem;
+        &:first-child {
+            margin-top: 0;
+        }
+        .top {
+            display: flex;
+            .profile {
+                width: 1.20rem;
+                height: 1.20rem;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: .20rem;
+                flex-shrink: 0;
+            }
+            .right {
+                flex-grow: 1;
+                padding-top: .14rem;
+                .uInfo {
+                    display: flex;
+                    align-items: baseline;
+                    position: relative;
+                    .name {
+                        font-size: .30rem;
+                        font-family: MicrosoftYaHei;
+                        color: rgba(88, 79, 96, 1);
+                    }
+                    .city {
+                        font-size: .24rem;
+                        font-family: MicrosoftYaHei;
+                        color: rgba(88, 79, 96, 1);
+                        margin-left: .20rem;
+                        width: 3.00rem;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    .tag {
+                        position: absolute;
+                        right: .03rem;
+                        top: .07rem;
+                        padding: .02rem .31rem;
+                        font-size: .24rem;
+                        font-family: MicrosoftYaHei;
+                        color: rgba(36, 199, 137, 1);
+                        border-radius: .36rem;
+                        border: .01rem solid rgba(36, 199, 137, 1);
+                    }
+                }
+                .time {
+                    font-size: .24rem;
+                    font-family: MicrosoftYaHei;
+                    color: rgba(88, 79, 96, 1);
+                    margin-top: .25rem;
+                }
+            }
+        }
+        .main .txt {
+            margin-top: .33rem;
+            font-size: .30rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(88, 79, 96, 1);
+            line-height: .45rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        .main .videoCtn {
+            width: 6.90rem;
+            height: 3.50rem;
+            position: relative;
+            margin: 0.1rem auto 0;
+        }
+        .mask {
+            position: absolute;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .main .videoCtn .play-btn {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            width: .48rem;
+            height: .48rem;
+            transform: translate3d(-50%, -50%, 0);
+        }
+        .main .videoCtn .poster {
+            width: 100%;
+            height: 100%;
+        }
+        .main .imgs {
+            margin-top: .19rem;
+            display: flex;
+            position: relative;
+        }
+        .main .imgs .masks {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 2.22rem;
+            height: 2.22rem;
+            background: rgba(0, 0, 0, 1);
+            opacity: 0.7;
+            border-radius: .10rem;
+            color: #fff;
+            font-size: .46rem;
+            text-align: center;
+            line-height: 2.22rem;
+        }
+        .main .imgs .imgCtn {
+            width: 2.22rem;
+            height: 2.22rem;
+            flex-shrink: 0;
+            border-radius: .10rem;
+            overflow: hidden;
+            margin-left: .12rem;
+        }
+        .main .imgs .imgCtn:first-child {
+            margin-left: 0;
+        }
+        .loc {
+            display: flex;
+            align-items: center;
+            margin-top: .31rem;
+        }
+        .loc .imgCtn {
+            width: .26rem;
+            height: .33rem;
+            font-size: 0;
+        }
+        .loc span {
+            font-size: .22rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(154, 154, 154, 1);
+            /* margin-top: .10rem; */
+            margin-left: .08rem;
+        }
+        .btm {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: .56rem;
+        }
+        .btm .item {
+            display: flex;
+            font-size: .24rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(128, 128, 128, 1);
+            line-height: .24rem;
+            margin-right: .40rem;
+            &.item-last{
+                margin-right: 0.2rem;
+            }
+        }
+        .btm .item .eye {
+            width: .28rem;
+            height: .20rem;
+        }
+        .btm .item .dialog {
+            width: .26rem;
+            height: .26rem;
+        }
+        .btm .item .good {
+            width: .25rem;
+            height: .26rem;
+        }
+        .btm .item span {
+            margin-left: .10rem;
+        }
+    } // .replyCtn {
+    //     margin-top: .10rem;
+    //     padding: .04rem .29rem .30rem .29rem;
+    //     background: #f8f8f8;
+    //     font-size: .24rem;
+    //     font-family: MicrosoftYaHei;
+    //     color: rgba(102, 102, 102, 1);
+    // }
+    // .replyCtn .more_comments {
+    //     font-size: .24rem;
+    //     line-height: .36rem;
+    //     /* background: palegoldenrod; */
+    //     margin-top: .26rem;
+    //     display: -webkit-box;
+    //     -webkit-box-orient: vertical;
+    //     -webkit-line-clamp: 3;
+    //     overflow: hidden;
+    // }
+    // .replyCtn .get_more_info {
+    //     color: #24c789;
+    //     margin-top: .26rem;
+    //     text-align: right;
+    // }
+}

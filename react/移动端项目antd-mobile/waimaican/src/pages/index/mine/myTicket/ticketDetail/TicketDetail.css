@@ -1,0 +1,21 @@
+.page-ticketDetail {
+    background-color: #F2F2F2;
+    padding: 0.20rem 0.28rem 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  
+.page-ticketDetail  .detail-list {
+    width: 6.34rem;
+    padding: 0 0.30rem;
+  }
+  
+.page-ticketDetail  .detail-list .detail {
+    line-height: 0.76rem;
+    border-bottom:0.01rem solid #E5E5E5;
+    font-size: 0.28rem;
+  }
+.page-ticketDetail  .detail-list .detail.rule{
+    line-height: 0.48rem;
+    padding: 0.15rem 0;
+  }

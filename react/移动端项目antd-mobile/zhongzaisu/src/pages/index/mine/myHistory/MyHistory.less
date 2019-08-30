@@ -1,0 +1,46 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.overflow(@clamp) {
+    // -webkit-box-orient: vertical;
+    display: -webkit-box; // text-overflow: ellipsis;
+    -webkit-line-clamp: @clamp;
+    overflow: hidden;
+}
+
+.myHistory-page {
+    background: #f5f5f5;
+    .tabs {
+        display: flex;
+        line-height: .90rem;
+        position: relative;
+        justify-content: center;
+        background: #fff;
+        z-index: 100;
+        width: 100%;
+        .tab {
+            flex: 1;
+            text-align: center;
+            font-size: .28rem;
+            font-family: MicrosoftYaHei;
+            color: #999;
+            &.act {
+                color: #584F60;
+            }
+        }
+        .slider {
+            width: 1.35rem;
+            height: .06rem;
+            background: #24C789;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all 0.3s;
+        }
+    }
+    .cttList {
+        margin-top: 0.08rem;
+    }
+}

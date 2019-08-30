@@ -1,0 +1,38 @@
+.center-dialog-wrapper{
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .center-dialog-mask {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .center-dialog {
+    position: relative;
+    z-index: 99;
+    background: #fff;
+    opacity: 0;
+    transition: all 0.2s linear;
+    overflow: auto;
+  }
+  
+  .center-dialog.show {
+    opacity: 1;
+  }
+  .cancle-img{
+    width: .52rem;
+    height: 1.09rem;
+  }

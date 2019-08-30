@@ -1,0 +1,93 @@
+/* pages/mine/mine.wxss */
+
+.page-mine {
+    background-color: #f2f2f2;
+    padding: 0.20rem 0.24rem 0 0.24rem;
+    height: 100%;
+}
+
+.page-mine .top {
+    position: relative;
+    overflow: hidden;
+    height: 2.66rem;
+    margin-bottom: 0.20rem;
+}
+
+.page-mine .top .user {
+    font-size: 0.30rem;
+    line-height: 0.42rem;
+    color: #fff;
+    text-align: center;
+}
+
+.page-mine .top .user img {
+    display: block;
+    width: 1.20rem;
+    height: 1.20rem;
+    border-radius: 50%;
+    margin: 0.52rem auto 0.10rem;
+}
+
+.page-mine .btns {
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    height: 2.00rem;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 0.10rem;
+}
+
+
+.page-mine .btns .btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    color: #666;
+    font-size: 0.28rem;
+    line-height: 0.36rem;
+}
+
+.page-mine .btns .btn img {
+    width: 0.72rem;
+    height: 0.72rem;
+    margin-bottom: 0.05rem;
+}
+
+.page-mine .btns .btn .count {
+    position: absolute;
+    top: -0.1rem;
+    left: 1.3rem;
+    width: 0.3rem;
+    height: 0.3rem;
+    background: #f00;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.18rem;
+    line-height: 0.3rem;
+    text-align: center;
+}
+
+.page-mine .notice {
+    height: 1rem;
+    margin-top: 0.20rem;
+    font-size: 0.28rem;
+    color: #333;
+    padding: 0 0.24rem;
+    background-color: #fff;
+    border-radius: 0.10rem;
+}
+
+.page-mine .notice .left {
+    width: 0.42rem;
+    height: 0.42rem;
+    margin-right: 0.20rem;
+}
+
+.page-mine .notice .right-img-box,
+.notice .right-img-box img {
+    width: 0.18rem;
+    height: 0.35rem;
+}

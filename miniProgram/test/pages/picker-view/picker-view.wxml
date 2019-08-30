@@ -1,5 +1,0 @@
-<picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" range="{{data}}">
-    <picker-view-column>
-      <view wx:for="{{data}}" class='{{index==Index?"aa":""}}'>{{item}}年</view>
-    </picker-view-column>
-  </picker-view>

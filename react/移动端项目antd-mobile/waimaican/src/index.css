@@ -1,0 +1,151 @@
+.page {
+    color: #333;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  *{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#root{
+  height: 100%;
+}
+  
+  .page .wx-swiper-dot {
+    background-color: #fff;
+    width: 0.20rem;
+    height: 0.20rem;
+  }
+  
+  .page .wx-swiper-dot-active {
+    background-color: #fc612a;
+  }
+  
+  .shadow-box {
+    border-radius: 0.10rem;
+    box-shadow:0px 0.02rem 0.06rem 0px rgba(17,17,17,0.07);
+    background: #fff;
+  }
+  
+  .btn-active {
+    background-color: #f86e3c !important;
+  }
+  
+  .text-overflow-1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .text-overflow-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .flex-center-ver {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flex-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .showtoast {
+    margin: 0.20rem auto;
+    text-align: center;
+    font-size: 0.24rem;
+    color: #999;
+  }
+  
+  .showtoast img {
+    vertical-align: middle;
+    width: 0.40rem;
+    height: 0.40rem;
+    margin-right: 0.20rem;
+  }
+  
+  .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .normal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 0.28rem;
+    color: #fc612a;
+    padding-top: 2rem;
+  }
+  
+  .normal img {
+    width: 1.82rem;
+    height: 1.39rem;
+    display: inline-block;
+    margin-bottom: 0.24rem;
+  }
+  
+  /* 页面整体加载 */
+  
+  .loadings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 0.30rem;
+    color: #ccc;
+    margin-top: 2rem;
+  }
+  
+  .loadings img {
+    width: 0.60rem;
+    height: 0.60rem;
+    display: inline-block;
+    margin-bottom: 0.24rem;
+  }
+  .page-chooseShop .am-search{
+    background-color: #fff;
+    padding: 0 0.28rem;
+  }
+  .am-search-input{
+    height: 0.7rem!important;
+    background-color: #eee!important;
+  }
+  .am-search-input .am-search-synthetic-ph{
+    height: 0.7rem!important;
+    line-height: 0.7rem!important;
+  }
+  .am-search-input input[type="search"]{
+    height: 0.7rem;
+  }
+
+  .am-tabs-pane-wrap-active{
+    height: 100%!important;
+  }
+
+  .hover-btn{
+    opacity: 0.8;
+  }
+
+  .am-list-body::before{
+    height: 0!important;
+  }

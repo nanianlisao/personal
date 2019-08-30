@@ -1,0 +1,90 @@
+.huangye-component {
+    .list {
+        /* margin-top: .26rem; */
+        width: 100%;
+        overflow: hidden;
+    }
+    .list .box {
+        min-height: 1.58rem;
+    }
+    .listItem {
+        background: #fff;
+        display: flex;
+        padding: .21rem .25rem .19rem .30rem;
+        position: relative;
+        margin-bottom: .10rem;
+        transition-timing-function: ease;
+        transform: translate3d(5.00rem, 0, 0) scale(0.1) skewX(60deg);
+        &.load {
+            transform: translate3d(0, 0, 0) scale(1) skewX(0deg);
+        }
+        .profile {
+            width: 1.20rem;
+            height: 1.20rem;
+        }
+        .mid {
+            padding-left: .21rem;
+            width: 4.00rem;
+        }
+        .mid .top {
+            display: flex;
+            align-items: baseline;
+        }
+        .mid .top .name {
+            font-size: .26rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(88, 79, 96, 1);
+            flex-shrink: 0;
+        }
+        .mid .top .city {
+            font-size: .22rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(88, 79, 96, 1);
+            margin-left: .31rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .mid .product {
+            // display: flex;
+            flex-wrap: wrap;
+            margin-top: .12rem;
+        }
+        .mid .item {
+            display: flex;
+            line-height: .36rem;
+            margin-right: .26rem;
+        }
+        .mid .item:last-child {
+            margin-right: 0;
+        }
+        .mid .item .title {
+            font-size: .22rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(88, 79, 96, 1);
+            flex-shrink: 0;
+        }
+        .mid .item .ctt {
+            font-size: .22rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(88, 79, 96, 1);
+        }
+        .call {
+            position: absolute;
+            right: .25rem;
+            top: .51rem;
+        }
+        .call .imgCtn {
+            width: .46rem;
+            height: .46rem;
+            margin: 0 auto;
+        }
+        .call .txt {
+            text-align: center;
+            font-size: .22rem;
+            font-family: MicrosoftYaHei;
+            color: rgba(88, 79, 96, 1);
+            margin-top: .11rem;
+        }
+    }
+}

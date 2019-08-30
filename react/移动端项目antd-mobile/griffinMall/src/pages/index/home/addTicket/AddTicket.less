@@ -1,0 +1,106 @@
+
+.page-addTicket{
+    height: 100%;
+    position: relative;
+    background: #fff;
+    .ticket-list{
+        height: 100%;
+        padding-top: 0.4rem;
+        .ticket-item{
+            position: relative;
+            width: 6.6rem;
+            height: 1.9rem;
+            margin: 0 auto 0.2rem;
+            border-radius: 0.16rem;
+            background: #DDDDDD;
+            text-align: center;
+            color: #fff;
+            &.act{
+                background: #FF4579;
+            }
+            .img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1.51rem;
+                height: 0.87rem;
+            }
+            .ticket-name{
+                position: absolute;
+                left: 0;
+                top: 0.1rem;
+                line-height: 0.3rem;
+                font-size: 0.24rem;
+                color: #fff;
+                font-weight: bold;
+                padding:  0 0.8rem 0 0.1rem;
+                background: linear-gradient(to right, rgba(213, 0, 161, 1) 0%, rgba(213, 0, 161, 0) 100%);
+                &.grey{
+                color:#D5D5D5;
+                background: linear-gradient(to right, #fff 20%, #DDDDDD 100%);
+                }
+            }
+            .left{
+                width: 3.92rem;
+                .price{
+                    font-size: 0.48rem;
+                    span{
+                        font-size: 0.6rem;
+                        line-height: 0.8rem;
+                    }
+                }
+            }
+            .right{
+                width: 2.66rem;
+                border-left: 2px dotted #999;
+                .remark{
+                   font-size: 0.24rem; 
+                }
+                .name{
+                    font-size: 0.55rem;
+                    line-height: 0.75rem;
+                }
+                .btn{
+                    width: 1.6rem;
+                    line-height: 0.45rem;
+                    background: #fff;
+                    border-radius: 0.12rem;
+                    margin: 0 auto;
+                    font-size: 0.28rem;
+                    color: #FF4579;
+                    &.grey{
+                        color: #D5D5D5;
+                    }
+                }
+            }
+        }
+    }
+    .ticket-modal{
+        min-height: 6rem;
+        .header{
+            height: 0.9rem;
+            font-size: 0.3rem;
+            font-weight: bold;
+            padding: 0 0.2rem;
+            border-bottom: 1px solid #f2f2f2;
+            box-sizing: border-box;
+            .close-btn{
+                padding: 0.1rem;
+                img{
+                    width: 0.25rem;
+                    height: 0.25rem;
+                    display: block;
+                }
+            }
+        }
+        .text-mark{
+            padding: 0.3rem;
+            font-size: 0.26rem;
+            line-height: 0.42rem;
+            color: #666;
+            max-height: 9.1rem;
+            overflow: auto;
+            box-sizing: border-box;
+        }
+    }
+}

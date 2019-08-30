@@ -1,0 +1,116 @@
+.font-22 {
+    font-size: 0.25rem;
+    transform: scale(0.88);
+    transform-origin: left center;
+}
+
+[class^=page-] {
+    position: relative;
+    background: #fff;
+    min-height: 100%;
+}
+
+.grey {
+    color: #999;
+}
+
+
+img {
+    object-fit: cover;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.shadow-box {
+    border-radius: 0.1rem;
+    box-shadow: 0 0.03rem 0.09rem 0 rgba(16, 16, 16, 0.09);
+    background: #fff;
+}
+
+.text-overflow-1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.text-overflow-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.more-arrow-r {
+    width: 0.15rem;
+    height: 0.27rem;
+}
+
+
+.footer-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.2rem;
+    background-color: #fff;
+    height: 1.28rem;
+}
+
+.footer-wrap .footer {
+    height: 1.08rem;
+    background: #fff;
+    border-radius: 0.04rem;
+    box-shadow: 0 0.25rem 0.32rem 0 rgba(0, 0, 0, 0.1);
+    padding: 0.1rem;
+}
+
+.footer-wrap .footer .footer-btn {
+    flex: 1;
+    margin-right: 0.1rem;
+    background: #FFDA53;
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 0.88rem;
+    border-radius: 0.04rem;
+    text-align: center;
+}
+
+.footer-wrap .footer .footer-btn:active {
+    background: rgb(255, 201, 5) !important;
+}
+
+.footer-wrap .footer .footer-btn:last-child {
+    margin-right: 0;
+    background: linear-gradient(-90deg, rgba(37, 161, 197, 1) 0%, rgba(64, 194, 232, 1) 100%);
+}
+
+.footer-wrap .footer .footer-btn:last-child:active {
+    background: #208dac !important;
+}
+
+.border2 {
+    border-bottom: 0.02rem solid #f2f2ff;
+}

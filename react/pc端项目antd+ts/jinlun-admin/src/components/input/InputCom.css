@@ -1,0 +1,25 @@
+.inputComponent-div{
+    display: flex;
+    position: relative;
+}
+.inputComponent-span-div{
+    line-height: 32px;
+    width: 110px;
+}
+.inputComponent-span-div-hide{
+    display: none;
+}
+.inputComponent-message-div{
+    display: none;
+    background-color: #FFF;
+}
+.inputComponent-message-div-err{
+    display: none;
+    /* background-color: #FFF; */
+    color: #f5222d !important;
+    display: block;
+}
+.inputComponent-err-border{
+    border-color: #f5222d !important;
+}
+

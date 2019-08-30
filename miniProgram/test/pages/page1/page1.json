@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "dialog": "/components/dialog/dialog",
-    "foot-dialog": "/components/foot-dialog/foot-dialog",
-    "top-dialog": "/components/top-dialog/top-dialog",
-    "water-mark": "/components/water-mark/water-mark"
-  }
-}

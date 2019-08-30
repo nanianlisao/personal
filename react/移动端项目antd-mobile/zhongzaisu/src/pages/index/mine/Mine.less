@@ -1,0 +1,160 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.mine-page {
+    /* pages/mine/mine.wxss */
+    min-height: 100%;
+    padding-bottom: 0.62rem;
+    box-sizing: border-box;
+    position: relative;
+    .top {
+        height: 2.4rem;
+        padding: 0.1rem 0.3rem 0;
+        background: #24C789;
+        color: #fff;
+        .register{
+            font-size: 0.36rem;
+            margin-top: 0.35rem;
+            line-height: 0.54rem;
+        }
+        .remark{
+            font-size: 0.24rem;
+            margin-top: 0.15rem;
+        }
+        .top-box {
+            justify-content: space-between;
+            display: flex;
+        }
+        .profile {
+            width: 1.20rem;
+            height: 1.20rem;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .mid {
+            margin-left: .2rem;
+            flex: 1;
+            .name {
+                font: bold 0.32rem/0.54rem MicrosoftYaHei;
+            }
+            .level {
+                width: 1.48rem;
+                height: .36rem;
+                margin-top: .2rem;
+                .flex();
+                background: #fff;
+                border-radius: .16rem;
+                box-shadow: 5px 1px 5px rgba(36, 199, 137, 0.6);
+                justify-content: center;
+                img {
+                    margin: 0 0.06rem 0 0.04rem;
+                    width: .22rem;
+                    height: .19rem;
+                }
+                .txt {
+                    font-size: .275rem;
+                    transform: scale(0.8);
+                    transform-origin: left;
+                    font-family: MicrosoftYaHei;
+                    color: rgba(36, 199, 137, 1);
+                }
+            }
+            .date {
+                .flex();
+                margin-top: 0.15rem;
+                font-size: 0.3rem;
+                transform: scale(0.6);
+                transform-origin: left top;
+                width: 166%;
+                img {
+                    width: 0.35rem;
+                    height: 0.35rem;
+                    margin-right: 0.22rem;
+                }
+            }
+        }
+        .right {
+            width: 1.2rem;
+            line-height: 0.4rem;
+            height: 0.4rem;
+            font-size: 0.22rem;
+            background: #0A9862;
+            text-align: center;
+            border-radius: 0.12rem;
+            margin-top: 0.1rem;
+            opacity: 0.6;
+        }
+    }
+    .content {
+        padding: 0 0.3rem;
+        margin-top: -0.5rem;
+        .section {
+            background: #fff;
+            border-radius: 0.1rem;
+            margin-bottom: 0.2rem;
+        }
+        .item {
+            .flex();
+            height: 1.2rem;
+            padding: 0 .26rem 0 .36rem;
+            justify-content: space-between;
+            &.toLogin{
+                justify-content: center;
+                color: #24C789;
+            }
+            img {
+                width: 0.15rem;
+                height: 0.26rem;
+            }
+            .remark {
+                color: #666;
+            }
+        }
+        .myInfo {
+            .header {
+                line-height: 0.94rem;
+                font-size: 0.28rem;
+                padding: 0 .26rem 0 .36rem;
+                border-bottom: 0.01rem solid #f5f5f5;
+            }
+            .info-list {
+                .flex();
+                justify-content: space-between;
+                .info-item {
+                    height: 1.65rem;
+                    position: relative;
+                    flex-direction: column;
+                    .flex();
+                    flex: 1;
+                    justify-content: center;
+                    font-size: 0.26rem;
+                    color: #666;
+                    .news {
+                        position: absolute;
+                        top: 0.1rem;
+                        right: 0.4rem;
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        color: #fff;
+                        background: #24C789;
+                        line-height: 0.4rem;
+                        text-align: center;
+                        border-radius: 50%;
+                        transform: scale(0.6);
+                    }
+                    img {
+                        width: 0.62rem;
+                        height: 0.62rem;
+                        margin-bottom: 0.12rem;
+                    }
+                }
+            }
+        }
+    }
+}

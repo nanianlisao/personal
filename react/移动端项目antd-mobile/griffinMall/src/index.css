@@ -1,0 +1,144 @@
+.page {
+    color: #333;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+.am-tabs-content-wrap {
+    transition: all 0.5s;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.page .wx-swiper-dot {
+    background-color: #fff;
+    width: 0.20rem;
+    height: 0.20rem;
+}
+
+.page .wx-swiper-dot-active {
+    background-color: #fc612a;
+}
+
+
+.showtoast {
+    margin: 0.20rem auto;
+    text-align: center;
+    font-size: 0.24rem;
+    color: #999;
+}
+
+.showtoast img {
+    vertical-align: middle;
+    width: 0.40rem;
+    height: 0.40rem;
+    margin-right: 0.20rem;
+}
+
+
+.normal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 0.28rem;
+    color: #fc612a;
+    padding: 2rem 0 1rem;
+}
+
+.normal img {
+    width: 1.82rem;
+    height: 1.39rem;
+    display: inline-block;
+    margin-bottom: 0.24rem;
+}
+
+/* 页面整体加载 */
+
+.loadings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 0.30rem;
+    color: #ccc;
+    margin-top: 2rem;
+}
+
+.loadings img {
+    width: 0.60rem;
+    height: 0.60rem;
+    display: inline-block;
+    margin-bottom: 0.24rem;
+}
+
+.borderRadius {
+    border-radius: 0.1rem;
+}
+
+
+#root .am-list-header {
+    padding: 0;
+}
+
+#root .am-list-body {
+    background: transparent;
+}
+
+#root .am-list-body::before,
+#root .am-list-body::after {
+    height: 0 !important;
+}
+
+.am-tabs-pane-wrap-active {
+    height: 100% !important;
+}
+
+
+.postfix {
+    width: 0.2rem;
+    height: 0.05rem;
+}
+
+.postfix img {
+    display: block;
+}
+
+
+.mr-10 {
+    margin-right: 0.1rem;
+}
+
+.hover-btn:active {
+    background: #208dac!important;
+}

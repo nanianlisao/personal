@@ -1,7 +1,0 @@
-<!--components/foot-dialog/foot-dialog.wxml 陈翔 c597219320@aliyun.com 2018.08.06 -->
-<view class='foot-dialog-wrapper'>
-  <view class='foot-dialog-mask' hidden='{{!showMask}}' bindtap='hideDialog'></view>
-  <scroll-view scroll-y class="foot-dialog {{transition?'show':''}}" hidden='{{!showTxt}}' style="transform:translateY({{height}}rpx);max-height:{{height}}rpx;">
-    <slot></slot>
-  </scroll-view>
-</view>

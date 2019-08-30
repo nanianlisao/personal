@@ -1,3 +1,0 @@
-<!--pages/page3/page3.wxml-->
- <button bindtap='test'>获取指纹</button> 
-<addr-check></addr-check>

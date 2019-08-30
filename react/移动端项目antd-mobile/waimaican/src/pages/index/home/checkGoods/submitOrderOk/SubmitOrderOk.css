@@ -1,0 +1,103 @@
+   .page-submitOrderOk {
+    color: #333;
+    background: #f2f2f2;
+    min-height: 100%;
+  }
+  
+   .page-submitOrderOk .status {
+    justify-content: center;
+    line-height: 1.95rem;
+    font-size: .30rem;
+  }
+  
+   .page-submitOrderOk .status img {
+    width: .54rem;
+    height: .54rem;
+    margin-right: .22rem;
+  }
+  
+   .page-submitOrderOk .order-info {
+    width: 7.02rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 .24rem;
+    font-size: .28rem;
+    background: #fff;
+    border-radius:.05rem;
+  }
+  
+   .page-submitOrderOk .order-info .title {
+    line-height: .76rem;
+    border-bottom:.01rem solid #e5e5e5;
+    font-size: .30rem;
+  }
+  
+   .page-submitOrderOk .order-info .goods-list .goods-info {
+    line-height: .46rem;
+    color: #999;
+  }
+   .page-submitOrderOk .order-info .goods-list {
+    margin: .12rem 0;
+  }
+  
+   .page-submitOrderOk .order-info .goods-list .goods-info .goods-name {
+    margin-right: .30rem;
+    color: #333;
+  }
+  
+   .page-submitOrderOk .order-info .goods-list .goods-bottom{
+    margin-top: .15rem;
+  }
+  
+   .page-submitOrderOk .order-info .goods-list .goods-bottom .price {
+    color: #ec1010;
+  }
+   .page-submitOrderOk .order-info .all-price{
+    font-size: .30rem;
+    line-height: .70rem; 
+    margin-bottom: .10rem;
+    font-weight: bold;
+  }
+   .page-submitOrderOk .order-info .all-price .price-name{
+    font-weight: bold;
+  }
+   .page-submitOrderOk .order-info .all-price .price-value{
+    color: #EC1010;
+  }
+   .page-submitOrderOk .remark{
+    text-align: center;
+    font-size: .26rem;
+    color: #666;
+    margin-top: .20rem;
+    line-height: .46rem;
+  }
+   .page-submitOrderOk .remark span{
+    color: #FC612A;
+  }
+   .page-submitOrderOk .move{
+    margin-top: .70rem;
+    padding: 0 1.15rem .30rem;
+  }
+   .page-submitOrderOk .move .am-button{
+    font-size: .32rem;
+    line-height: .80rem;
+    height: 0.8rem;
+    color: #fff;
+  }
+   .page-submitOrderOk .move .pay{
+    background-color: #FC612A;
+    /* box-shadow:0 .04rem .14rem 0 rgba(239,73,14,0.42); */
+  }
+   .page-submitOrderOk .move .return{
+    background-color: #FCA62A;
+   /* box-shadow:0px 4px 14px 0px rgba(233,142,11,0.42); */
+  }
+   .page-submitOrderOk .move .return2{
+    border:.01rem solid #FCA62A;
+    line-height: .78rem;
+    color: #FCA62A;
+  }
+   .page-submitOrderOk .move .am-button:first-child{
+    margin-bottom: .30rem;
+  }
+  

@@ -1,0 +1,161 @@
+/* pages/circle/circle.wxss */
+
+.quanzi-page {
+    background: #f5f5f5;
+    position: relative;
+    height: 100%;
+    .top-swiper {
+        height: 4rem !important;
+    }
+    .search-bar {
+        position: absolute;
+        width: 6rem;
+        height: 0.7rem;
+        top: 0.12rem;
+        left: 0.75rem;
+        box-shadow: 0.05rem 0.05rem 0.05rem rgba(0, 0, 0, 0.15), -0.05rem 0.05rem 0.05rem rgba(0, 0, 0, 0.15);
+        &.am-search {
+            opacity: 0.8;
+            background: #fff;
+            border-radius: 0.35rem;
+        }
+    }
+    .swiperCtn {
+        position: relative;
+    }
+    .slider_image {
+        display: block;
+        width: 7.50rem;
+        height: 4rem !important;
+        margin: 0 auto;
+    }
+    .tabs {
+        width: 6.90rem;
+        height: .90rem;
+        background: #fff;
+        line-height: .90rem;
+        border-radius: .45rem;
+        margin: 0 auto;
+        margin-top: .20rem;
+        display: flex;
+        box-shadow: .00rem .02rem .15rem rgba(0, 0, 0, 0.1);
+    }
+    .tabs .tab {
+        border-right: .01rem solid #584f60;
+        text-align: center;
+        font-size: .28rem;
+        font-family: MicrosoftYaHei;
+        color: #584f60;
+        line-height: .52rem;
+        height: .52rem;
+        align-self: center;
+        padding-right: .55rem;
+        margin-left: .55rem;
+    }
+    .tabs .tab:first-child {
+        margin-left: .67rem;
+    }
+    .tabs .tab:last-child {
+        border: none;
+        padding-right: 0;
+    }
+    .tabs .ac {
+        color: rgba(36, 199, 137, 1);
+    }
+    .mid {
+        padding: .20rem 0;
+        background: #fff;
+        margin: .20rem 0;
+        .top {
+            display: flex;
+            justify-content: center;
+            width: 7.1rem;
+            margin: 0 auto;
+            border-bottom: 0.01rem solid #F5F5F5;
+            .item {
+                margin: 0 .90rem .24rem .90rem;
+                .imgCtn {
+                    width: .90rem;
+                    height: .90rem;
+                }
+                .txt {
+                    text-align: center;
+                    font-size: .26rem;
+                    line-height: .39rem;
+                    font-family: MicrosoftYaHei;
+                    color: rgba(88, 79, 96, 1);
+                    margin-top: .09rem;
+                }
+            }
+        }
+        .btm-wrap {
+            height: 1.5rem;
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .btm {
+                display: flex;
+                justify-content: center;
+                font-size: .24rem;
+                font-family: MicrosoftYaHei;
+                margin-bottom: 0.2rem;
+                color: rgba(36, 199, 137, 1);
+                .btmView {
+                    display: flex;
+                    justify-content: center;
+                    flex-flow: column nowrap;
+                    &:first-child {
+                        margin-right: .43rem;
+                    }
+                    .item {
+                        line-height: .24rem;
+                    }
+                    .item:first-child {
+                        margin-bottom: .14rem;
+                    }
+                }
+            }
+            .newCount {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 3.2rem;
+                line-height: 0.62rem;
+                border: 1px solid #999999;
+                box-shadow: 0 0.01rem 0.05rem 0 rgba(0, 0, 0, 0.2);
+                border-radius: 0.31rem;
+                margin: 0 auto 0;
+                font-size: 0.24rem;
+                img {
+                    width: 0.42rem;
+                    height: 0.42rem;
+                }
+            }
+        }
+    }
+}
+
+.myRelease-page,
+.quanzi-page {
+    .imgCtn img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .releaseBtn {
+        text-align: center;
+        position: absolute;
+        right: .30rem;
+        bottom: 1.23rem;
+        z-index: 99;
+        background: #24c789;
+        font-size: .24rem;
+        color: #fff;
+        width: .72rem;
+        height: .72rem;
+        line-height: .72rem;
+        border-radius: 50%;
+    }
+}

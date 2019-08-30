@@ -1,0 +1,91 @@
+.spec-box {
+    position: relative;
+    padding: .27rem .45rem .28rem .45rem;
+    border-radius: .10rem;
+  }
+  
+  .spec-box .specs {
+    /* max-height: 3.70rem;
+    overflow-y: scroll; */
+  }
+  
+  .spec-box .title {
+    font-size: .32rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: .49rem;
+  }
+  
+  .spec-box .item {
+    font-size: .24rem;
+    width: 100%;
+  }
+  
+  .spec-box .item .item-name {
+    font-size: .30rem;
+    line-height: .58rem;
+    margin-bottom:.06rem;
+  }
+  
+  .spec-box .item .spec {
+    flex-shrink: 0;
+    padding: 0 .30rem;
+    height: .50rem;
+    background-color: #fff;
+    border-radius:.05rem;
+    border:.02rem solid #e0e0e0;
+    text-align: center;
+    line-height: .50rem;
+    font-size: 24prx;
+    font-family: PingFang-SC-Medium;
+    margin-bottom: .10rem;
+    margin-right: .20rem;
+  }
+  
+  .spec-box .spec.choose {
+    background-color: #fc612a;
+    border:.02rem solid #fc612a;
+    color: #fff;
+  }
+  
+  .spec-box .spec.grey {
+    border:.02rem solid #999;
+    color: #fff;
+    background-color: #999;
+  }
+  
+  .spec-box .item .item-spac-box {
+    display: flex;
+    flex-flow: wrap;
+  }
+  
+  .spec-box .price {
+    font-size: .36rem;
+    color: #ec1010;
+    line-height: .86rem;
+  }
+  
+  .spec-box .price .no-enough {
+    font-size: .26rem;
+    margin-left: .30rem;
+    color: #999;
+  }
+  
+  .spec-box .add-btn {
+    width: 3.00rem;
+    height: .80rem;
+    background-color: #fff;
+    border-radius: .10rem;
+    border:.02rem solid #fc612a;
+    color: #fc612a;
+    text-align: center;
+    line-height: .80rem;
+    font-size: .32rem;
+    margin: 0 auto;
+  }
+  
+  .spec-box .add-btn.grey {
+    border:.02rem solid #999;
+    color: #fff;
+    background-color: #999;
+  }

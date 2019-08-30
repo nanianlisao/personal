@@ -1,0 +1,99 @@
+.buy-goods-box {
+    position: relative;
+    width: 7.50rem;
+    padding-bottom: 1.08rem;
+  }
+  
+  .buy-goods-box .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: .70rem;
+    padding: 0 .28rem 0 .30rem;
+    box-sizing: border-box;
+    font-size: .30rem;
+    background-color: #fcf4f1;
+  }
+  
+  .buy-goods-box .top .title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .buy-goods-box .top .rec {
+    height: .50rem;
+    width: .10rem;
+    background-color: #ea5520;
+    margin-right: .32rem;
+  }
+  
+  .buy-goods-box .top .delete {
+    padding:.05rem .10rem;
+    position: relative;
+    right: -.10rem;
+  }
+  
+  .buy-goods-box .top img {
+    width: .45rem;
+    height: .46rem;
+  }
+  
+  .buy-goods-box .goods-box {
+    max-height: 6.40rem;
+    width: 7.50rem;
+    padding-top: .20rem;
+    overflow: scroll;
+  }
+  
+  .buy-goods-box .goods-box .goods {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: .15rem .30rem .15rem;
+    height: 1.10rem;
+    background-color: #fff;
+    font-size: .30rem;
+    line-height: .45rem;
+  }
+  
+  .buy-goods-box .goods-box .goods.outTime {
+    background-color: #e2e2e2;
+  }
+  
+  .buy-goods-box .goods-box .goods .name {
+    width: 3.60rem;
+  }
+  
+  .buy-goods-box .goods-box .goods .g-spec-box {
+    color: #666;
+    font-size: .26rem;
+    line-height: .38rem;
+    margin-top: .05rem;
+  }
+  
+  .buy-goods-box .goods-box .goods .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .buy-goods-box .goods-box .goods .right .num-btn-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .buy-goods-box .goods-box .goods .right .price {
+    color: #ea5520;
+    margin-right: .40rem;
+  }
+  
+  .buy-goods-box .goods-box .goods .outTime {
+    position: absolute;
+    bottom:.05rem;
+    font-size: .24rem;
+    color: #ea5520;
+    line-height: .36rem;
+    right: .76rem;
+  }

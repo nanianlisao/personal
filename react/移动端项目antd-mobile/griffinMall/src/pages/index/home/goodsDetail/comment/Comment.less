@@ -1,0 +1,91 @@
+.comment-page{
+    background: #fff;
+    .top-tab{
+        height: 1.1rem;
+        border-bottom: 0.02rem solid #F2F2F2;
+        padding-left: 0.4rem;
+        .tab-item{
+            width: 1rem;
+            line-height: 0.5rem;
+            text-align: center;
+            color: #25A1C5;
+            border: 0.01rem solid #25A1C5;
+            border-radius: 0.13rem;
+            margin-right: 0.2rem;
+            &.act{
+                background: #25A1C5;
+                color: #fff;
+            }
+        }
+    }
+    .comment-component{
+        .comment-item{
+            padding: 0.38rem 0.3rem;
+            border-bottom: 0.02rem solid #F2F2F2;
+            .comment-header{
+                font-size: 0.26rem;
+                color: #25A1C5;
+                img{
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    border-radius: 50%;
+                    margin-right: 0.2rem;
+                }
+            }
+            .comment-body{
+                margin-top: 0.25rem;
+                font-size: 0.28rem;
+                color: #222;
+                line-height: 0.36rem;
+            }
+            .comment-img{
+                position: relative;
+                width: 6.57rem;
+                margin: 0.25rem 0 0 0.21rem;
+                img{
+                    width: 2.07rem;
+                    height: 2.07rem;
+                    margin-right: 0.12rem;
+                }
+                .mask{
+                    position: absolute;
+                    top: 0;
+                    right: 0.12rem;
+                    width: 2.07rem;
+                    height: 2.07rem;
+                    flex-direction: column;
+                    font-size: 0.26rem;
+                    line-height: 0.38rem;
+                    color: #fff;
+                    background:rgba(17,17,17,0.3);
+                }
+            }
+            .comment-footer{
+                .date{
+                    font-size: 0.24rem;
+                    color: #ABABAB;
+                }
+                .praise{
+                    margin-top: 0.2rem;
+                    width: 1.32rem;
+                    height: 0.5rem;
+                    border: 1px solid #999;
+                    color: #999;
+                    font-size: 0.25rem;
+                    transform: scale(0.8);
+                    transform-origin: right center;
+                    border-radius: 0.25rem;
+                    &.like{
+                        border-color: #25A1C5;
+                        color: #25A1C5;
+                    }
+                    img{
+                        width: 0.34rem;
+                        height: 0.34rem;
+                        margin-right: 0.13rem;
+                    }
+                }
+            }
+        }
+    }
+}

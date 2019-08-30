@@ -1,0 +1,124 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.addCommentDetail-page {
+    .reply-box {
+        padding: 0.3rem;
+
+        .am-list-item {
+            padding-left: 0;
+        }
+
+        font-size: 0.26rem;
+
+        .reply-btn {
+            line-height: 0.4rem;
+            color: #666;
+            text-align: right;
+            padding-right: 0.3rem;
+
+            &.act {
+                color: #3f8cf6;
+            }
+        }
+    }
+}
+
+.commentListDetail-page {
+    background: #fff;
+
+    .comment-top {
+        margin-bottom: 0.2rem;
+        color: #262626;
+        font: bold 0.28rem/0.84rem PingFang-SC-Bold;
+        border-bottom: 0.01rem solid #E6E6E6;
+        .flex();
+        justify-content: space-between;
+
+        .add-comment {
+            .flex();
+            color: #3f8cf6;
+
+            img {
+                margin-left: 0.1rem;
+                width: 0.24rem;
+                height: 0.24rem;
+            }
+        }
+    }
+
+    .am-list-body::before {
+        height: 0 !important;
+    }
+
+    .comment-list {
+        .am-list-view-scrollview-content {
+            padding: 0 0.4rem 0 0.3rem;
+
+        }
+
+        .comment-item {
+            padding-bottom: 0.2rem;
+            border-bottom: 0.01rem solid #E6E6E6;
+
+            .comment-header {
+                .flex();
+                font-size: 0.24rem;
+                color: #666;
+                margin-bottom: 0.08rem;
+
+                img {
+                    width: 0.6rem;
+                    height: 0.6rem;
+                    border-radius: 50%;
+                    margin-right: 0.3rem;
+                }
+            }
+
+            .comment-content {
+                margin-left: 0.9rem;
+
+                .comment-info {
+                    font-size: 0.26rem;
+                    color: #1A1A1A;
+                    line-height: 0.42rem;
+                }
+
+                .comment-footer {
+                    .flex();
+                    justify-content: space-between;
+                    margin-top: 0.18rem;
+                    line-height: 0.36rem;
+                    font-size: 0.24rem;
+                    color: #666;
+
+                    .reply {
+                        .flex();
+
+                        img {
+                            width: 0.26rem;
+                            height: 0.26rem;
+                            margin-right: 0.1rem;
+                        }
+                    }
+                }
+
+                .reply-list {
+                    margin-top: 0.3rem;
+                    background: #F8F8F8;
+                    padding: 0.1rem 0.3rem;
+                    font-size: 0.24rem;
+                    color: #666;
+                    line-height: 0.48rem;
+
+                    .nickName {
+                        margin-right: 0.1rem;
+                        color: #5186CF;
+                    }
+                }
+            }
+        }
+    }
+}

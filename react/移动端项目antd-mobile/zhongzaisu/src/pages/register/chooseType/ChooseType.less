@@ -1,0 +1,100 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.chooseType-page {
+    position: relative;
+    min-height: 100%;
+    background: #fff;
+    padding: 0 0.46rem;
+    .top{
+        text-align: center;
+        padding: 0.6rem 0;
+        font: bold 0.38rem/0.78rem MicrosoftYaHei;
+    }
+    .type-list{
+        .flex();
+        justify-content: space-between;
+        .type-item{
+            box-sizing: border-box;
+            padding: 0.2rem 0.3rem;
+            width: 1.27rem;
+            height: 1.2rem;
+            font-size: 0.29rem;
+            line-height: 0.41rem;
+            color: #666;
+            border: 0.02rem solid #e6e6e6;
+            border-radius: 50%;
+            text-align: center;
+            &.act{
+                background: #24C789;
+                color: #fff;
+                border-color: #24C789;
+            }
+        }
+    }
+
+    .charge-list{
+        margin-top: 1.26rem;
+        padding: 0 0.5rem;
+        .charge-item{
+            padding: 0 0.3rem 0 0.36rem;
+            border: 0.02rem solid #24C789;
+            line-height: 0.74rem;
+            color: #666;
+            border-radius: 0.06rem;
+            margin-bottom: 0.1rem;
+            font-size: 0.3rem;
+            .flex();
+            justify-content: space-between;
+            &.act{
+                background: #24C789;
+                color: #fff;
+            }
+            .info{
+                .flex();
+                img{
+                    width: 0.55rem;
+                    height: 0.33rem;
+                    margin:0 0 0.2rem 0.1rem;
+                }
+            }
+            .levelUp{
+                font-weight: bold;
+            }
+        }
+    }
+
+    .remark{
+        text-align: center;
+        margin-top: 1.5rem;
+        p{
+            font-size: 0.315rem;
+            color: #B3B3B3;
+            line-height: 0.53rem;
+            transform: scale(0.7);
+            transform-origin: 50% top;
+        }
+    }
+
+
+    .submit {
+       position: fixed;
+       width: 6.58rem;
+       left: 0.46rem;
+       bottom: 0.3rem;
+        .submit-btn {
+            font-size: 0.34rem;
+            height: 0.88rem;
+            line-height: 0.88rem;
+            border-radius: 0.44rem;
+            color: #fff;
+            background: #24C789;
+            box-shadow:0px 8px 16px 0px rgba(36,199,137,0.24);
+            &.hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}

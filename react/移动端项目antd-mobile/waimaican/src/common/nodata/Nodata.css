@@ -1,0 +1,17 @@
+.normal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 0.28rem;
+    color: #999;
+    padding-top: 2rem;
+  }
+  
+  .normal img {
+    width: 1.44rem;
+    height: 1.4rem;
+    display: inline-block;
+    margin-bottom: 0.24rem;
+  }
+  

@@ -1,0 +1,63 @@
+.orderList-component {
+    .order-item {
+        width: 7.14rem;
+        background: #fff;
+        margin: 0.2rem auto 0;
+        padding: 0.3rem 0 0.4rem;
+        box-shadow: 0 0.02rem 0.06rem 0 rgba(17, 17, 17, 0.07);
+        border-radius: 0.13rem;
+
+        .order-header {
+            padding: 0 0.22rem;
+            line-height: 0.46rem;
+            font-size: 0.26rem;
+            color: #ABABAB;
+
+            .order-status {
+                color: #25A1C5;
+            }
+        }
+
+        .order-footer {
+            padding: 0.22rem;
+            justify-content: flex-end;
+            font-size: 0.28rem;
+            color: #25A1C5;
+
+            .total-num {
+                font-size: 0.26rem;
+                margin-right: 0.2rem;
+                color: #ABABAB;
+
+                span {
+                    color: #25A1C5;
+                }
+            }
+        }
+
+        .order-btn {
+            padding-top: 0.3rem;
+            justify-content: flex-end;
+
+            .btn {
+                margin-right: 0.2rem;
+                width: 1.50rem;
+                line-height: 0.6rem;
+                text-align: center;
+                font-size: 0.28rem;
+                color: #fff;
+                background: #FFDA53;
+                border-radius: .12rem;
+                &:active{
+                    background: rgb(255, 201, 5)!important;
+                }
+                &:last-child{
+                    background-color: #25A1C5;
+                    &:active{
+                        background: #208dac!important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+.pay-options {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 7.50rem;
+    height: .98rem;
+    background-color: #fed4c5;
+  }
+  
+  .pay-options.greyC {
+    background-color: #333;
+  }
+  
+  .pay-options .pay-left {
+    position: relative;
+    display: flex;
+    flex: 1;
+  }
+  
+  .pay-options .pay-left .shopCar {
+    position: absolute;
+    left: .28rem;
+    top: -.20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.00rem;
+    height: 1.00rem;
+    border-radius: .50rem;
+    background-color: #fc612a;
+  }
+  
+  .pay-options.greyC .pay-left .shopCar {
+    background-color: #666;
+  }
+  
+  .pay-options .pay-left .shopCar img {
+    width: .52rem;
+    height: .50rem;
+    display: block;
+  }
+  
+  .pay-options .pay-left .shopCar .num {
+    position: absolute;
+    right: -0.05rem;
+    top: -0.05rem;
+    width: .34rem;
+    height: .34rem;
+    border-radius: .17rem;
+    background-color: #f00;
+    color: #fff;
+    font-size: .22rem;
+    text-align: center;
+    line-height: .34rem;
+  }
+  .pay-options .pay-left .footer-infos{
+    display: flex;
+    align-items: center;
+  }
+  .pay-options .pay-left .price {
+    font-size: .36rem;
+    margin-left: 1.54rem;
+  }
+  
+  .pay-options.greyC .pay-left .price {
+    color: #666;
+    line-height: 0.98rem;
+  }
+  
+  .pay-options .pay-left .price span {
+    font-size: .30rem;
+  }
+  
+  .pay-options .pay-left .more-info {
+    margin-left: 0.2rem;
+    height: 0.54rem;
+    padding-left: 0.2rem;
+    border-left: 0.01rem solid #666;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 0.24rem;
+    color: #666;
+    line-height: 0.32rem;
+
+  }
+  .pay-options .pay-left .more-info.active {
+    border-left: 0.01rem solid #EA5520;
+    color: #EA5520;
+  }
+  .pay-options .confirm-btn {
+    width: 2.00rem;
+    height: .98rem;
+    background-color: #fc612a;
+    text-align: center;
+    line-height: .98rem;
+    color: #fff;
+    font-size: .32rem;
+  }
+  
+  .pay-options.greyC .confirm-btn {
+    background-color: #666;
+  }

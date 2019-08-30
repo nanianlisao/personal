@@ -1,0 +1,77 @@
+.register-page {
+    background: #fff;
+    min-height: 100%;
+    padding: 0 0.4rem;
+    .title {
+        font-size: 0.6rem;
+        line-height: 0.9rem;
+        padding: 0.85rem 0 1.1rem;
+    }
+    .form {
+        .am-list-line::before,
+        .am-list-line::after,
+        .am-list-body::before,
+        .am-list-body::after {
+            height: 0 !important;
+        }
+        .am-list-item {
+            padding-left: 0;
+            .am-list-line {
+                padding-right: 0;
+            }
+        }
+        .form-item {
+            .am-input-extra{
+                max-height: 2rem;
+            }
+            .am-input-label-5 {
+                width: 0.6rem;
+            }
+            border-bottom: 0.01rem solid #DCDCDC;
+            &:first-child img {
+                width: 0.24rem;
+                height: 0.34rem;
+            }
+            &:nth-child(2) img {
+                width: 0.28rem;
+                height: 0.21rem;
+            }
+            input{
+                height: 42px;
+            }
+            .ext {
+                width: 1.6rem;
+                text-align: center;
+                line-height: 0.6rem;
+                background: #ccc;
+                font-size: 0.28rem;
+                color: #fff;
+                border-radius: 0.1rem;
+                &.act {
+                    background: #24C789;
+                }
+            }
+        }
+    }
+    .submit {
+        margin-top: 1.5rem;
+        .btn {
+            background: #24C789;
+            box-shadow: 0px 8px 16px 0px rgba(36, 199, 137, 0.24);
+            border-radius: 0.44rem;
+            line-height: 0.88rem;
+            height: 0.88rem;
+            color: #fff;
+            font-size: 0.34rem;
+            .hover {
+                opacity: 0.5;
+            }
+        }
+    }
+    .go-register{
+        text-align: center;
+        font-size: 0.26rem;
+        color: #24C789;
+        margin-top: 0.4rem;
+    }
+}

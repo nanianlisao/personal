@@ -1,0 +1,77 @@
+.page-searchGoods {
+    height: 100%;
+    padding-top: 0;
+    background: #fff;
+  }
+
+  .page-searchGoods .am-search-clear{
+    display: none!important;
+  }
+  
+ .page-searchGoods .pickGoods-box {
+    position: static;
+    width: 7.50rem;
+    height: 100%;
+    border: none;
+  }
+  
+ .page-searchGoods .pickGoods-box .right-box {
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
+  
+ .page-searchGoods .pickGoods-box .content {
+    height: 100%;
+    position: relative;
+    padding: 0 .24rem;
+    box-sizing: border-box;
+  }
+  
+ .page-searchGoods .pickGoods-box .right-box .search-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    width: 100%;
+    height: .98rem;
+    box-sizing: border-box;
+    padding: 0 .24rem;
+    border-bottom:.01rem solid #e5e5e5;
+    border-top:.01rem solid #e5e5e5;
+  }
+  
+ .page-searchGoods .pickGoods-box .right-box .search {
+    width: 6.20rem;
+    padding-left: 0;
+    margin: .14rem 0;
+  }
+  
+ .page-searchGoods .pickGoods-box .right-box .search-btn {
+    color: #fc612a;
+    font-size: .28rem;
+  }
+  
+ .page-searchGoods .pickGoods-box .right-box .goods-box {
+    position: static;
+    width: 100%;
+    height: 100%;
+    padding-top: .98rem;
+    padding-bottom: .98rem;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
+  
+ .page-searchGoods .pickGoods-box .right-box .goods-box  .goods-list {
+    padding-top: .30rem;
+  }
+  
+  .page-searchGoods .pickGoods-box .right-box .goods-box .goods {
+    margin-bottom: .30rem;
+  }
+  
+  .page-searchGoods .pickGoods-box .right-box .goods-box .goods-info .name{
+    width: 5.10rem;
+  }
+  

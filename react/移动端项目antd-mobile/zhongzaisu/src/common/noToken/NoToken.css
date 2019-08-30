@@ -1,0 +1,18 @@
+.com-noToken{
+    padding-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.com-noToken .img{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+.com-noToken .span{
+    margin: 0.2rem 0;
+    font-size: 0.28rem;
+    color: #666;
+    line-height: 0.48rem;
+}

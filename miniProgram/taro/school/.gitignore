@@ -1,0 +1,7 @@
+dist/
+deploy_versions/
+.temp/
+.rn_temp/
+src/pulgins
+node_modules/
+.DS_Store

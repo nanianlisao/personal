@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "top-dialog": "/components/top-dialog/top-dialog"
-  }
-}

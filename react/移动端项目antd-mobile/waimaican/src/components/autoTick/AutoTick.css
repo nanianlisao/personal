@@ -1,0 +1,111 @@
+.autoTick-wrapper {
+    position: relative;
+    padding: .23rem .23rem .23rem .24rem;
+  }
+  
+  .autoTick-box {
+    position: relative;
+    display: flex;
+    height: 1.83rem;
+    box-sizing: border-box;
+    margin-bottom: .14rem;
+  }
+  
+  .autoTick-box:last-child {
+    margin-bottom: 0;
+  }
+  
+  .autoTick-box .autoTick-bgImg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .autoTick-box .autoTick-left {
+    width: 3.66rem;
+    padding:.09rem 0 0 .25rem;
+    box-sizing: border-box;
+  }
+  
+  .autoTick-box .autoTick-name {
+    color: #fff;
+    font-size: .24rem;
+    line-height: .46rem;
+  }
+  
+  .autoTick-box .autoTick-info {
+    display: flex;
+    align-items: center;
+    margin-top:.08rem;
+    font-size: .24rem;
+    line-height: .36rem;
+    color: #fff;
+  }
+  
+  .autoTick-box .autoTick-info-left {
+    margin-right: .30rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .autoTick-box .autoTick-info-left .autoTick-cost {
+    font-size: .38rem;
+    line-height: .60rem;
+  }
+  
+  .autoTick-box .autoTick-info-right .autoTick-remark {
+    font-size: .16rem;
+  }
+  .minCon{
+    font-size: .40rem;
+    margin-top: 0.04rem;
+    transform: scale(0.5);
+    width: 200%;
+    transform-origin: top left;
+  }
+  .autoTick-box .autoTick-date {
+    font-size: .40rem;
+    transform: scale(0.5);
+    transform-origin: top left;
+    white-space: nowrap;
+    color: #ffdac7;
+    margin-top: .12rem;
+  }
+  
+  .autoTick-right {
+    width: 1.90rem;
+    text-align: center;
+  }
+  
+  .autoTick-right .autoTick-getTick {
+    position: relative;
+    width: 1.54rem;
+    height: .67rem;
+    line-height: .58rem;
+    margin: .62rem auto 0;
+    color: #ff3c22;
+    font-size: .22rem;
+  }
+  
+  .autoTick-right .autoTick-getTick img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .autoTick-right .autoTick-hasUsed {
+    margin-top:.08rem;
+    font-size: .22rem;
+    color: #ab834e;
+  }
+  
+  .autoTick-right .autoTick-hasUsed .used-conut {
+    font-size: .22rem;
+    color: #7f5928;
+  }

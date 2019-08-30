@@ -1,0 +1,45 @@
+.noticeBar {
+    position: relative;
+    font-size: 0.28rem;
+    color: #f76a24;
+    line-height: 0.72rem;
+    background: #fefcec;
+    padding-right: 0.3rem;
+
+    .icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0.72rem;
+        height: 0.72rem;
+        padding: 0.12rem;
+        background: #fefcec;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .wrapper {
+        // width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-left: 0.3rem;
+        &.hasIcon {
+            padding-left: 0.72rem;
+        }
+
+        .inner {
+            width: 10000px;
+            overflow: hidden;
+            .content{
+                display: inline-block;
+            }
+        }
+
+        
+    }
+
+
+}

@@ -1,6 +1,0 @@
-<view class='container'>
-  <view class="box">
-    <view class="left child"></view>
-    <view class="right child"></view>
-  </view>
-</view>

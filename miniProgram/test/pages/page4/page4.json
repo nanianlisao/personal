@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "move-swiper": "/components/move-swiper/move-swiper",
-    "move-item": "/components/move-item/move-item"
-  }
-}

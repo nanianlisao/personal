@@ -1,0 +1,369 @@
+.box-home-goods {
+    width: 3.5rem;
+    overflow: hidden;
+
+    .poster {
+        height: 3.5rem;
+    }
+
+    .goods-content {
+        padding: 0.2rem 0.2rem 0.28rem;
+
+        .name {
+            font-size: 0.26rem;
+            line-height: 0.38rem;
+            height: 0.76rem;
+        }
+
+        .footer {
+            margin-top: 0.2rem;
+
+            .footer-info {
+                font-size: 0.22rem;
+                line-height: 0.36rem;
+                color: #25A1C5;
+
+                .price {
+                    font-size: 0.36rem;
+                }
+
+                .sales-count {
+                    margin-left: 0.1rem;
+                    color: #999;
+                }
+            }
+        }
+    }
+}
+
+
+.box-level-goods {
+    padding: 0.1rem 0.3rem;
+    border-bottom: 0.02rem solid #F2F2F2;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .poster {
+        height: 2.03rem;
+        width: 2.03rem;
+        flex-shrink: 0;
+
+        img {
+            border-radius: 0.09rem;
+        }
+    }
+
+    .goods-content {
+        flex: 1;
+        margin-left: 0.2rem;
+
+        .name {
+            font-size: 0.3rem;
+            line-height: 0.38rem;
+            height: 0.76rem;
+        }
+
+        .marks-list {
+            margin-top: 0.15rem;
+
+            .marks-item {
+                margin-right: 0.1rem;
+                border: 1px solid #25A1C5;
+                text-align: center;
+                font-size: 0.24rem;
+                color: #25A1C5;
+                border-radius: 0.12rem;
+                min-width: 0.6rem;
+                padding: 0 0.1rem;
+                line-height: 0.36rem;
+            }
+        }
+
+        .footer {
+            margin-top: 0.2rem;
+
+            .footer-info {
+                font-size: 0.36rem;
+                line-height: 0.36rem;
+                color: #25A1C5;
+
+                .sales-count {
+                    font-size: 0.24rem;
+                    margin-left: 0.2rem;
+                    color: #999;
+
+                    img {
+                        width: 0.23rem;
+                        height: 0.23rem;
+                        margin-right: 0.1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .more {
+        margin-left: 0.2rem;
+    }
+
+    &.box-small-level-goods {
+        .poster {
+            height: 1.55rem;
+            width: 1.55rem;
+
+            img {
+                border-radius: 0.09rem;
+            }
+        }
+
+        .goods-content {
+            .name {
+                font-size: 0.28rem;
+                line-height: 0.36rem;
+                height: 0.72rem;
+            }
+
+            .footer {
+                margin-top: 0.15rem;
+
+                .footer-info {
+                    font-size: 0.3rem;
+                }
+            }
+        }
+    }
+}
+
+
+.box-level-cart-goods {
+    padding: 0.2rem 0.3rem;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .poster {
+        height: 2.03rem;
+        width: 2.03rem;
+        flex-shrink: 0;
+
+        img {
+            border-radius: 0.09rem;
+        }
+    }
+
+    .goods-content {
+        flex: 1;
+        margin-left: 0.2rem;
+
+        .name {
+            font-size: 0.3rem;
+            line-height: 0.38rem;
+            max-height: 0.76rem;
+
+            &.disable {
+                color: #ABABAB;
+            }
+        }
+
+        .reason {
+            font-size: 0.24rem;
+            color: #222;
+            margin-top: 0.12rem;
+        }
+
+        .spec-box {
+            font-size: 0.28rem;
+            color: #ABABAB;
+            line-height: 0.36rem;
+            margin-top: 0.1rem;
+        }
+
+        .goods-footer {
+            font-size: 0.3rem;
+            color: #25A1C5;
+            line-height: 0.36rem;
+            margin-top: 0.1rem;
+
+            .change-num {
+                font-size: 0.26rem;
+                color: #111;
+
+                img {
+                    width: 0.46rem;
+                    height: 0.44rem;
+                }
+
+                span {
+                    display: inline-block;
+                    width: 0.7rem;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+
+    &.small {
+        .poster {
+            height: 1.88rem;
+            width: 1.88rem;
+        }
+
+        .goods-content {
+            .name {
+                font-size: 0.28rem;
+                line-height: 0.36rem;
+                max-height: 0.72rem;
+            }
+
+            .spec-box {
+                font-size: 0.24rem;
+            }
+
+        }
+    }
+
+
+}
+
+.box-level-order-goods {
+    padding: 0.1rem 0.22rem;
+
+    .poster {
+        height: 1.81rem;
+        width: 1.81rem;
+        flex-shrink: 0;
+
+        img {
+            border-radius: 0.09rem;
+        }
+    }
+
+    .goods-content {
+        flex: 1;
+        margin-left: 0.32rem;
+
+        .name {
+            font-size: 0.28rem;
+            line-height: 0.36rem;
+            height: 0.72rem;
+        }
+
+        .goods-footer {
+            margin-top: 0.1rem;
+            display: flex;
+            justify-content: space-between;
+
+            .spec-box {
+                font-size: 0.26rem;
+                color: #ABABAB;
+                line-height: 0.36rem;
+            }
+
+            .reply {
+                flex-shrink: 0;
+                color: #25A1C5;
+                line-height: 0.36rem;
+                font-size: 0.24rem;
+
+            }
+        }
+
+        .goods-right {
+            font-size: 0.3rem;
+            color: #ABABAB;
+            line-height: 0.28rem;
+            margin-left: 0.4rem;
+            text-align: right;
+
+            .price {
+                color: #111;
+                margin-bottom: 0.1rem;
+            }
+
+            .red-mark {
+                color: #f00;
+                font-size: 0.24rem;
+                margin-right: 0.1rem;
+            }
+        }
+
+    }
+
+
+}
+
+
+
+.box-pintuan-goods {
+    padding: 0.3rem 0.3rem;
+    border-bottom: 0.02rem solid #F2F2F2;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    .poster {
+        height: 2.03rem;
+        width: 2.03rem;
+        flex-shrink: 0;
+
+        img {
+            border-radius: 0.09rem;
+        }
+    }
+
+    .goods-content {
+        flex: 1;
+        margin-left: 0.2rem;
+
+        .name {
+            font-size: 0.3rem;
+            line-height: 0.38rem;
+            height: 0.76rem;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 0.2rem;
+
+            .left {
+                .remark{
+                    display: inline-block;
+                    width: 0.8rem;
+                }
+                .left-top {
+                    color: #333;
+                    font-size: 0.24rem;
+                    .price {
+                        color: #25A1C5;
+                        font-weight: 400;
+                        font-size: 0.36rem;
+                    }
+                }
+
+                .left-b {
+                    color: #999;
+                    font-size: 0.24rem;
+                    .price {
+                        font-size: 0.26rem;
+                        text-decoration: line-through;
+                        
+                    }
+                }
+            }
+            .pintuan-btn{
+                width: 1.3rem;
+                color: #fff;
+                background-color: #25A1C5;
+                text-align: center;
+                line-height: 0.55rem;
+                font-size: 0.26rem;
+                border-radius: 0.12rem;
+            }
+        }
+    }
+}

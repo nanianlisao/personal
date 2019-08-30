@@ -1,0 +1,183 @@
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.overflow-1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.page-chooseLocation {
+    position: relative;
+
+    .top {
+        width: 100%;
+        height: 2.5rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+    }
+
+    .wrapper {
+        width: 6rem;
+        margin: 0 auto;
+        position: relative;
+        top: -1.7rem;
+        background: #fff;
+        box-shadow: 0 0.02rem 0.09rem rgba(17, 17, 17, 0.12);
+        border-radius: 0.24rem;
+
+        .header {
+            justify-content: center;
+            background: #EA5520;
+            line-height: 1rem;
+            color: #fff;
+            font-size: 0.34rem;
+            border-radius: .24rem .24rem 0 0;
+
+            img {
+                width: 0.48rem;
+                height: 0.48rem;
+                margin-right: 0.03rem;
+            }
+        }
+
+        .content {
+            padding: 0 0.22rem 0.7rem;
+
+            .input-wrap {
+                position: relative;
+                .input-null {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                    z-index: 10;
+                }
+            }
+
+            .am-input-item {
+                padding-left: 0;
+                height: 0.76rem;
+                line-height: 0.76rem;
+                min-height: 0;
+                border-bottom: 1px solid #ddd;
+
+                .am-list-line::after {
+                    height: 0;
+                }
+
+                input {
+                    font-size: 0.28rem;
+
+                    &:disabled {
+                        background: transparent;
+                        color: #333;
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+
+
+            .dizhi-list {
+                .dizhi-item {
+                    height: 1.29rem;
+                    border-bottom: 0.02rem solid #EAEAEA;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    .check {
+                        width: 0.6rem;
+                        height: 0.6rem;
+                        box-sizing: border-box;
+                        padding: 0.1rem 0.2rem 0.1rem 0;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                        }
+                    }
+
+                    .info {
+                        width: 4.6rem;
+
+                        .info-top {
+                            justify-content: space-between;
+                            font-size: 0.3rem;
+                            color: #111111;
+                            line-height: 0.45rem;
+                        }
+
+                        .dizhi {
+                            font-size: 0.24rem;
+                            color: #666;
+                            line-height: 0.36rem;
+                            margin-top: 0.06rem;
+                        }
+                    }
+
+                    .arrow {
+                        width: 0.17rem;
+                        height: 0.33rem;
+                        margin-left: 0.2rem;
+                    }
+                }
+            }
+
+            .noDizhi {
+                height: 2.3rem;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 0.3rem;
+                line-height: 0.46rem;
+                color: #999;
+
+                img {
+                    width: 0.52rem;
+                    height: 0.52rem;
+                }
+
+            }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translate(-50%);
+            width: 3rem;
+            margin: 0 auto;
+
+            &.zhai {
+                width: 2.5rem;
+            }
+
+            &.bottom-reset {
+                bottom: -0.5rem;
+            }
+
+            .btn {
+                background: #EA5520;
+                font-size: 0.3rem;
+                color: #fff;
+                line-height: 0.8rem;
+                height: 0.8rem;
+                margin-bottom: 0.2rem;
+                border-radius: 0.24rem;
+            }
+        }
+    }
+}

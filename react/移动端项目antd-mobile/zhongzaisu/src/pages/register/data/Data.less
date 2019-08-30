@@ -1,0 +1,81 @@
+.data-page {
+    background: #fff;
+    min-height: 100%;
+    padding: 0 0.38rem;
+    .title {
+        font-size: 0.6rem;
+        line-height: 0.9rem;
+        padding: 0.85rem 0 1.1rem;
+    }
+    .form {
+        .am-list-line::before,
+        .am-list-line::after,
+        .am-list-body::before,
+        .am-list-body::after {
+            height: 0 !important;
+        }
+        .am-list-item {
+            padding-left: 0;
+            .am-list-line {
+                padding-right: 0;
+            }
+        }
+        .form-item {
+            .borderB {
+                border-bottom: 0.01rem solid #DCDCDC;
+            }
+            .am-list-content {
+                padding: 0.58rem 0 0 0;
+                .label-name {
+                    font-size: 0.3rem;
+                    color: #333;
+                    line-height: 0.5rem;
+                }
+                .am-input-item {
+                    height: auto;
+                    min-height: 0;
+                    padding-top: 0.38rem;
+                    input:disabled {
+                        background: transparent;
+                        color: #333;
+                        opacity: 1;
+                    }
+                }
+                .am-input-extra {
+                    padding-right: 0.72rem;
+                    img {
+                        width: 0.17rem;
+                        height: 0.28rem;
+                    }
+                }
+                input {
+                    font-size: 0.32rem;
+                    line-height: 0.52rem;
+                }
+                .ext {
+                    font-size: 0.32rem;
+                    color: #91E3C4;
+                    &.act {
+                        color: #24C789;
+                    }
+                }
+            }
+        }
+    }
+    .submit {
+        margin-top: 0.78rem;
+        padding-bottom: 0.2rem;
+        .btn {
+            box-shadow: 0px 8px 16px 0px rgba(36, 199, 137, 0.24);
+            background: #24C789;
+            border-radius: 0.44rem;
+            line-height: 0.88rem;
+            height: 0.88rem;
+            color: #fff;
+            font-size: 0.34rem;
+            .hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}
