@@ -1,0 +1,2 @@
+/* pages/share/share.wxss */
+@import '../scope/scope.wxss' 

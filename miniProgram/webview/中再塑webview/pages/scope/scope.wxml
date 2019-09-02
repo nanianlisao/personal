@@ -1,0 +1,18 @@
+<!--pages/login/open/open.wxml-->
+<view class='containers'>
+  <view class='top'>
+    <image class='img' src='/img/0.jpg'></image>
+    <text class='name'>{{appName}}</text>
+    <view class='xian'></view>
+  </view>
+  <text class='t1'>登录后开发者将获得以下权限</text>
+  <view class='t2box'>
+    <view class='dian'></view>
+    <text class='t2' wx:if="{{userLocation}}">获得您的位置信息</text>
+    <text class='t2' wx:if="{{scope=='userInfo'}}">获得您的头像信息</text>
+    <text class='t2' wx:else>获得您的手机号码</text>
+  </view>
+  <button class='confirm' open-type="openSetting" bindopensetting="opensetting" wx:if="{{userLocation}}">打开设置</button>
+  <button class='confirm' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{scope=='userInfo'}}">确认授权</button>
+  <button class='confirm' open-type="getPhoneNumber" bindtap='getCode' bindgetphonenumber="getPhoneNumber" wx:else>确认授权</button>
+</view>

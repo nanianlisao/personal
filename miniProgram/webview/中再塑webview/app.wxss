@@ -1,0 +1,94 @@
+/**app.wxss**/
+
+page {
+  color: #333;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  min-height: 100%;
+}
+.flex-middle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shadow-box {
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx 20rpx rgba(0, 0, 0, 0.4);
+  background: #fff;
+}
+
+.btn-active {
+  background-color: #f86e3c !important;
+}
+
+.text-overflow-1 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text-overflow-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.flex-center-ver {
+  display: flex;
+  align-items: center;
+}
+
+.showtoast {
+  margin: 20rpx auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.showtoast image {
+  vertical-align: middle;
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.normal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 28rpx;
+  color: #FC612A;
+  padding-top: 200rpx;
+}
+
+.normal image {
+  width: 182rpx;
+  height: 139rpx;
+  display: inline-block;
+  margin-bottom: 24rpx;
+}
+
+/* 页面整体加载 */
+
+.loadings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 30rpx;
+  color: #ccc;
+  margin-top: 200rpx;
+}
+
+.loadings image {
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  margin-bottom: 24rpx;
+}

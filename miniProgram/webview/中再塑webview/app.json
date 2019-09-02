@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/open/open",
+    "pages/test/test",
+    "pages/share/share",
+    "pages/scope/scope"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "中再塑",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于店铺距离排序"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

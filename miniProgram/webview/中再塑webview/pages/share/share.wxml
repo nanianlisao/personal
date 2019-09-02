@@ -1,0 +1,16 @@
+<!--pages/login/open/open.wxml-->
+<view class='containers'>
+  <view class='top'>
+    <image class='img' src='/img/0.jpg'></image>
+    <text class='name'>{{appName}}</text>
+    <view class='xian'></view>
+  </view>
+  <text class='t1'>分享后你将获得</text>
+  <view class='t2box'>
+    <view class='dian'></view>
+    <text class='t2' wx:if="{{type=='member'}}">会员时长增加</text>
+    <text class='t2' wx:if="{{type=='baojia'}}">查看报价</text>
+    <text class='t2' wx:if="{{type=='quanzi'}}">好感度</text>
+  </view>
+  <button class='confirm' open-type="share">去分享</button>
+</view>

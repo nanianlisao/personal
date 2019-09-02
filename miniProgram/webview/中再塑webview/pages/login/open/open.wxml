@@ -1,0 +1,14 @@
+<!--pages/login/open/open.wxml-->
+<view class='containers'>
+  <view class='top'>
+    <image class='img' src='/img/0.jpg'></image>
+    <text class='name'>{{appName}}</text>
+    <view class='xian'></view>
+  </view>
+  <text class='t1'>登录后开发者将获得以下权限</text>
+  <view class='t2box'>
+    <view class='dian'></view>
+    <text class='t2'>获得你的公开信息（昵称、头像等）</text>
+  </view>
+  <button class='confirm' open-type='getUserInfo' bindgetuserinfo="bindGetUserInfo">确认登陆</button>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/test/test.wxml-->
+<!-- <web-view src="http://qc.njdream.cn"></web-view> -->
+<web-view src="{{webUrl}}" bindmessage="getMessage"></web-view>
+

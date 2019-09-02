@@ -1,0 +1,121 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wx391be289aeefb09b",
+	"projectname": "%E4%B8%AD%E5%86%8D%E5%A1%91webview",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": 0,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": "page=http://localhost:3000/chooseShop",
+					"scene": "1047"
+				},
+				{
+					"id": 1,
+					"name": "购买",
+					"pathName": "pages/index/checkGoods/checkGoods",
+					"query": "id=3&orderTime=11:23",
+					"scene": "1047"
+				},
+				{
+					"id": -1,
+					"name": "店铺列表",
+					"pathName": "pages/index/choseShop/choseShop",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "订单",
+					"pathName": "pages/mine/myOrder/myOrder",
+					"query": "orderId=S1901040000956",
+					"scene": "1047"
+				},
+				{
+					"id": 4,
+					"name": "支付成功",
+					"pathName": "pages/index/paySuccess/paySuccess",
+					"query": "orderId=S1901040000956",
+					"scene": "1047"
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/mine/ticket/ticket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "历史优惠券",
+					"pathName": "pages/mine/ticket/hisTicket/hisTicket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "使用须知",
+					"pathName": "pages/mine/notice/notice",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "订单详情",
+					"pathName": "pages/mine/myOrder/orderDetail/orderDetail",
+					"query": "id=S1811140000007"
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/index/checkGoods/searchGoods/searchGoods",
+					"query": "storesId=48&name=巧克力"
+				},
+				{
+					"id": 10,
+					"name": "支付",
+					"pathName": "pages/mine/myOrder/pay/pay",
+					"query": "orderId=S1812120000779&amount=9",
+					"scene": "1047"
+				},
+				{
+					"id": -1,
+					"name": "授权",
+					"pathName": "pages/scope/scope",
+					"scene": null
+				}
+			]
+		}
+	}
+}
