@@ -1,0 +1,276 @@
+.home-box
+  text-align center
+  #banner
+    width 19.2rem
+    height 100%
+    overflow hidden
+    position relative
+    .ivu-carousel-item, .ivu-carousel-list, .ivu-carousel-track
+      height 100% !important
+    .demo-carousel
+      width 100%
+      height 100%
+      position relative
+      cursor pointer
+      >img
+        width 19.2rem
+        height 100%
+  .professional-field
+    padding 0.3rem 0
+    .professional-title
+      height 0.38rem
+      line-height 0.38rem
+      border-bottom 0.02rem solid #E1E1E1
+      h2
+        padding 0.04rem
+      a
+        float right
+        color #5160BA
+    .professional-box
+      height 7.3rem
+      width 12rem
+      padding-top 0.5rem
+      display flex
+      flex-wrap wrap
+      justify-content center
+      .wrap
+        display flex
+        justify-content center
+        align-items center
+        width 24%
+        height 3.4rem
+      .expertise-box
+        background #fff
+        padding 0.16rem
+        display inline-block
+        width 100%
+        height 3.1rem
+        margin-right 0.15rem
+        border-radius 0.03rem
+        box-shadow 0 0.01rem 0.05rem 0 rgba(0, 0, 0, 0.2)
+        div
+          margin-top 0.2rem
+          position relative
+          img
+            width 0.51rem
+            height 0.51rem
+          h2
+            margin 0.25rem 0
+            font-weight 400
+            font-size 0.18rem
+          p
+            text-align left
+            font-size 0.14rem
+            overflow hidden
+            text-overflow ellipsis
+            display -webkit-box
+            -webkit-box-orient vertical
+            -webkit-line-clamp 3
+          span
+            cursor pointer
+            border 0.01rem solid #fff
+            padding 0 0.1rem
+            width 1.1rem
+            height 0.32rem
+            line-height 0.32rem
+            border-radius 0.03rem
+            display block
+            margin 0.15rem auto
+            font-size 0.12rem
+      .expertise-box:nth-child(4), .expertise-box:nth-child(4):hover
+        margin-right 0
+      .expertise-box:hover
+        display inline-block
+        background #3F51B5
+        color #fff
+        // transform scale(1, 1.1)
+        height 3.4rem
+        transition all 0.2s ease-in-out
+        overflow hidden
+        h2
+          color #fff
+        img
+          transform translateY(-1.2rem)
+          filter drop-shadow(#fff 0 1.2rem)
+      .contact-input, #container
+        width 35rem
+      .contact-qq
+        text-align left
+        background #3F51B5
+        color #ffffff
+        font-weight 700
+        font-size 1.3em
+        padding 0.5rem 0
+        margin-bottom 1rem
+        display block
+      #container
+        height 10rem
+  .next-button
+    border none
+    background none
+    position absolute
+    top 80%
+    left 9.4rem
+    z-index 20
+.ivu-carousel
+  .ivu-carousel-dots-inside
+    top 85%
+  .anchor-box
+    position fixed
+    top 30rem
+    right 1rem
+    .ivu-anchor-ink:before
+      background none
+    .ivu-anchor-link-title
+      border 0.02rem solid #fff
+      width 0.13rem
+      height 0.13rem
+      border-radius 0.13rem
+    .ivu-anchor-link-active
+      .ivu-anchor-link-title
+        width 0.13rem
+        height 0.13rem
+        border-radius 0.13rem
+        background #3F51B5
+        border 0.02rem solid #3F51B5
+#fp-nav ul li .active span
+  background #3F51B5
+.fp-tableCell
+  display block
+  vertical-align top
+.news-case-box
+  padding-top 0.4rem
+  .public-box
+    .public-title
+      height 0.6rem
+      line-height 0.6rem
+      width 5.35rem
+      border-bottom 0.02rem solid #E1E1E1
+      margin-bottom 0.2rem
+      h2
+        font-size 0.24rem
+        border-bottom 0.03rem solid #3F51B5
+        display inline-block
+        height 0.6rem
+      a
+        color #3F51B5
+    .hot-case-item
+      display flex
+      width 5.37rem
+      height 0.9rem
+      background #F5F5F5
+      box-sizing border-box
+      margin-bottom 0.1rem
+      border 0.02rem solid #F5F5F5
+      transition border 0.2s ease-in-out
+      cursor pointer
+      .img-box
+        width 1.53rem
+        height 0.95rem
+        overflow hidden
+        img
+          width 1.53rem
+          height 0.86rem
+      .box-content
+        margin-left 0.26rem
+        text-align left
+        h2
+          font-size 0.16rem
+          margin-top 0.2rem
+          overflow hidden
+          white-space nowrap
+          text-overflow ellipsis
+    .hot-case-item:hover
+      box-sizing border-box
+      border 0.02rem solid #3F51B5
+    .news-main
+      .main-news-box
+        width 5.37rem
+        height 2.1rem
+        position relative
+        cursor pointer
+        overflow hidden
+        img
+          width 5.37rem
+          height 2.1rem
+        p
+          position absolute
+          bottom 0
+          background rgba(63, 81, 181, 0.7)
+          height 0.35rem
+          line-height 0.35rem
+          width 100%
+          color #fff
+      .news-list
+        margin-top 0.14rem
+        li
+          display flex
+          align-items center
+          justify-content space-between
+          height 0.26rem
+          cursor pointer
+          font-size 0.16rem
+          list-style none
+          position relative
+          &:before
+            content ''
+            position absolute
+            left -0.15rem
+            top 0.1rem
+            width 0.06rem
+            height 0.06rem
+            border-radius 50%
+            background #3F51B5
+          p
+            display inline-block
+            max-width 4.8rem
+            text-overflow ellipsis
+            white-space nowrap
+            overflow hidden
+        li:hover
+          color #3F51B5
+.banner-img
+  width 19.2rem
+  height 3.2rem
+  position absolute
+  bottom 1.13rem
+  img
+    width 100%
+    height 100%
+  .text-content
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    color #fff
+    .specialty-box
+      p
+        display inline-block
+        font-size 0.24rem
+        margin-top 0.6rem
+    .service
+      font-size 0.36rem
+      margin-top 0.25rem
+    .start-box
+      p
+        display inline-block
+        font-size 0.24rem
+        margin-top 0.25rem
+      p:first-child
+        border-bottom 0.02rem solid #ffffff
+        margin-right 0.1rem
+      p:nth-child(2)
+        background #ffffff
+        color rgba(163, 163, 163, 1)
+        width 1.25rem
+        height 0.38rem
+.article-none
+  text-align center
+  img
+    width 1.25rem
+    height 1.25rem
+  p
+    color rgba(221, 221, 221, 1)
+    margin-top 0.3rem
+    font-size 0.24rem
