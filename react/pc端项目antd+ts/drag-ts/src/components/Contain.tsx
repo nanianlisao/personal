@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { IChildProps } from '../types/tag'
 
 export interface IContainProps {
 }
 
 export interface IContainState {
-    dom: Array<any>
+    dom: Array<IChildProps>
 }
 
 export default class Contain extends React.Component<IContainProps, IContainState> {
@@ -31,7 +32,7 @@ export default class Contain extends React.Component<IContainProps, IContainStat
         }
     }
 
-     render() {
+    render() {
         let { dom } = this.state
         console.log(dom)
         return (
@@ -45,7 +46,7 @@ export default class Contain extends React.Component<IContainProps, IContainStat
                         })
                     }} >
                     {dom.map((x) => (
-                        <div key={x.name}>{x.name}</div>
+                        <div key={x.ComName}>{x.ComName}</div>
                     ))}
                 </div>
             </div>
