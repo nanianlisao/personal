@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+    <h3>测试下载图片</h3>
+    <img
+      id="images"
+      src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=783710799,3900198171&fm=173&app=49&f=JPEG"
+      alt=""
+      width="300"
+    />
+    <button onclick="upload()">点击下载图片</button>
+  </body>
+  <script>
+    // ********************************方案一  图片刷新就下载***********************************************
+   
+    function downloadImage(selector, name) {
+      const image = new Image();
+      // 解决跨域 canvas 污染问题
+      image.setAttribute("crossOrigin", "anonymous");
+      image.onload = function() {
+        const canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        const context = canvas.getContext("2d");
+        context.drawImage(image, 0, 0, image.width, image.height);
+        //得到图片的base64编码数据
+        const url = canvas.toDataURL("image/png");
+        // 生成一个 a 标签
+        const a = document.createElement("a");
+        // 创建一个点击事件
+        const event = new MouseEvent("click");
+        // 将 a 的 download 属性设置为我们想要下载的图片的名称，若 name 不存在则使用'图片'作为默认名称
+        a.download = name || "图片";
+        // 将生成的 URL 设置为 a.href 属性
+        a.href = url;
+        // 触发 a 的点击事件
+        a.dispatchEvent(event);
+        // return a;
+      };
+      image.src = document.getElementById(selector).src;
+    }
+    // 调用方式
+    // 参数一： 选择器，代表 img 标签
+    // 参数而： 图片名称，可选
+    // downloadImage("images");
+ 
+    // **********************************方案二  点击下载按钮下载*********************************************
+  
+    function upload() {
+    	console.log('222')
+    	downloadImage("images");
+    	return
+      const image = new Image();
+      // 解决跨域 canvas 污染问题
+      image.setAttribute("crossOrigin", "anonymous");
+      image.onload = function() {
+        const canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        const context = canvas.getContext("2d");
+        context.drawImage(image, 0, 0, image.width, image.height);
+        //得到图片的base64编码数据
+        const url = canvas.toDataURL("image/png");
+        // 生成一个 a 标签
+        const a = document.createElement("a");
+        // 创建一个点击事件
+        const event = new MouseEvent("click");
+        // 将 a 的 download 属性设置为我们想要下载的图片的名称，若 name 不存在则使用'图片'作为默认名称
+        a.download = name || "图片";
+        // 将生成的 URL 设置为 a.href 属性
+        a.href = url;
+        // 触发 a 的点击事件
+        a.dispatchEvent(event);
+        // return a;
+      };
+      image.src = document.getElementById("images").src;
+    }
+  </script>
+</html>
