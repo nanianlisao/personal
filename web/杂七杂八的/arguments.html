@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>arguments</title>
+</head>
+<body>
+    <button id="btn">点击触发函数</button>
+    <script>
+        let btn = document.querySelector('#btn')
+        btn.addEventListener('click',()=>{
+            this.aa(1,2,3)
+        })
+
+        function aa(x,y){
+           try{
+            console.log(arguments)
+            setTimeout(()=>{
+                arguments.callee(...arguments)
+            },1000)
+           }catch(e){
+               console.log(e)
+           }
+        }
+      
+    </script>
+</body>
+</html>

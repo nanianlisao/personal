@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个throttle函数，缓存纯函数的结果</title>
+</head>
+
+<body>
+    <input type="number" id="input1">
+    <input type="number" id="input2">
+    <button onclick="handAdd()">加法计算</button>
+    <button onclick="handMulti()">乘法计算</button>
+    <div>结果为：<span id="result"></span></div>
+    <div>
+        <button onclick="showCache()">查看缓存数据</button>
+        <button onclick="clearCache()">清空缓存</button>
+    </div>
+    <script>
+        let result = document.querySelector('#result')
+        let input1 = document.querySelector('#input1')
+        let input2 = document.querySelector('#input2')
+
+        function add(num1, num2) {
+            return Number(num1) + Number(num2)
+        }
+
+        function multi(num1, num2) {
+            return num1 * num2
+        }
+        // 对add函数和multi进行处理
+        add = throttle(add)
+        multi = throttle(multi)
+
+        function throttle(fn) {
+            // 用一个全局的window.cache来做缓存池
+            if (!window.cache) {
+                window.cache = new Map();
+            }
+            return function () {
+                var args = arguments;
+                // 函数名和参数值作为缓存key
+                let key = fn.name + JSON.stringify(args)
+                if (window.cache.has(key)) {
+                    console.log('这是缓存的数据')
+                    return window.cache.get(key)
+                } else {
+                    var context = this;
+                    let result = fn.apply(context, args);
+                    window.cache.set(key, result)
+                    return result
+                }
+            }
+        }
+
+
+        // 计算加法
+        function handAdd() {
+            var res = add(input1.value, input2.value)
+            result.innerHTML = res
+        }
+
+        // 计算乘法
+        function handMulti() {
+            var res = multi(input1.value, input2.value)
+            result.innerHTML = res
+        }
+
+        // 清除缓存
+        function clearCache() {
+            window.cache && window.cache.clear()
+        }
+
+        // 查看缓存
+        function showCache() {
+            console.log(window.cache)
+        }
+    </script>
+</body>
+
+</html>

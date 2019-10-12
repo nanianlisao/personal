@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实现一个promise</title>
+</head>
+
+<body>
+    <script>
+        function Promise(exector) {
+            // 这里我们将value 成功时候的值 reason失败时候的值放入属性中
+            let self = this;
+            this.value = undefined;
+            this.reason = undefined;
+            this.status = 'pending';
+
+            // 存储then中成功的回调函数
+            this.onResolvedCallbacks = [];
+            // 存储then中失败的回调函数
+            this.onRejectedCallbacks = [];
+
+            // 成功执行
+            function resolve(value) {
+                // 判断是否处于pending状态
+                if (self.status === 'pending') {
+                    self.value = value;
+                    // 这里我们执行之后需要更改状态
+                    self.status = 'resolved';
+                    // 成功之后遍历then中成功的所有回调函数
+                    self.onResolvedCallbacks.forEach(fn => fn());
+                }
+            }
+
+            // 失败执行
+            function reject(reason) {
+                // 判断是否处于pending状态
+                if (self.status === 'pending') {
+                    self.reason = reason;
+                    // 这里我们执行之后需要更改状态
+                    self.status = 'rejected';
+
+                    // 成功之后遍历then中失败的所有回调函数
+                    self.onRejectedCallbacks.forEach(fn => fn());
+                }
+            }
+            // 这里对异常进行处理
+            try {
+                exector(resolve, reject);
+            } catch (e) {
+                reject(e)
+            }
+        }
+
+
+        Promise.prototype.then = function (onFulfilled, onReject) {
+            // 获取下this
+            let self = this;
+            let promise2
+            if (this.status === 'resolved') {
+                promise2 = new Promise(function (resolve, reject) {
+                    onFulfilled(self.value);
+                })
+            }
+
+            if (this.status === 'rejected') {
+                promise2 = new Promise(function (resolve, reject) {
+                    onRejected(self.reason);
+                })
+            }
+
+            // 如果异步执行则位pending状态
+            if (this.status === 'pending') {
+                // 保存回调函数
+                promise2 = new Promise(function (resolve, reject) {
+                    this.onResolvedCallbacks.push(() => {
+                        onFulfilled(self.value);
+                    })
+
+                    this.onRejectedCallbacks.push(() => {
+                        onRejected(self.reason)
+                    });
+                })
+            }
+            return promise2
+        }
+
+
+
+        /*
+
+        let promise = new Promise((resolve, reject) => {
+            //这里放入我们要执行的函数，可能是同步，也可能是异步, 这里我们就来写一个异步的执行
+            setTimeout(() => {
+                resolve('hello');
+            })
+        })
+
+        promise.then(data => {
+            console.log(data);
+        }, err => { console.log(err) })
+        */
+    </script>
+</body>
+
+</html>
