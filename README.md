@@ -43,6 +43,6 @@ vue入门练习，todo应用，网易云音乐
 dream-vue，用vue2.0重写的官网移动端部分
 
 ## web
-主要是前期用jquery开发的一些web项目 和个人练习
+主要是前期用jquery开发的一些web项目 和个人练习和常用函数
 
 
