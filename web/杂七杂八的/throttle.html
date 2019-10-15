@@ -37,7 +37,8 @@
         function throttle(fn) {
             // 用一个全局的window.cache来做缓存池
             if (!window.cache) {
-                window.cache = new Map();
+                window.cache = new Map()
+                console.log('1')
             }
             return function () {
                 var args = arguments;
